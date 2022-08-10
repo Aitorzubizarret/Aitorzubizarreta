@@ -8,22 +8,32 @@
 import UIKit
 
 class MainViewController: UIViewController {
-
+    
+    // MARK: - UI Elements
+    
+    // MARK: - Properties
+    
+    private var tableView = UITableView()
+    
+    // MARK: - Methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setupTableView()
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    private func setupTableView() {
+        self.view.addSubview(tableView)
+        
+        // Constraints.
+        let safeArea: UILayoutGuide = view.layoutMarginsGuide
+        
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.topAnchor.constraint(equalTo: safeArea.topAnchor).isActive = true
+        tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor).isActive = true
+        tableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
     }
-    */
-
+    
 }
