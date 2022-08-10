@@ -10,10 +10,25 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        // Create an instance of the Main VC.
+        let mainVC: MainViewController = MainViewController()
+        
+        // Create the Navigation Controller and add the Main VC to it.
+        let navigationController: UINavigationController = UINavigationController()
+        navigationController.pushViewController(mainVC, animated: false)
+                
+        // Create the window and add the Navigation Controller as the root view.
+        let frame = UIScreen.main.bounds
+        window = UIWindow(frame: frame)
+        if let window = window {
+            window.rootViewController = navigationController
+            window.makeKeyAndVisible()
+        }
+        
         return true
     }
 
