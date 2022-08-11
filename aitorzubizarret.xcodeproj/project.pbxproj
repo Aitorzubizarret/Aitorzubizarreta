@@ -16,6 +16,14 @@
 		1A7A59DE28A405B700D5667D /* aitorzubizarretUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7A59DD28A405B700D5667D /* aitorzubizarretUITestsLaunchTests.swift */; };
 		1AC80EF828A407710049E901 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC80EF628A407710049E901 /* MainViewController.swift */; };
 		1AC80EF928A407710049E901 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AC80EF728A407710049E901 /* MainViewController.xib */; };
+		1AC80F0328A568BB0049E901 /* AboutMeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC80F0128A568BB0049E901 /* AboutMeTableViewCell.swift */; };
+		1AC80F0428A568BB0049E901 /* AboutMeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AC80F0228A568BB0049E901 /* AboutMeTableViewCell.xib */; };
+		1AC80F0828A568D30049E901 /* CVTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC80F0628A568D30049E901 /* CVTableViewCell.swift */; };
+		1AC80F0928A568D30049E901 /* CVTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AC80F0728A568D30049E901 /* CVTableViewCell.xib */; };
+		1AC80F0D28A568F30049E901 /* ContactMeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC80F0B28A568F30049E901 /* ContactMeTableViewCell.swift */; };
+		1AC80F0E28A568F30049E901 /* ContactMeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AC80F0C28A568F30049E901 /* ContactMeTableViewCell.xib */; };
+		1AC80F1228A569170049E901 /* PhotosAlbumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC80F1028A569170049E901 /* PhotosAlbumTableViewCell.swift */; };
+		1AC80F1328A569170049E901 /* PhotosAlbumTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AC80F1128A569170049E901 /* PhotosAlbumTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +57,14 @@
 		1A7A59DD28A405B700D5667D /* aitorzubizarretUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aitorzubizarretUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		1AC80EF628A407710049E901 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		1AC80EF728A407710049E901 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		1AC80F0128A568BB0049E901 /* AboutMeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMeTableViewCell.swift; sourceTree = "<group>"; };
+		1AC80F0228A568BB0049E901 /* AboutMeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutMeTableViewCell.xib; sourceTree = "<group>"; };
+		1AC80F0628A568D30049E901 /* CVTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVTableViewCell.swift; sourceTree = "<group>"; };
+		1AC80F0728A568D30049E901 /* CVTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CVTableViewCell.xib; sourceTree = "<group>"; };
+		1AC80F0B28A568F30049E901 /* ContactMeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactMeTableViewCell.swift; sourceTree = "<group>"; };
+		1AC80F0C28A568F30049E901 /* ContactMeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactMeTableViewCell.xib; sourceTree = "<group>"; };
+		1AC80F1028A569170049E901 /* PhotosAlbumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosAlbumTableViewCell.swift; sourceTree = "<group>"; };
+		1AC80F1128A569170049E901 /* PhotosAlbumTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotosAlbumTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +119,7 @@
 				1A7A59BC28A405B600D5667D /* SceneDelegate.swift */,
 				1AC80EF428A4074D0049E901 /* Models */,
 				1AC80EF328A407460049E901 /* Views */,
+				1AC80EFA28A567AA0049E901 /* Cells */,
 				1AC80EF228A407330049E901 /* Controllers */,
 				1A7A59C328A405B700D5667D /* Assets.xcassets */,
 				1A7A59C828A405B700D5667D /* Info.plist */,
@@ -157,6 +174,53 @@
 				1AC80EF728A407710049E901 /* MainViewController.xib */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		1AC80EFA28A567AA0049E901 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1AC80F0F28A568FB0049E901 /* PhotosAlbumCell */,
+				1AC80F0A28A568DC0049E901 /* ContactMeCell */,
+				1AC80F0528A568C40049E901 /* CVCell */,
+				1AC80F0028A568A40049E901 /* AboutMeCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		1AC80F0028A568A40049E901 /* AboutMeCell */ = {
+			isa = PBXGroup;
+			children = (
+				1AC80F0128A568BB0049E901 /* AboutMeTableViewCell.swift */,
+				1AC80F0228A568BB0049E901 /* AboutMeTableViewCell.xib */,
+			);
+			path = AboutMeCell;
+			sourceTree = "<group>";
+		};
+		1AC80F0528A568C40049E901 /* CVCell */ = {
+			isa = PBXGroup;
+			children = (
+				1AC80F0628A568D30049E901 /* CVTableViewCell.swift */,
+				1AC80F0728A568D30049E901 /* CVTableViewCell.xib */,
+			);
+			path = CVCell;
+			sourceTree = "<group>";
+		};
+		1AC80F0A28A568DC0049E901 /* ContactMeCell */ = {
+			isa = PBXGroup;
+			children = (
+				1AC80F0B28A568F30049E901 /* ContactMeTableViewCell.swift */,
+				1AC80F0C28A568F30049E901 /* ContactMeTableViewCell.xib */,
+			);
+			path = ContactMeCell;
+			sourceTree = "<group>";
+		};
+		1AC80F0F28A568FB0049E901 /* PhotosAlbumCell */ = {
+			isa = PBXGroup;
+			children = (
+				1AC80F1028A569170049E901 /* PhotosAlbumTableViewCell.swift */,
+				1AC80F1128A569170049E901 /* PhotosAlbumTableViewCell.xib */,
+			);
+			path = PhotosAlbumCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,8 +327,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AC80F0E28A568F30049E901 /* ContactMeTableViewCell.xib in Resources */,
+				1AC80F0928A568D30049E901 /* CVTableViewCell.xib in Resources */,
 				1A7A59C728A405B700D5667D /* LaunchScreen.storyboard in Resources */,
+				1AC80F0428A568BB0049E901 /* AboutMeTableViewCell.xib in Resources */,
 				1AC80EF928A407710049E901 /* MainViewController.xib in Resources */,
+				1AC80F1328A569170049E901 /* PhotosAlbumTableViewCell.xib in Resources */,
 				1A7A59C428A405B700D5667D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,8 +359,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A7A59BB28A405B600D5667D /* AppDelegate.swift in Sources */,
+				1AC80F1228A569170049E901 /* PhotosAlbumTableViewCell.swift in Sources */,
+				1AC80F0328A568BB0049E901 /* AboutMeTableViewCell.swift in Sources */,
+				1AC80F0D28A568F30049E901 /* ContactMeTableViewCell.swift in Sources */,
 				1A7A59BD28A405B600D5667D /* SceneDelegate.swift in Sources */,
 				1AC80EF828A407710049E901 /* MainViewController.swift in Sources */,
+				1AC80F0828A568D30049E901 /* CVTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
