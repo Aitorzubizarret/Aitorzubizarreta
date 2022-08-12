@@ -38,6 +38,8 @@ class MainViewController: UIViewController {
         tableView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor).isActive = true
         tableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         
+        tableView.separatorStyle = .none
+        
         // Register cells.
         let aboutMeCell: UINib = UINib(nibName: "AboutMeTableViewCell", bundle: nil)
         tableView.register(aboutMeCell, forCellReuseIdentifier: "AboutMeTableViewCell")
