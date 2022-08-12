@@ -65,9 +65,9 @@ extension MainViewController: UITableViewDelegate {
         case 0:
             return 100
         case 1:
-            return 100
+            return 80
         case 2:
-            return 100
+            return 80
         case 3:
             return 170
         default:

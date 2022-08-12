@@ -18,23 +18,23 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oZe-Gg-Dfw">
-                        <rect key="frame" x="20" y="35" width="280" height="55"/>
+                        <rect key="frame" x="20" y="25" width="280" height="61"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SOBRE MÍ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eye-nf-2Mc">
-                                <rect key="frame" x="30" y="18.5" width="160" height="18"/>
+                                <rect key="frame" x="30" y="21.5" width="160" height="18"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
-                                <color key="textColor" name="darkBlue"/>
+                                <color key="textColor" name="myDarkBlue"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" name="blue"/>
+                        <color key="backgroundColor" name="myBlue"/>
                         <constraints>
                             <constraint firstItem="Eye-nf-2Mc" firstAttribute="centerY" secondItem="oZe-Gg-Dfw" secondAttribute="centerY" id="BJo-9n-3Tu"/>
                             <constraint firstItem="Eye-nf-2Mc" firstAttribute="leading" secondItem="oZe-Gg-Dfw" secondAttribute="leading" constant="30" id="oyX-k1-0Nc"/>
                         </constraints>
                     </view>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="body" translatesAutoresizingMaskIntoConstraints="NO" id="5xo-pu-pR3">
-                        <rect key="frame" x="230" y="0.0" width="60" height="89"/>
+                        <rect key="frame" x="230" y="0.0" width="60" height="85"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="60" id="jwf-OL-LkT"/>
                         </constraints>
@@ -43,11 +43,11 @@
                 <constraints>
                     <constraint firstItem="5xo-pu-pR3" firstAttribute="leading" secondItem="Eye-nf-2Mc" secondAttribute="trailing" constant="20" id="0BW-LQ-2gO"/>
                     <constraint firstItem="oZe-Gg-Dfw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="5xL-rO-otE"/>
-                    <constraint firstItem="oZe-Gg-Dfw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="35" id="WwL-PG-P3z"/>
-                    <constraint firstAttribute="bottom" secondItem="5xo-pu-pR3" secondAttribute="bottom" constant="11" id="WzK-RN-FSb"/>
+                    <constraint firstItem="oZe-Gg-Dfw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="25" id="WwL-PG-P3z"/>
+                    <constraint firstAttribute="bottom" secondItem="5xo-pu-pR3" secondAttribute="bottom" constant="15" id="WzK-RN-FSb"/>
                     <constraint firstItem="5xo-pu-pR3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="oBd-xj-AKJ"/>
                     <constraint firstAttribute="trailing" secondItem="5xo-pu-pR3" secondAttribute="trailing" constant="30" id="og8-Gr-tve"/>
-                    <constraint firstAttribute="bottom" secondItem="oZe-Gg-Dfw" secondAttribute="bottom" constant="10" id="xUh-Qp-nHZ"/>
+                    <constraint firstAttribute="bottom" secondItem="oZe-Gg-Dfw" secondAttribute="bottom" constant="14" id="xUh-Qp-nHZ"/>
                     <constraint firstAttribute="trailing" secondItem="oZe-Gg-Dfw" secondAttribute="trailing" constant="20" id="z13-TO-Oef"/>
                 </constraints>
             </tableViewCellContentView>
@@ -62,10 +62,10 @@
     </objects>
     <resources>
         <image name="body" width="335" height="723"/>
-        <namedColor name="blue">
+        <namedColor name="myBlue">
             <color red="0.83921568627450982" green="0.91764705882352937" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="darkBlue">
+        <namedColor name="myDarkBlue">
             <color red="0.15686274509803921" green="0.45490196078431372" blue="0.65098039215686276" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
