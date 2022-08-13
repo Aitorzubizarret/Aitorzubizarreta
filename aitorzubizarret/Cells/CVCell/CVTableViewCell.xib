@@ -43,7 +43,7 @@
                             <constraint firstItem="hpH-jn-Lfr" firstAttribute="leading" secondItem="1q8-3u-YRO" secondAttribute="leading" constant="30" id="2Xi-CN-HEo"/>
                             <constraint firstItem="y75-rc-IjH" firstAttribute="leading" secondItem="hpH-jn-Lfr" secondAttribute="trailing" constant="20" id="J7J-HB-Uas"/>
                             <constraint firstItem="y75-rc-IjH" firstAttribute="centerY" secondItem="1q8-3u-YRO" secondAttribute="centerY" id="UIa-Fs-cQ4"/>
-                            <constraint firstAttribute="trailing" secondItem="y75-rc-IjH" secondAttribute="trailing" constant="20" symbolic="YES" id="c0l-lc-FSM"/>
+                            <constraint firstAttribute="trailing" secondItem="y75-rc-IjH" secondAttribute="trailing" constant="20" id="c0l-lc-FSM"/>
                             <constraint firstItem="hpH-jn-Lfr" firstAttribute="centerY" secondItem="1q8-3u-YRO" secondAttribute="centerY" id="jMR-x0-bCP"/>
                         </constraints>
                     </view>
