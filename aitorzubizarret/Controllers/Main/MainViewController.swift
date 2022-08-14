@@ -76,7 +76,22 @@ extension MainViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Cell \(indexPath.item) selected")
+        switch indexPath.item {
+        case 0:
+            let aboutMeVC = AboutMeViewController()
+            show(aboutMeVC, sender: nil)
+        case 1:
+            let cvVC = CVViewController()
+            show(cvVC, sender: nil)
+        case 2:
+            let contactMeVC = ContactMeViewController()
+            show(contactMeVC, sender: nil)
+        case 3:
+            let photoAlbumVC = PhotoAlbumViewController()
+            show(photoAlbumVC, sender: nil)
+        default:
+            print("")
+        }
     }
     
 }

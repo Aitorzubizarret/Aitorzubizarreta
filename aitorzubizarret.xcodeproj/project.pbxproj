@@ -24,6 +24,14 @@
 		1AC80F0E28A568F30049E901 /* ContactMeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AC80F0C28A568F30049E901 /* ContactMeTableViewCell.xib */; };
 		1AC80F1228A569170049E901 /* PhotosAlbumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC80F1028A569170049E901 /* PhotosAlbumTableViewCell.swift */; };
 		1AC80F1328A569170049E901 /* PhotosAlbumTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AC80F1128A569170049E901 /* PhotosAlbumTableViewCell.xib */; };
+		1AC80F1728A906360049E901 /* AboutMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC80F1528A906360049E901 /* AboutMeViewController.swift */; };
+		1AC80F1828A906360049E901 /* AboutMeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AC80F1628A906360049E901 /* AboutMeViewController.xib */; };
+		1AC80F1E28A906850049E901 /* CVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC80F1C28A906850049E901 /* CVViewController.swift */; };
+		1AC80F1F28A906850049E901 /* CVViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AC80F1D28A906850049E901 /* CVViewController.xib */; };
+		1AC80F2228A906980049E901 /* ContactMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC80F2028A906980049E901 /* ContactMeViewController.swift */; };
+		1AC80F2328A906980049E901 /* ContactMeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AC80F2128A906980049E901 /* ContactMeViewController.xib */; };
+		1AC80F2A28A907240049E901 /* PhotoAlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC80F2828A907240049E901 /* PhotoAlbumViewController.swift */; };
+		1AC80F2B28A907240049E901 /* PhotoAlbumViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AC80F2928A907240049E901 /* PhotoAlbumViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +73,14 @@
 		1AC80F0C28A568F30049E901 /* ContactMeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactMeTableViewCell.xib; sourceTree = "<group>"; };
 		1AC80F1028A569170049E901 /* PhotosAlbumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosAlbumTableViewCell.swift; sourceTree = "<group>"; };
 		1AC80F1128A569170049E901 /* PhotosAlbumTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotosAlbumTableViewCell.xib; sourceTree = "<group>"; };
+		1AC80F1528A906360049E901 /* AboutMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMeViewController.swift; sourceTree = "<group>"; };
+		1AC80F1628A906360049E901 /* AboutMeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutMeViewController.xib; sourceTree = "<group>"; };
+		1AC80F1C28A906850049E901 /* CVViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVViewController.swift; sourceTree = "<group>"; };
+		1AC80F1D28A906850049E901 /* CVViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CVViewController.xib; sourceTree = "<group>"; };
+		1AC80F2028A906980049E901 /* ContactMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactMeViewController.swift; sourceTree = "<group>"; };
+		1AC80F2128A906980049E901 /* ContactMeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactMeViewController.xib; sourceTree = "<group>"; };
+		1AC80F2828A907240049E901 /* PhotoAlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAlbumViewController.swift; sourceTree = "<group>"; };
+		1AC80F2928A907240049E901 /* PhotoAlbumViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoAlbumViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +164,10 @@
 			isa = PBXGroup;
 			children = (
 				1AC80EF528A407580049E901 /* Main */,
+				1AC80F1428A906190049E901 /* AboutMe */,
+				1AC80F1928A906400049E901 /* CV */,
+				1AC80F1A28A9064E0049E901 /* ContactMe */,
+				1AC80F1B28A9065E0049E901 /* PhotoAlbum */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -221,6 +241,42 @@
 				1AC80F1128A569170049E901 /* PhotosAlbumTableViewCell.xib */,
 			);
 			path = PhotosAlbumCell;
+			sourceTree = "<group>";
+		};
+		1AC80F1428A906190049E901 /* AboutMe */ = {
+			isa = PBXGroup;
+			children = (
+				1AC80F1528A906360049E901 /* AboutMeViewController.swift */,
+				1AC80F1628A906360049E901 /* AboutMeViewController.xib */,
+			);
+			path = AboutMe;
+			sourceTree = "<group>";
+		};
+		1AC80F1928A906400049E901 /* CV */ = {
+			isa = PBXGroup;
+			children = (
+				1AC80F1C28A906850049E901 /* CVViewController.swift */,
+				1AC80F1D28A906850049E901 /* CVViewController.xib */,
+			);
+			path = CV;
+			sourceTree = "<group>";
+		};
+		1AC80F1A28A9064E0049E901 /* ContactMe */ = {
+			isa = PBXGroup;
+			children = (
+				1AC80F2028A906980049E901 /* ContactMeViewController.swift */,
+				1AC80F2128A906980049E901 /* ContactMeViewController.xib */,
+			);
+			path = ContactMe;
+			sourceTree = "<group>";
+		};
+		1AC80F1B28A9065E0049E901 /* PhotoAlbum */ = {
+			isa = PBXGroup;
+			children = (
+				1AC80F2828A907240049E901 /* PhotoAlbumViewController.swift */,
+				1AC80F2928A907240049E901 /* PhotoAlbumViewController.xib */,
+			);
+			path = PhotoAlbum;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -327,12 +383,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AC80F2B28A907240049E901 /* PhotoAlbumViewController.xib in Resources */,
 				1AC80F0E28A568F30049E901 /* ContactMeTableViewCell.xib in Resources */,
 				1AC80F0928A568D30049E901 /* CVTableViewCell.xib in Resources */,
 				1A7A59C728A405B700D5667D /* LaunchScreen.storyboard in Resources */,
+				1AC80F2328A906980049E901 /* ContactMeViewController.xib in Resources */,
 				1AC80F0428A568BB0049E901 /* AboutMeTableViewCell.xib in Resources */,
 				1AC80EF928A407710049E901 /* MainViewController.xib in Resources */,
 				1AC80F1328A569170049E901 /* PhotosAlbumTableViewCell.xib in Resources */,
+				1AC80F1F28A906850049E901 /* CVViewController.xib in Resources */,
+				1AC80F1828A906360049E901 /* AboutMeViewController.xib in Resources */,
 				1A7A59C428A405B700D5667D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,9 +418,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AC80F2A28A907240049E901 /* PhotoAlbumViewController.swift in Sources */,
 				1A7A59BB28A405B600D5667D /* AppDelegate.swift in Sources */,
+				1AC80F1E28A906850049E901 /* CVViewController.swift in Sources */,
 				1AC80F1228A569170049E901 /* PhotosAlbumTableViewCell.swift in Sources */,
+				1AC80F1728A906360049E901 /* AboutMeViewController.swift in Sources */,
 				1AC80F0328A568BB0049E901 /* AboutMeTableViewCell.swift in Sources */,
+				1AC80F2228A906980049E901 /* ContactMeViewController.swift in Sources */,
 				1AC80F0D28A568F30049E901 /* ContactMeTableViewCell.swift in Sources */,
 				1A7A59BD28A405B600D5667D /* SceneDelegate.swift in Sources */,
 				1AC80EF828A407710049E901 /* MainViewController.swift in Sources */,
