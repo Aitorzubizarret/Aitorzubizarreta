@@ -3,7 +3,9 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -16,24 +18,44 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="170"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mF9-qO-b01">
-                        <rect key="frame" x="133" y="74.5" width="54" height="21"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d4P-IP-fuL">
+                        <rect key="frame" x="20" y="10" width="280" height="150"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FOTOS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mF9-qO-b01">
+                        <rect key="frame" x="50" y="30" width="220" height="18"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="54" id="QPo-pw-muY"/>
-                            <constraint firstAttribute="height" constant="21" id="yZ4-wk-zSJ"/>
+                            <constraint firstAttribute="height" constant="18" id="Mwn-Yj-Ksk"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                        <color key="textColor" name="myDarkBlue"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="mF9-qO-b01" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="WpH-XP-Wh0"/>
-                    <constraint firstItem="mF9-qO-b01" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="djb-Ge-w3z"/>
+                    <constraint firstItem="mF9-qO-b01" firstAttribute="trailing" secondItem="d4P-IP-fuL" secondAttribute="trailing" constant="-30" id="5Pe-Xa-cL8"/>
+                    <constraint firstItem="mF9-qO-b01" firstAttribute="leading" secondItem="d4P-IP-fuL" secondAttribute="leading" constant="30" id="LgZ-mO-6Me"/>
+                    <constraint firstAttribute="trailing" secondItem="d4P-IP-fuL" secondAttribute="trailing" constant="20" id="Tx0-HP-azt"/>
+                    <constraint firstItem="d4P-IP-fuL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="UCB-V4-O8B"/>
+                    <constraint firstAttribute="bottom" secondItem="d4P-IP-fuL" secondAttribute="bottom" constant="10" id="b6D-T3-D1H"/>
+                    <constraint firstItem="mF9-qO-b01" firstAttribute="top" secondItem="d4P-IP-fuL" secondAttribute="top" constant="20" id="lDc-5j-BnQ"/>
+                    <constraint firstItem="d4P-IP-fuL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="oRl-aK-I4q"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="mainView" destination="d4P-IP-fuL" id="Mt3-Ip-Maf"/>
+                <outlet property="titleLabel" destination="mF9-qO-b01" id="czC-Yq-wCT"/>
+            </connections>
             <point key="canvasLocation" x="137.68115942028987" y="153.34821428571428"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <namedColor name="myDarkBlue">
+            <color red="0.15686274509803921" green="0.45490196078431372" blue="0.65098039215686276" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
