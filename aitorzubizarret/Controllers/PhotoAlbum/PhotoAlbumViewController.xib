@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -10,6 +11,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PhotoAlbumViewController" customModule="aitorzubizarret" customModuleProvider="target">
             <connections>
+                <outlet property="collectionView" destination="h1P-Cg-ehX" id="xot-ge-Mhm"/>
+                <outlet property="descriptionLabel" destination="ILj-DK-xab" id="R1z-Md-8EU"/>
+                <outlet property="displayOptionsSegmentControl" destination="1cH-lk-Njg" id="OOf-FI-HP0"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,27 +22,89 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fotos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VPK-iZ-g0w">
-                    <rect key="frame" x="185.5" y="437.5" width="43" height="21"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qFT-1e-9q1">
+                    <rect key="frame" x="0.0" y="44" width="414" height="105.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JQV-mk-cs8">
+                            <rect key="frame" x="30" y="10" width="50" height="26.5"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="50" id="VCT-IP-ykb"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
+                            <color key="textColor" name="myDarkBlue"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FOTOS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eV1-gR-hbJ">
+                            <rect key="frame" x="30" y="36.5" width="50" height="14"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                            <color key="textColor" name="myDarkBlue"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="1cH-lk-Njg">
+                            <rect key="frame" x="0.0" y="70.5" width="414" height="32"/>
+                            <segments>
+                                <segment title="" image="square.grid.3x2.fill" catalog="system"/>
+                                <segment title="" image="rectangle.grid.1x2.fill" catalog="system"/>
+                            </segments>
+                            <connections>
+                                <action selector="displayOptionsSegmentControlChanged:" destination="-1" eventType="valueChanged" id="343-eA-LcV"/>
+                            </connections>
+                        </segmentedControl>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Este es el resultado de mis dos hobbies, viajar y la fotografía." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ILj-DK-xab">
+                            <rect key="frame" x="100" y="10" width="284" height="40.5"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                            <color key="textColor" name="myDarkBlue"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="43" id="axc-3L-M3m"/>
-                        <constraint firstAttribute="height" constant="21" id="hgn-dm-JCi"/>
+                        <constraint firstItem="1cH-lk-Njg" firstAttribute="leading" secondItem="qFT-1e-9q1" secondAttribute="leading" id="1ng-Mf-whq"/>
+                        <constraint firstItem="ILj-DK-xab" firstAttribute="bottom" secondItem="eV1-gR-hbJ" secondAttribute="bottom" id="6PY-TK-LOz"/>
+                        <constraint firstItem="eV1-gR-hbJ" firstAttribute="top" secondItem="JQV-mk-cs8" secondAttribute="bottom" id="G9b-T9-KEG"/>
+                        <constraint firstItem="ILj-DK-xab" firstAttribute="top" secondItem="JQV-mk-cs8" secondAttribute="top" id="KTj-rz-u3e"/>
+                        <constraint firstItem="eV1-gR-hbJ" firstAttribute="leading" secondItem="JQV-mk-cs8" secondAttribute="leading" id="YQB-6o-chz"/>
+                        <constraint firstAttribute="trailing" secondItem="ILj-DK-xab" secondAttribute="trailing" constant="30" id="YZ2-1h-oGf"/>
+                        <constraint firstItem="JQV-mk-cs8" firstAttribute="top" secondItem="qFT-1e-9q1" secondAttribute="top" constant="10" id="ZUi-bz-sl7"/>
+                        <constraint firstItem="ILj-DK-xab" firstAttribute="leading" secondItem="JQV-mk-cs8" secondAttribute="trailing" constant="20" id="l7m-WG-YxQ"/>
+                        <constraint firstAttribute="trailing" secondItem="1cH-lk-Njg" secondAttribute="trailing" id="o9U-QI-m6j"/>
+                        <constraint firstItem="eV1-gR-hbJ" firstAttribute="trailing" secondItem="JQV-mk-cs8" secondAttribute="trailing" id="q7S-cj-lsp"/>
+                        <constraint firstItem="JQV-mk-cs8" firstAttribute="leading" secondItem="qFT-1e-9q1" secondAttribute="leading" constant="30" id="qfG-7o-gqX"/>
+                        <constraint firstAttribute="bottom" secondItem="1cH-lk-Njg" secondAttribute="bottom" constant="4" id="qkE-1i-Tx7"/>
+                        <constraint firstItem="1cH-lk-Njg" firstAttribute="top" secondItem="eV1-gR-hbJ" secondAttribute="bottom" constant="20" id="xtb-vd-fE2"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                </view>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="h1P-Cg-ehX">
+                    <rect key="frame" x="0.0" y="149.5" width="414" height="746.5"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ir9-R7-NOh">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="VPK-iZ-g0w" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="UEN-Tb-t61"/>
-                <constraint firstItem="VPK-iZ-g0w" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="zeY-yb-J1K"/>
+                <constraint firstItem="h1P-Cg-ehX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="4y6-Zn-GLv"/>
+                <constraint firstItem="qFT-1e-9q1" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="87X-kn-6Vq"/>
+                <constraint firstItem="qFT-1e-9q1" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="8yN-3s-nVe"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="qFT-1e-9q1" secondAttribute="trailing" id="SRy-LW-WZw"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="h1P-Cg-ehX" secondAttribute="trailing" id="X3R-1M-Dts"/>
+                <constraint firstItem="h1P-Cg-ehX" firstAttribute="top" secondItem="qFT-1e-9q1" secondAttribute="bottom" id="d9R-t7-GTP"/>
+                <constraint firstAttribute="bottom" secondItem="h1P-Cg-ehX" secondAttribute="bottom" id="kJW-ze-9FT"/>
             </constraints>
-            <point key="canvasLocation" x="139" y="112"/>
+            <point key="canvasLocation" x="137.68115942028987" y="111.83035714285714"/>
         </view>
     </objects>
     <resources>
+        <image name="rectangle.grid.1x2.fill" catalog="system" width="128" height="101"/>
+        <image name="square.grid.3x2.fill" catalog="system" width="128" height="80"/>
+        <namedColor name="myDarkBlue">
+            <color red="0.15686274509803921" green="0.45490196078431372" blue="0.65098039215686276" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
