@@ -15,11 +15,10 @@ class PhotoThumbnailCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Properties
     
-    var thumbnailImageName: String = "" {
+    var thumbnailURLString: String = "" {
         didSet {
-            if !thumbnailImageName.isEmpty {
-                thumbnailImageView.image = UIImage(named: thumbnailImageName)
-            }
+            guard let safeURL = URL(string: thumbnailURLString) else { return }
+            thumbnailImageView.download(from: safeURL)
         }
     }
     
@@ -27,7 +26,12 @@ class PhotoThumbnailCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        setupView()
     }
-
+    
+    private func setupView() {
+        thumbnailImageView.image = UIImage(named: "photo-placecholder")
+    }
+    
 }

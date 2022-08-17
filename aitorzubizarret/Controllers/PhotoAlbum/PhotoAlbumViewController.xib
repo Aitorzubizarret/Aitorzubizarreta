@@ -11,9 +11,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PhotoAlbumViewController" customModule="aitorzubizarret" customModuleProvider="target">
             <connections>
+                <outlet property="amountOfPhotosLabel" destination="JQV-mk-cs8" id="OPw-uh-jGc"/>
                 <outlet property="collectionView" destination="h1P-Cg-ehX" id="xot-ge-Mhm"/>
                 <outlet property="descriptionLabel" destination="ILj-DK-xab" id="R1z-Md-8EU"/>
-                <outlet property="displayOptionsSegmentControl" destination="1cH-lk-Njg" id="OOf-FI-HP0"/>
+                <outlet property="dividerImageView" destination="ogm-sG-Oae" id="eJF-7c-6Ga"/>
+                <outlet property="groupViewButton" destination="d9J-wj-T0U" id="TRW-hT-7Jg"/>
+                <outlet property="individualViewButton" destination="fAF-nU-plM" id="nzf-ul-yRH"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,7 +26,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qFT-1e-9q1">
-                    <rect key="frame" x="0.0" y="44" width="414" height="105.5"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="112.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JQV-mk-cs8">
                             <rect key="frame" x="30" y="10" width="50" height="26.5"/>
@@ -31,51 +34,88 @@
                                 <constraint firstAttribute="width" constant="50" id="VCT-IP-ykb"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
-                            <color key="textColor" name="myDarkBlue"/>
+                            <color key="textColor" name="myDarkGrey"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FOTOS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eV1-gR-hbJ">
                             <rect key="frame" x="30" y="36.5" width="50" height="14"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
-                            <color key="textColor" name="myDarkBlue"/>
+                            <color key="textColor" name="myDarkGrey"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="1cH-lk-Njg">
-                            <rect key="frame" x="0.0" y="70.5" width="414" height="32"/>
-                            <segments>
-                                <segment title="" image="square.grid.3x2.fill" catalog="system"/>
-                                <segment title="" image="rectangle.grid.1x2.fill" catalog="system"/>
-                            </segments>
-                            <connections>
-                                <action selector="displayOptionsSegmentControlChanged:" destination="-1" eventType="valueChanged" id="343-eA-LcV"/>
-                            </connections>
-                        </segmentedControl>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Este es el resultado de mis dos hobbies, viajar y la fotografía." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ILj-DK-xab">
                             <rect key="frame" x="100" y="10" width="284" height="40.5"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                            <color key="textColor" name="myDarkBlue"/>
+                            <color key="textColor" name="myDarkGrey"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8X3-4q-Qws">
+                            <rect key="frame" x="0.0" y="70.5" width="414" height="1"/>
+                            <color key="backgroundColor" name="myGrey"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="59t-WC-SWi"/>
+                            </constraints>
+                        </imageView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="hdQ-NC-CeT">
+                            <rect key="frame" x="0.0" y="71.5" width="414" height="40"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d9J-wj-T0U">
+                                    <rect key="frame" x="0.0" y="0.0" width="209.5" height="40"/>
+                                    <color key="backgroundColor" name="myGrey"/>
+                                    <color key="tintColor" name="myDarkGrey"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" image="square.grid.3x3.fill" catalog="system"/>
+                                    <connections>
+                                        <action selector="groupViewButtonTapped:" destination="-1" eventType="touchUpInside" id="dMZ-KW-wW2"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fAF-nU-plM">
+                                    <rect key="frame" x="209.5" y="0.0" width="204.5" height="40"/>
+                                    <color key="tintColor" name="myDarkGrey"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" image="square.split.1x2.fill" catalog="system"/>
+                                    <connections>
+                                        <action selector="individualViewButtonTapped:" destination="-1" eventType="touchUpInside" id="l3J-OH-HvO"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="XIW-nj-qsv"/>
+                            </constraints>
+                        </stackView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ogm-sG-Oae">
+                            <rect key="frame" x="0.0" y="111.5" width="414" height="1"/>
+                            <color key="backgroundColor" name="myGrey"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="fY8-kQ-uA8"/>
+                            </constraints>
+                        </imageView>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstItem="1cH-lk-Njg" firstAttribute="leading" secondItem="qFT-1e-9q1" secondAttribute="leading" id="1ng-Mf-whq"/>
+                        <constraint firstAttribute="bottom" secondItem="ogm-sG-Oae" secondAttribute="bottom" id="3HK-ZD-PG8"/>
+                        <constraint firstItem="ogm-sG-Oae" firstAttribute="leading" secondItem="qFT-1e-9q1" secondAttribute="leading" id="6J6-mu-WwB"/>
                         <constraint firstItem="ILj-DK-xab" firstAttribute="bottom" secondItem="eV1-gR-hbJ" secondAttribute="bottom" id="6PY-TK-LOz"/>
+                        <constraint firstItem="ogm-sG-Oae" firstAttribute="top" secondItem="hdQ-NC-CeT" secondAttribute="bottom" id="7KP-dL-IJf"/>
                         <constraint firstItem="eV1-gR-hbJ" firstAttribute="top" secondItem="JQV-mk-cs8" secondAttribute="bottom" id="G9b-T9-KEG"/>
                         <constraint firstItem="ILj-DK-xab" firstAttribute="top" secondItem="JQV-mk-cs8" secondAttribute="top" id="KTj-rz-u3e"/>
+                        <constraint firstItem="8X3-4q-Qws" firstAttribute="leading" secondItem="qFT-1e-9q1" secondAttribute="leading" id="N03-r0-bCJ"/>
+                        <constraint firstItem="hdQ-NC-CeT" firstAttribute="leading" secondItem="qFT-1e-9q1" secondAttribute="leading" id="VW8-NZ-7qg"/>
                         <constraint firstItem="eV1-gR-hbJ" firstAttribute="leading" secondItem="JQV-mk-cs8" secondAttribute="leading" id="YQB-6o-chz"/>
                         <constraint firstAttribute="trailing" secondItem="ILj-DK-xab" secondAttribute="trailing" constant="30" id="YZ2-1h-oGf"/>
                         <constraint firstItem="JQV-mk-cs8" firstAttribute="top" secondItem="qFT-1e-9q1" secondAttribute="top" constant="10" id="ZUi-bz-sl7"/>
+                        <constraint firstItem="8X3-4q-Qws" firstAttribute="top" secondItem="eV1-gR-hbJ" secondAttribute="bottom" constant="20" id="fEQ-ge-qUV"/>
+                        <constraint firstAttribute="trailing" secondItem="ogm-sG-Oae" secondAttribute="trailing" id="ig8-hS-Zwr"/>
                         <constraint firstItem="ILj-DK-xab" firstAttribute="leading" secondItem="JQV-mk-cs8" secondAttribute="trailing" constant="20" id="l7m-WG-YxQ"/>
-                        <constraint firstAttribute="trailing" secondItem="1cH-lk-Njg" secondAttribute="trailing" id="o9U-QI-m6j"/>
+                        <constraint firstItem="hdQ-NC-CeT" firstAttribute="top" secondItem="8X3-4q-Qws" secondAttribute="bottom" id="lDL-io-Lw6"/>
+                        <constraint firstAttribute="trailing" secondItem="hdQ-NC-CeT" secondAttribute="trailing" id="mhd-Jx-zbz"/>
+                        <constraint firstAttribute="trailing" secondItem="8X3-4q-Qws" secondAttribute="trailing" id="oqQ-80-aNg"/>
                         <constraint firstItem="eV1-gR-hbJ" firstAttribute="trailing" secondItem="JQV-mk-cs8" secondAttribute="trailing" id="q7S-cj-lsp"/>
                         <constraint firstItem="JQV-mk-cs8" firstAttribute="leading" secondItem="qFT-1e-9q1" secondAttribute="leading" constant="30" id="qfG-7o-gqX"/>
-                        <constraint firstAttribute="bottom" secondItem="1cH-lk-Njg" secondAttribute="bottom" constant="4" id="qkE-1i-Tx7"/>
-                        <constraint firstItem="1cH-lk-Njg" firstAttribute="top" secondItem="eV1-gR-hbJ" secondAttribute="bottom" constant="20" id="xtb-vd-fE2"/>
                     </constraints>
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="h1P-Cg-ehX">
-                    <rect key="frame" x="0.0" y="149.5" width="414" height="746.5"/>
+                    <rect key="frame" x="0.0" y="156.5" width="414" height="739.5"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ir9-R7-NOh">
                         <size key="itemSize" width="128" height="128"/>
@@ -100,10 +140,13 @@
         </view>
     </objects>
     <resources>
-        <image name="rectangle.grid.1x2.fill" catalog="system" width="128" height="101"/>
-        <image name="square.grid.3x2.fill" catalog="system" width="128" height="80"/>
-        <namedColor name="myDarkBlue">
-            <color red="0.15686274509803921" green="0.45490196078431372" blue="0.65098039215686276" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <image name="square.grid.3x3.fill" catalog="system" width="128" height="112"/>
+        <image name="square.split.1x2.fill" catalog="system" width="128" height="114"/>
+        <namedColor name="myDarkGrey">
+            <color red="0.27450980392156865" green="0.28627450980392155" blue="0.29803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="myGrey">
+            <color red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
