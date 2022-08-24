@@ -17,24 +17,8 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sobre Mí" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rtn-Xi-Zpf">
-                    <rect key="frame" x="173" y="437.5" width="68" height="21"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="68" id="IBI-wf-6v4"/>
-                        <constraint firstAttribute="height" constant="21" id="zok-mf-h1S"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <constraints>
-                <constraint firstItem="Rtn-Xi-Zpf" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Z7o-CK-Q8b"/>
-                <constraint firstItem="Rtn-Xi-Zpf" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="jaG-kY-16R"/>
-            </constraints>
             <point key="canvasLocation" x="139" y="112"/>
         </view>
     </objects>
