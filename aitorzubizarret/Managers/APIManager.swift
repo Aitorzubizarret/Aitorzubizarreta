@@ -13,15 +13,20 @@ final class APIManager {
     
     static let shared = APIManager()
     
+    private var session: URLSession {
+        let configuration = URLSessionConfiguration.ephemeral // Doesn't persist data.
+        let session = URLSession(configuration: configuration)
+        return session
+    }
+    
     private let photosSource = "https://www.aitorzubizarreta.eus/jsons/aitorzubizarret/photos-V1.json"
     
     // MARK: - Methods
     
     func getPhotos() {
-        
         guard let photosSourceURL = URL(string: photosSource) else { return }
         
-        let task = URLSession.shared.dataTask(with: photosSourceURL) { data, response, error in
+        let task = session.dataTask(with: photosSourceURL) { data, response, error in
             
             if let safeError = error {
                 print("Error \(safeError.localizedDescription)")
