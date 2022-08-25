@@ -29,9 +29,7 @@ struct PostSection: Codable {
             return cell
         } else if let safeTitle  = title {
             let cell = tableView.dequeueReusableCell(withIdentifier: "PostSectionTitleTableViewCell", for: indexPath) as! PostSectionTitleTableViewCell
-            var content = cell.defaultContentConfiguration()
-            content.text = "\(safeTitle)"
-            cell.contentConfiguration = content
+            cell.customTitle = "\(safeTitle)"
             return cell
         } else if let safeSubtitle = subtitle {
             let cell = tableView.dequeueReusableCell(withIdentifier: "PostSectionSubtitleTableViewCell", for: indexPath) as! PostSectionSubtitleTableViewCell
