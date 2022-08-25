@@ -27,28 +27,28 @@ struct PostSection: Codable {
             content.text = "Image"
             cell.contentConfiguration = content
             return cell
-        } else if let _  = title {
+        } else if let safeTitle  = title {
             let cell = tableView.dequeueReusableCell(withIdentifier: "PostSectionTitleTableViewCell", for: indexPath) as! PostSectionTitleTableViewCell
             var content = cell.defaultContentConfiguration()
-            content.text = "Title"
+            content.text = "\(safeTitle)"
             cell.contentConfiguration = content
             return cell
-        } else if let _ = subtitle {
+        } else if let safeSubtitle = subtitle {
             let cell = tableView.dequeueReusableCell(withIdentifier: "PostSectionSubtitleTableViewCell", for: indexPath) as! PostSectionSubtitleTableViewCell
             var content = cell.defaultContentConfiguration()
-            content.text = "Subtitle"
+            content.text = "\(safeSubtitle)"
             cell.contentConfiguration = content
             return cell
-        } else if let _ = quote {
+        } else if let safeQuote = quote {
             let cell = tableView.dequeueReusableCell(withIdentifier: "PostSectionQuoteTableViewCell", for: indexPath) as! PostSectionQuoteTableViewCell
             var content = cell.defaultContentConfiguration()
-            content.text = "Quote"
+            content.text = "\(safeQuote)"
             cell.contentConfiguration = content
             return cell
-        } else if let _ = description {
+        } else if let safeDescription = description {
             let cell = tableView.dequeueReusableCell(withIdentifier: "PostSectionDescriptionTableViewCell", for: indexPath) as! PostSectionDescriptionTableViewCell
             var content = cell.defaultContentConfiguration()
-            content.text = "Description"
+            content.text = "\(safeDescription)"
             cell.contentConfiguration = content
             return cell
         } else {
