@@ -19,7 +19,8 @@ final class APIManager {
         return session
     }
     
-    private let photosSource = "https://www.aitorzubizarreta.eus/jsons/aitorzubizarret/photos-V1.json"
+    private let aboutMeSource = "https://www.aitorzubizarreta.eus/jsons/aitorzubizarret/aboutme-V1.json"
+    private let photosSource  = "https://www.aitorzubizarreta.eus/jsons/aitorzubizarret/photos-V1.json"
     
     // MARK: - Methods
     
@@ -46,6 +47,37 @@ final class APIManager {
                     let photos = try JSONDecoder().decode([Photo].self, from: safeData)
                     DataManager.shared.photos = photos
                     
+                } catch let error {
+                    print("Error JSONDecoder: \(error)")
+                }
+            }
+            
+        }
+        task.resume()
+    }
+    
+    func getAboutMe() {
+        guard let aboutMeSourceURL = URL(string: aboutMeSource) else { return }
+        
+        let task = session.dataTask(with: aboutMeSourceURL) { data, response, error in
+            
+            if let safeError = error {
+                print("Error \(safeError.localizedDescription)")
+                return
+            }
+            
+            if let safeResponse = response {
+                //print("Response \(safeResponse)")
+            }
+            
+            if let safeData = data {
+                // For debug purposes.
+                //let receivedData: String = String(data: safeData, encoding: .utf8) ?? ""
+                //debugPrint("DebugPrint - Data: \(receivedData) - Response: \(response) - Error: \(error)")
+                
+                do {
+                    let aboutMePostSections = try JSONDecoder().decode([PostSection].self, from: safeData)
+                    DataManager.shared.aboutMePostSections = aboutMePostSections
                 } catch let error {
                     print("Error JSONDecoder: \(error)")
                 }

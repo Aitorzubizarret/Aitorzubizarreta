@@ -21,6 +21,18 @@ class AboutMeViewController: UIViewController {
         super.viewDidLoad()
         
         initTableView()
+        
+        DataManager.shared.getAboutMe()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(updateCollectionView), name: Notification.Name("AboutMe"), object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self, name: Notification.Name("AboutMe"), object: nil)
     }
     
     private func initTableView() {
@@ -42,7 +54,26 @@ class AboutMeViewController: UIViewController {
         tableView.separatorStyle = .none
         
         // Register cells.
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        let postSectionImageCell = UINib(nibName: "PostSectionImageTableViewCell", bundle: nil)
+        tableView.register(postSectionImageCell, forCellReuseIdentifier: "PostSectionImageTableViewCell")
+        
+        let postSectionTitleCell = UINib(nibName: "PostSectionTitleTableViewCell", bundle: nil)
+        tableView.register(postSectionTitleCell, forCellReuseIdentifier: "PostSectionTitleTableViewCell")
+        
+        let postSectionSubtitleCell = UINib(nibName: "PostSectionSubtitleTableViewCell", bundle: nil)
+        tableView.register(postSectionSubtitleCell, forCellReuseIdentifier: "PostSectionSubtitleTableViewCell")
+        
+        let postSectionQuoteCell = UINib(nibName: "PostSectionQuoteTableViewCell", bundle: nil)
+        tableView.register(postSectionQuoteCell, forCellReuseIdentifier: "PostSectionQuoteTableViewCell")
+        
+        let postSectionDescriptionCell = UINib(nibName: "PostSectionDescriptionTableViewCell", bundle: nil)
+        tableView.register(postSectionDescriptionCell, forCellReuseIdentifier: "PostSectionDescriptionTableViewCell")
+    }
+    
+    @objc private func updateCollectionView() {
+        DispatchQueue.main.async { [weak self] in
+            self?.tableView.reloadData()
+        }
     }
     
 }
@@ -60,16 +91,11 @@ extension AboutMeViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return DataManager.shared.aboutMePostSections.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        
-        var content = cell.defaultContentConfiguration()
-        content.text = "Text"
-        cell.contentConfiguration = content
-        
+        let cell = DataManager.shared.aboutMePostSections[indexPath.row].getCustomTableViewCell(tableView: tableView, indexPath: indexPath)
         return cell
     }
     

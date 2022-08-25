@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A04A7A828B7C61700403B7F /* PostSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A04A7A728B7C61700403B7F /* PostSection.swift */; };
+		1A04A7B228B7DACA00403B7F /* PostSectionImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A04A7B028B7DACA00403B7F /* PostSectionImageTableViewCell.swift */; };
+		1A04A7B328B7DACA00403B7F /* PostSectionImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A04A7B128B7DACA00403B7F /* PostSectionImageTableViewCell.xib */; };
+		1A04A7B628B7DADD00403B7F /* PostSectionTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A04A7B428B7DADD00403B7F /* PostSectionTitleTableViewCell.swift */; };
+		1A04A7B728B7DADD00403B7F /* PostSectionTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A04A7B528B7DADD00403B7F /* PostSectionTitleTableViewCell.xib */; };
+		1A04A7BA28B7DAEF00403B7F /* PostSectionSubtitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A04A7B828B7DAEF00403B7F /* PostSectionSubtitleTableViewCell.swift */; };
+		1A04A7BB28B7DAEF00403B7F /* PostSectionSubtitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A04A7B928B7DAEF00403B7F /* PostSectionSubtitleTableViewCell.xib */; };
+		1A04A7BE28B7DB0100403B7F /* PostSectionQuoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A04A7BC28B7DB0100403B7F /* PostSectionQuoteTableViewCell.swift */; };
+		1A04A7BF28B7DB0100403B7F /* PostSectionQuoteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A04A7BD28B7DB0100403B7F /* PostSectionQuoteTableViewCell.xib */; };
+		1A04A7C228B7DB1400403B7F /* PostSectionDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A04A7C028B7DB1400403B7F /* PostSectionDescriptionTableViewCell.swift */; };
+		1A04A7C328B7DB1400403B7F /* PostSectionDescriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A04A7C128B7DB1400403B7F /* PostSectionDescriptionTableViewCell.xib */; };
 		1A7A59BB28A405B600D5667D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7A59BA28A405B600D5667D /* AppDelegate.swift */; };
 		1A7A59BD28A405B600D5667D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7A59BC28A405B600D5667D /* SceneDelegate.swift */; };
 		1A7A59C428A405B700D5667D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A7A59C328A405B700D5667D /* Assets.xcassets */; };
@@ -58,6 +69,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A04A7A728B7C61700403B7F /* PostSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSection.swift; sourceTree = "<group>"; };
+		1A04A7B028B7DACA00403B7F /* PostSectionImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSectionImageTableViewCell.swift; sourceTree = "<group>"; };
+		1A04A7B128B7DACA00403B7F /* PostSectionImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostSectionImageTableViewCell.xib; sourceTree = "<group>"; };
+		1A04A7B428B7DADD00403B7F /* PostSectionTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSectionTitleTableViewCell.swift; sourceTree = "<group>"; };
+		1A04A7B528B7DADD00403B7F /* PostSectionTitleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostSectionTitleTableViewCell.xib; sourceTree = "<group>"; };
+		1A04A7B828B7DAEF00403B7F /* PostSectionSubtitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSectionSubtitleTableViewCell.swift; sourceTree = "<group>"; };
+		1A04A7B928B7DAEF00403B7F /* PostSectionSubtitleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostSectionSubtitleTableViewCell.xib; sourceTree = "<group>"; };
+		1A04A7BC28B7DB0100403B7F /* PostSectionQuoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSectionQuoteTableViewCell.swift; sourceTree = "<group>"; };
+		1A04A7BD28B7DB0100403B7F /* PostSectionQuoteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostSectionQuoteTableViewCell.xib; sourceTree = "<group>"; };
+		1A04A7C028B7DB1400403B7F /* PostSectionDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSectionDescriptionTableViewCell.swift; sourceTree = "<group>"; };
+		1A04A7C128B7DB1400403B7F /* PostSectionDescriptionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostSectionDescriptionTableViewCell.xib; sourceTree = "<group>"; };
 		1A7A59B728A405B600D5667D /* aitorzubizarret.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = aitorzubizarret.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A7A59BA28A405B600D5667D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A7A59BC28A405B600D5667D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -120,6 +142,63 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A04A7AA28B7D90A00403B7F /* Title */ = {
+			isa = PBXGroup;
+			children = (
+				1A04A7B428B7DADD00403B7F /* PostSectionTitleTableViewCell.swift */,
+				1A04A7B528B7DADD00403B7F /* PostSectionTitleTableViewCell.xib */,
+			);
+			path = Title;
+			sourceTree = "<group>";
+		};
+		1A04A7AB28B7D9E100403B7F /* PostSections */ = {
+			isa = PBXGroup;
+			children = (
+				1A04A7AD28B7D9FB00403B7F /* Image */,
+				1A04A7AA28B7D90A00403B7F /* Title */,
+				1A04A7AC28B7D9EF00403B7F /* Subtitle */,
+				1A04A7AE28B7DA0500403B7F /* Quote */,
+				1A04A7AF28B7DA0D00403B7F /* Description */,
+			);
+			path = PostSections;
+			sourceTree = "<group>";
+		};
+		1A04A7AC28B7D9EF00403B7F /* Subtitle */ = {
+			isa = PBXGroup;
+			children = (
+				1A04A7B828B7DAEF00403B7F /* PostSectionSubtitleTableViewCell.swift */,
+				1A04A7B928B7DAEF00403B7F /* PostSectionSubtitleTableViewCell.xib */,
+			);
+			path = Subtitle;
+			sourceTree = "<group>";
+		};
+		1A04A7AD28B7D9FB00403B7F /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				1A04A7B028B7DACA00403B7F /* PostSectionImageTableViewCell.swift */,
+				1A04A7B128B7DACA00403B7F /* PostSectionImageTableViewCell.xib */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		1A04A7AE28B7DA0500403B7F /* Quote */ = {
+			isa = PBXGroup;
+			children = (
+				1A04A7BC28B7DB0100403B7F /* PostSectionQuoteTableViewCell.swift */,
+				1A04A7BD28B7DB0100403B7F /* PostSectionQuoteTableViewCell.xib */,
+			);
+			path = Quote;
+			sourceTree = "<group>";
+		};
+		1A04A7AF28B7DA0D00403B7F /* Description */ = {
+			isa = PBXGroup;
+			children = (
+				1A04A7C028B7DB1400403B7F /* PostSectionDescriptionTableViewCell.swift */,
+				1A04A7C128B7DB1400403B7F /* PostSectionDescriptionTableViewCell.xib */,
+			);
+			path = Description;
+			sourceTree = "<group>";
+		};
 		1A7A59AE28A405B600D5667D = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				1AC80F3428AB03730049E901 /* Photo.swift */,
+				1A04A7A728B7C61700403B7F /* PostSection.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -214,6 +294,7 @@
 		1AC80EFA28A567AA0049E901 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				1A04A7AB28B7D9E100403B7F /* PostSections */,
 				1AC80F0F28A568FB0049E901 /* PhotosAlbumCell */,
 				1AC80F0A28A568DC0049E901 /* ContactMeCell */,
 				1AC80F0528A568C40049E901 /* CVCell */,
@@ -425,17 +506,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A04A7B728B7DADD00403B7F /* PostSectionTitleTableViewCell.xib in Resources */,
 				1AC80F2B28A907240049E901 /* PhotoAlbumViewController.xib in Resources */,
 				1AC80F0E28A568F30049E901 /* ContactMeTableViewCell.xib in Resources */,
+				1A04A7C328B7DB1400403B7F /* PostSectionDescriptionTableViewCell.xib in Resources */,
+				1A04A7BB28B7DAEF00403B7F /* PostSectionSubtitleTableViewCell.xib in Resources */,
 				1AC80F0928A568D30049E901 /* CVTableViewCell.xib in Resources */,
 				1A7A59C728A405B700D5667D /* LaunchScreen.storyboard in Resources */,
 				1AC80F2328A906980049E901 /* ContactMeViewController.xib in Resources */,
 				1AC80F0428A568BB0049E901 /* AboutMeTableViewCell.xib in Resources */,
 				1AC80EF928A407710049E901 /* MainViewController.xib in Resources */,
 				1AC80F1328A569170049E901 /* PhotosAlbumTableViewCell.xib in Resources */,
+				1A04A7BF28B7DB0100403B7F /* PostSectionQuoteTableViewCell.xib in Resources */,
 				1AC80F1F28A906850049E901 /* CVViewController.xib in Resources */,
 				1AC80F1828A906360049E901 /* AboutMeViewController.xib in Resources */,
 				1AC80F3028A949940049E901 /* PhotoThumbnailCollectionViewCell.xib in Resources */,
+				1A04A7B328B7DACA00403B7F /* PostSectionImageTableViewCell.xib in Resources */,
 				1A7A59C428A405B700D5667D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -461,18 +547,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A04A7C228B7DB1400403B7F /* PostSectionDescriptionTableViewCell.swift in Sources */,
+				1A04A7BE28B7DB0100403B7F /* PostSectionQuoteTableViewCell.swift in Sources */,
+				1A04A7A828B7C61700403B7F /* PostSection.swift in Sources */,
 				1AC80F3528AB03730049E901 /* Photo.swift in Sources */,
 				1AC80F3728ABECBC0049E901 /* DataManager.swift in Sources */,
 				1AC80F2A28A907240049E901 /* PhotoAlbumViewController.swift in Sources */,
 				1A7A59BB28A405B600D5667D /* AppDelegate.swift in Sources */,
 				1AC80F1E28A906850049E901 /* CVViewController.swift in Sources */,
 				1AC80F1228A569170049E901 /* PhotosAlbumTableViewCell.swift in Sources */,
+				1A04A7B228B7DACA00403B7F /* PostSectionImageTableViewCell.swift in Sources */,
 				1AC80F1728A906360049E901 /* AboutMeViewController.swift in Sources */,
 				1AC80F0328A568BB0049E901 /* AboutMeTableViewCell.swift in Sources */,
 				1AC80F2228A906980049E901 /* ContactMeViewController.swift in Sources */,
 				1AC80F0D28A568F30049E901 /* ContactMeTableViewCell.swift in Sources */,
 				1AC80F3A28ABF5C40049E901 /* UIImageView+Extension.swift in Sources */,
+				1A04A7B628B7DADD00403B7F /* PostSectionTitleTableViewCell.swift in Sources */,
 				1A7A59BD28A405B600D5667D /* SceneDelegate.swift in Sources */,
+				1A04A7BA28B7DAEF00403B7F /* PostSectionSubtitleTableViewCell.swift in Sources */,
 				1AC80EF828A407710049E901 /* MainViewController.swift in Sources */,
 				1AC80F3328AB01180049E901 /* APIManager.swift in Sources */,
 				1AC80F2F28A949940049E901 /* PhotoThumbnailCollectionViewCell.swift in Sources */,

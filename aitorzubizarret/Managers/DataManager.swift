@@ -13,6 +13,11 @@ final class DataManager {
     
     static var shared = DataManager()
     
+    var aboutMePostSections: [PostSection] = [] {
+        didSet {
+            NotificationCenter.default.post(name: Notification.Name("AboutMe"), object: nil)
+        }
+    }
     var photos: [Photo] = [] {
         didSet {
             NotificationCenter.default.post(name: Notification.Name("Photos"), object: nil)
@@ -22,6 +27,10 @@ final class DataManager {
     
     func getPhotos() {
         APIManager.shared.getPhotos()
+    }
+    
+    func getAboutMe() {
+        APIManager.shared.getAboutMe()
     }
     
 }
