@@ -20,7 +20,7 @@ class PostSectionTitleTableViewCell: UITableViewCell {
             let attributedText = NSMutableAttributedString(string: customTitle)
             
             let paragraphStyle = NSMutableParagraphStyle()
-            paragraphStyle.lineSpacing = 1.4
+            paragraphStyle.lineSpacing = 1.8
             
             attributedText.addAttribute(.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, attributedText.length))
             
