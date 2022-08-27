@@ -26,152 +26,203 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9dW-ku-N0P">
-                    <rect key="frame" x="40" y="64" width="334" height="410"/>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BJn-q3-9Bd">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="90B-Bb-wWl">
-                            <rect key="frame" x="112" y="40" width="110" height="110"/>
-                            <color key="backgroundColor" name="myLightYellow"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="110" id="QL6-rT-oUB"/>
-                                <constraint firstAttribute="width" constant="110" id="yfC-om-xfL"/>
-                            </constraints>
-                        </imageView>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Me" translatesAutoresizingMaskIntoConstraints="NO" id="s6p-W1-PwC">
-                            <rect key="frame" x="117" y="45" width="100" height="100"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="100" id="WtI-UV-fyu"/>
-                                <constraint firstAttribute="height" constant="100" id="YW4-Os-PgD"/>
-                            </constraints>
-                        </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aitor Zubizarreta Perez" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wkV-1G-eHW">
-                            <rect key="frame" x="20" y="170" width="294" height="26.5"/>
-                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
-                            <color key="textColor" name="myDarkGrey"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Desarrollador iOS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sGF-2f-sJF">
-                            <rect key="frame" x="20" y="198.5" width="294" height="21.5"/>
-                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
-                            <color key="textColor" name="myDarkGrey"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zi2-Dn-pro">
-                            <rect key="frame" x="20" y="260" width="294" height="110"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JaJ-Ha-k9j">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
                             <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="FMA-Ly-FCt">
-                                    <rect key="frame" x="0.0" y="0.0" width="70" height="110"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9dW-ku-N0P">
+                                    <rect key="frame" x="40" y="40" width="334" height="455"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMAIL" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n3P-lf-hbm">
-                                            <rect key="frame" x="0.0" y="0.0" width="70" height="30"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="90B-Bb-wWl">
+                                            <rect key="frame" x="112" y="40" width="110" height="110"/>
+                                            <color key="backgroundColor" name="myLightYellow"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="110" id="pqO-1b-FQL"/>
+                                                <constraint firstAttribute="height" constant="110" id="u7b-eV-EZF"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Me" translatesAutoresizingMaskIntoConstraints="NO" id="s6p-W1-PwC">
+                                            <rect key="frame" x="117" y="45" width="100" height="100"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="100" id="Gl1-Gt-PoA"/>
+                                                <constraint firstAttribute="width" constant="100" id="ihJ-nD-vS5"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aitor Zubizarreta Perez" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wkV-1G-eHW">
+                                            <rect key="frame" x="20" y="170" width="294" height="26.5"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
                                             <color key="textColor" name="myDarkGrey"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LINKEDIN" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JKP-JP-96k">
-                                            <rect key="frame" x="0.0" y="40" width="70" height="30"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Desarrollador iOS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sGF-2f-sJF">
+                                            <rect key="frame" x="20" y="198.5" width="294" height="21.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21.5" id="HNp-Tn-212"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
                                             <color key="textColor" name="myDarkGrey"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GITHUB" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O4L-3C-Sro">
-                                            <rect key="frame" x="0.0" y="80" width="70" height="30"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
-                                            <color key="textColor" name="myDarkGrey"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mpJ-CB-IRs">
+                                            <rect key="frame" x="40" y="260" width="254" height="155"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="-5" translatesAutoresizingMaskIntoConstraints="NO" id="wvF-UR-2eT">
+                                                    <rect key="frame" x="0.0" y="0.0" width="254" height="45"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMAIL" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n3P-lf-hbm">
+                                                            <rect key="frame" x="0.0" y="0.0" width="254" height="20"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                                            <color key="textColor" name="myDarkGrey"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AMW-SV-gof">
+                                                            <rect key="frame" x="0.0" y="15" width="254" height="30"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="30" id="chQ-3c-MAr"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                            <color key="tintColor" name="myDarkGrey"/>
+                                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                            <state key="normal" title="aitorzubizarreta@yahoo.es">
+                                                                <color key="titleColor" name="myDarkGrey"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="emailButtonTapped:" destination="-1" eventType="touchUpInside" id="6h6-ZH-ulX"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="45" id="Q7j-fP-t2t"/>
+                                                    </constraints>
+                                                </stackView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="-5" translatesAutoresizingMaskIntoConstraints="NO" id="lRQ-hi-jYU">
+                                                    <rect key="frame" x="0.0" y="55" width="254" height="45"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LINKEDIN" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JKP-JP-96k">
+                                                            <rect key="frame" x="0.0" y="0.0" width="254" height="20"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                                            <color key="textColor" name="myDarkGrey"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0hy-Ut-KIr">
+                                                            <rect key="frame" x="0.0" y="15" width="254" height="30"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="30" id="BTd-K6-GXQ"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                            <state key="normal" title="linkedin.com/in/aitorzubizarret">
+                                                                <color key="titleColor" name="myDarkGrey"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="linkedinButtonTapped:" destination="-1" eventType="touchUpInside" id="fWN-th-6eQ"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="45" id="Lfm-v2-1PL"/>
+                                                    </constraints>
+                                                </stackView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="-5" translatesAutoresizingMaskIntoConstraints="NO" id="Wk0-Xw-P2b">
+                                                    <rect key="frame" x="0.0" y="110" width="254" height="45"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GITHUB" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O4L-3C-Sro">
+                                                            <rect key="frame" x="0.0" y="0.0" width="254" height="20"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                                            <color key="textColor" name="myDarkGrey"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J73-Tx-zMp">
+                                                            <rect key="frame" x="0.0" y="15" width="254" height="30"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="30" id="tFh-o4-cdw"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                            <state key="normal" title="github.com/aitorzubizarret">
+                                                                <color key="titleColor" name="myDarkGrey"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="githubButtonTapped:" destination="-1" eventType="touchUpInside" id="pLo-gv-JDY"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="45" id="gUc-CR-phK"/>
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
+                                        </stackView>
                                     </subviews>
+                                    <color key="backgroundColor" name="myGrey"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="70" id="m3i-uk-TD8"/>
+                                        <constraint firstItem="s6p-W1-PwC" firstAttribute="centerY" secondItem="90B-Bb-wWl" secondAttribute="centerY" id="4e0-OQ-R0e"/>
+                                        <constraint firstItem="sGF-2f-sJF" firstAttribute="leading" secondItem="wkV-1G-eHW" secondAttribute="leading" id="9Zb-fW-Iws"/>
+                                        <constraint firstAttribute="trailing" secondItem="wkV-1G-eHW" secondAttribute="trailing" constant="20" id="9lA-H4-uXV"/>
+                                        <constraint firstItem="sGF-2f-sJF" firstAttribute="trailing" secondItem="wkV-1G-eHW" secondAttribute="trailing" id="Ckz-wW-cVQ"/>
+                                        <constraint firstItem="wkV-1G-eHW" firstAttribute="leading" secondItem="9dW-ku-N0P" secondAttribute="leading" constant="20" id="Djp-qZ-Y3O"/>
+                                        <constraint firstItem="90B-Bb-wWl" firstAttribute="centerX" secondItem="9dW-ku-N0P" secondAttribute="centerX" id="GvX-ah-Hf6"/>
+                                        <constraint firstItem="sGF-2f-sJF" firstAttribute="top" secondItem="wkV-1G-eHW" secondAttribute="bottom" constant="2" id="WdZ-Bm-fL8"/>
+                                        <constraint firstItem="wkV-1G-eHW" firstAttribute="top" secondItem="90B-Bb-wWl" secondAttribute="bottom" constant="20" id="ZRf-oZ-Sw2"/>
+                                        <constraint firstItem="s6p-W1-PwC" firstAttribute="centerX" secondItem="90B-Bb-wWl" secondAttribute="centerX" id="aYD-3I-aV5"/>
+                                        <constraint firstItem="90B-Bb-wWl" firstAttribute="top" secondItem="9dW-ku-N0P" secondAttribute="top" constant="40" id="bW5-10-HfN"/>
+                                        <constraint firstAttribute="trailing" secondItem="mpJ-CB-IRs" secondAttribute="trailing" constant="40" id="gMF-0y-h0s"/>
+                                        <constraint firstAttribute="bottom" secondItem="mpJ-CB-IRs" secondAttribute="bottom" constant="40" id="jwm-QC-4Ym"/>
+                                        <constraint firstItem="mpJ-CB-IRs" firstAttribute="top" secondItem="sGF-2f-sJF" secondAttribute="bottom" constant="40" id="pBF-FN-z1N"/>
+                                        <constraint firstItem="mpJ-CB-IRs" firstAttribute="leading" secondItem="9dW-ku-N0P" secondAttribute="leading" constant="40" id="zQF-Wy-KR1"/>
                                     </constraints>
-                                </stackView>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zt0-t9-DNP">
-                                    <rect key="frame" x="80" y="0.0" width="214" height="110"/>
-                                    <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AMW-SV-gof">
-                                            <rect key="frame" x="0.0" y="0.0" width="214" height="30"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                            <color key="tintColor" name="myDarkGrey"/>
-                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                            <state key="normal" title="aitorzubizarreta@yahoo.es">
-                                                <color key="titleColor" name="myDarkGrey"/>
-                                            </state>
-                                            <connections>
-                                                <action selector="emailButtonTapped:" destination="-1" eventType="touchUpInside" id="6h6-ZH-ulX"/>
-                                            </connections>
-                                        </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0hy-Ut-KIr">
-                                            <rect key="frame" x="0.0" y="40" width="214" height="30"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                            <state key="normal" title="linkedin.com/in/aitorzubizarret">
-                                                <color key="titleColor" name="myDarkGrey"/>
-                                            </state>
-                                            <connections>
-                                                <action selector="linkedinButtonTapped:" destination="-1" eventType="touchUpInside" id="fWN-th-6eQ"/>
-                                            </connections>
-                                        </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J73-Tx-zMp">
-                                            <rect key="frame" x="0.0" y="80" width="214" height="30"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                            <state key="normal" title="github.com/aitorzubizarret">
-                                                <color key="titleColor" name="myDarkGrey"/>
-                                            </state>
-                                            <connections>
-                                                <action selector="githubButtonTapped:" destination="-1" eventType="touchUpInside" id="pLo-gv-JDY"/>
-                                            </connections>
-                                        </button>
-                                    </subviews>
-                                </stackView>
+                                </view>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4bs-wo-vMg">
+                                    <rect key="frame" x="40" y="535" width="334" height="45"/>
+                                    <color key="backgroundColor" name="myLightYellow"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="45" id="AFq-Jp-09k"/>
+                                    </constraints>
+                                    <color key="tintColor" name="myDarkGrey"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="Descargar contacto">
+                                        <fontDescription key="titleFontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                    </buttonConfiguration>
+                                    <connections>
+                                        <action selector="downloadContactButtonTapped:" destination="-1" eventType="touchUpInside" id="NeH-pq-wM4"/>
+                                    </connections>
+                                </button>
                             </subviews>
-                        </stackView>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="9dW-ku-N0P" firstAttribute="top" secondItem="JaJ-Ha-k9j" secondAttribute="top" constant="40" id="0Bk-mC-aNu"/>
+                                <constraint firstItem="4bs-wo-vMg" firstAttribute="top" secondItem="9dW-ku-N0P" secondAttribute="bottom" constant="40" id="2vb-O4-Z7I"/>
+                                <constraint firstItem="4bs-wo-vMg" firstAttribute="leading" secondItem="JaJ-Ha-k9j" secondAttribute="leading" constant="40" id="56C-T1-WMI"/>
+                                <constraint firstItem="9dW-ku-N0P" firstAttribute="leading" secondItem="JaJ-Ha-k9j" secondAttribute="leading" constant="40" id="9Jd-gB-RWV"/>
+                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="4bs-wo-vMg" secondAttribute="bottom" constant="40" id="GLi-gY-kcm"/>
+                                <constraint firstAttribute="trailing" secondItem="4bs-wo-vMg" secondAttribute="trailing" constant="40" id="qu7-mO-kW5"/>
+                                <constraint firstAttribute="trailing" secondItem="9dW-ku-N0P" secondAttribute="trailing" constant="40" id="tb3-fg-C8S"/>
+                            </constraints>
+                        </view>
                     </subviews>
-                    <color key="backgroundColor" name="myGrey"/>
                     <constraints>
-                        <constraint firstItem="s6p-W1-PwC" firstAttribute="centerY" secondItem="90B-Bb-wWl" secondAttribute="centerY" id="4nc-9g-e1c"/>
-                        <constraint firstItem="sGF-2f-sJF" firstAttribute="top" secondItem="wkV-1G-eHW" secondAttribute="bottom" constant="2" id="5Cw-fN-9Al"/>
-                        <constraint firstItem="90B-Bb-wWl" firstAttribute="top" secondItem="9dW-ku-N0P" secondAttribute="top" constant="40" id="AYb-uC-ehp"/>
-                        <constraint firstAttribute="bottom" secondItem="zi2-Dn-pro" secondAttribute="bottom" constant="40" id="Dji-hu-wgG"/>
-                        <constraint firstItem="wkV-1G-eHW" firstAttribute="top" secondItem="90B-Bb-wWl" secondAttribute="bottom" constant="20" id="EnD-7J-lwx"/>
-                        <constraint firstItem="90B-Bb-wWl" firstAttribute="centerX" secondItem="9dW-ku-N0P" secondAttribute="centerX" id="FRJ-yY-PKB"/>
-                        <constraint firstItem="sGF-2f-sJF" firstAttribute="leading" secondItem="wkV-1G-eHW" secondAttribute="leading" id="GqQ-Ti-Oka"/>
-                        <constraint firstItem="wkV-1G-eHW" firstAttribute="leading" secondItem="9dW-ku-N0P" secondAttribute="leading" constant="20" id="dFB-LJ-S0z"/>
-                        <constraint firstItem="zi2-Dn-pro" firstAttribute="trailing" secondItem="wkV-1G-eHW" secondAttribute="trailing" id="e2B-WT-Jy4"/>
-                        <constraint firstAttribute="trailing" secondItem="wkV-1G-eHW" secondAttribute="trailing" constant="20" id="esy-EY-bXQ"/>
-                        <constraint firstItem="sGF-2f-sJF" firstAttribute="trailing" secondItem="wkV-1G-eHW" secondAttribute="trailing" id="fl0-0Z-WTv"/>
-                        <constraint firstItem="zi2-Dn-pro" firstAttribute="leading" secondItem="wkV-1G-eHW" secondAttribute="leading" id="kna-vU-QMh"/>
-                        <constraint firstItem="zi2-Dn-pro" firstAttribute="top" secondItem="sGF-2f-sJF" secondAttribute="bottom" constant="40" id="n14-aM-2kO"/>
-                        <constraint firstItem="s6p-W1-PwC" firstAttribute="centerX" secondItem="90B-Bb-wWl" secondAttribute="centerX" id="vrG-Z1-1Ql"/>
+                        <constraint firstItem="JaJ-Ha-k9j" firstAttribute="bottom" secondItem="bgL-JK-ZY6" secondAttribute="bottom" id="98C-Kw-Nt8"/>
+                        <constraint firstItem="JaJ-Ha-k9j" firstAttribute="height" secondItem="Jxb-x5-YNe" secondAttribute="height" priority="750" id="S27-IS-zKf"/>
+                        <constraint firstItem="JaJ-Ha-k9j" firstAttribute="leading" secondItem="bgL-JK-ZY6" secondAttribute="leading" id="ZfF-kz-Cg7"/>
+                        <constraint firstItem="JaJ-Ha-k9j" firstAttribute="top" secondItem="bgL-JK-ZY6" secondAttribute="top" id="naG-EN-rsh"/>
+                        <constraint firstItem="JaJ-Ha-k9j" firstAttribute="width" secondItem="Jxb-x5-YNe" secondAttribute="width" id="sP1-V5-A8h"/>
+                        <constraint firstItem="JaJ-Ha-k9j" firstAttribute="trailing" secondItem="bgL-JK-ZY6" secondAttribute="trailing" id="uq8-0u-r9Y"/>
                     </constraints>
-                </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4bs-wo-vMg">
-                    <rect key="frame" x="40" y="514" width="334" height="50"/>
-                    <color key="backgroundColor" name="myLightYellow"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="50" id="CI6-LM-QcT"/>
-                    </constraints>
-                    <color key="tintColor" name="myDarkGrey"/>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="Descargar contacto">
-                        <fontDescription key="titleFontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
-                    </buttonConfiguration>
-                    <connections>
-                        <action selector="downloadContactButtonTapped:" destination="-1" eventType="touchUpInside" id="NeH-pq-wM4"/>
-                    </connections>
-                </button>
+                    <viewLayoutGuide key="contentLayoutGuide" id="bgL-JK-ZY6"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="Jxb-x5-YNe"/>
+                </scrollView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="4bs-wo-vMg" firstAttribute="trailing" secondItem="9dW-ku-N0P" secondAttribute="trailing" id="0BN-vG-9gz"/>
-                <constraint firstItem="4bs-wo-vMg" firstAttribute="top" secondItem="9dW-ku-N0P" secondAttribute="bottom" constant="40" id="0lg-gf-4XG"/>
-                <constraint firstItem="9dW-ku-N0P" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="XBT-1i-6BE"/>
-                <constraint firstItem="9dW-ku-N0P" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="iBx-Aw-qCn"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9dW-ku-N0P" secondAttribute="trailing" constant="40" id="qWY-2S-5Sz"/>
-                <constraint firstItem="4bs-wo-vMg" firstAttribute="leading" secondItem="9dW-ku-N0P" secondAttribute="leading" id="zCm-tt-CmP"/>
+                <constraint firstItem="BJn-q3-9Bd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="BEo-dX-GVf"/>
+                <constraint firstItem="BJn-q3-9Bd" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="dGL-pP-6TI"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="BJn-q3-9Bd" secondAttribute="trailing" id="pD0-fR-Mbp"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="BJn-q3-9Bd" secondAttribute="bottom" id="tYH-Za-IEy"/>
             </constraints>
-            <point key="canvasLocation" x="139" y="112"/>
+            <point key="canvasLocation" x="138.75" y="111.25"/>
         </view>
     </objects>
     <resources>
