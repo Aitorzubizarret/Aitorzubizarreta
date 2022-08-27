@@ -21,11 +21,9 @@ struct PostSection: Codable {
     // MARK: - Methods
     
     func getCustomTableViewCell(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
-        if let _ = image {
+        if let safeImage = image {
             let cell = tableView.dequeueReusableCell(withIdentifier: "PostSectionImageTableViewCell", for: indexPath) as! PostSectionImageTableViewCell
-            var content = cell.defaultContentConfiguration()
-            content.text = "Image"
-            cell.contentConfiguration = content
+            cell.customPhotoURLString = safeImage
             return cell
         } else if let safeTitle  = title {
             let cell = tableView.dequeueReusableCell(withIdentifier: "PostSectionTitleTableViewCell", for: indexPath) as! PostSectionTitleTableViewCell

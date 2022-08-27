@@ -19,8 +19,8 @@ final class APIManager {
         return session
     }
     
-    private let aboutMeSource = "https://www.aitorzubizarreta.eus/jsons/aitorzubizarret/aboutme-V1.json"
-    private let photosSource  = "https://www.aitorzubizarreta.eus/jsons/aitorzubizarret/photos-V1.json"
+    private let aboutMeSource = "https://www.aitorzubizarreta.eus/projects/apps-content/aitorzubizarret/jsons/aboutme-V1.json"
+    private let photosSource  = "https://www.aitorzubizarreta.eus/projects/apps-content/aitorzubizarret/jsons/photos-V1.json"
     
     // MARK: - Methods
     
