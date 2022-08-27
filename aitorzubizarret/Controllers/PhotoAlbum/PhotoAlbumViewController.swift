@@ -79,8 +79,8 @@ class PhotoAlbumViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupView()
-        setupCollectionView()
+        initView()
+        initCollectionView()
         
         DataManager.shared.getPhotos()
     }
@@ -95,9 +95,11 @@ class PhotoAlbumViewController: UIViewController {
         NotificationCenter.default.removeObserver(self, name: Notification.Name("Photos"), object: nil)
     }
     
-    private func setupView() {}
+    private func initView() {
+        title = "Fotos"
+    }
     
-    private func setupCollectionView() {
+    private func initCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
         

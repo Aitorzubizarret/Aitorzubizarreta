@@ -20,10 +20,10 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupTableView()
+        initTableView()
     }
     
-    private func setupTableView() {
+    private func initTableView() {
         self.view.addSubview(tableView)
         
         tableView.delegate = self

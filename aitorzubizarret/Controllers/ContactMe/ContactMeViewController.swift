@@ -51,10 +51,12 @@ class ContactMeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupView()
+        initView()
     }
     
-    private func setupView() {
+    private func initView() {
+        title = "Contacta conmigo"
+        
         // View.
         mainView.backgroundColor = UIColor.white
         mainView.layer.borderWidth = 1

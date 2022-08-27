@@ -20,6 +20,7 @@ class AboutMeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        initView()
         initTableView()
         
         DataManager.shared.getAboutMe()
@@ -28,11 +29,17 @@ class AboutMeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(updateCollectionView), name: Notification.Name("AboutMe"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateTableView), name: Notification.Name("AboutMe"), object: nil)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
         NotificationCenter.default.removeObserver(self, name: Notification.Name("AboutMe"), object: nil)
+    }
+    
+    private func initView() {
+        title = "Sobre mí"
     }
     
     private func initTableView() {
@@ -70,7 +77,7 @@ class AboutMeViewController: UIViewController {
         tableView.register(postSectionDescriptionCell, forCellReuseIdentifier: "PostSectionDescriptionTableViewCell")
     }
     
-    @objc private func updateCollectionView() {
+    @objc private func updateTableView() {
         DispatchQueue.main.async { [weak self] in
             self?.tableView.reloadData()
         }
