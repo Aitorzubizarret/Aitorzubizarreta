@@ -23,6 +23,14 @@ final class DataManager {
             NotificationCenter.default.post(name: Notification.Name("Photos"), object: nil)
         }
     }
+    var cvFile: CVFile? = nil {
+        didSet {
+            guard let _ = cvFile else { return }
+            
+            NotificationCenter.default.post(name: Notification.Name("CV"), object: nil)
+        }
+    }
+    
     // MARK: - Methods
     
     func getPhotos() {
@@ -31,6 +39,10 @@ final class DataManager {
     
     func getAboutMe() {
         APIManager.shared.getAboutMe()
+    }
+    
+    func getCV() {
+        APIManager.shared.getCV()
     }
     
 }

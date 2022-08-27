@@ -17,24 +17,8 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CV" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZIM-ml-HPg">
-                    <rect key="frame" x="195.5" y="437.5" width="23" height="21"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="23" id="CZh-Rg-EON"/>
-                        <constraint firstAttribute="height" constant="21" id="HoK-BR-I74"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <constraints>
-                <constraint firstItem="ZIM-ml-HPg" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="EUy-Ab-qkT"/>
-                <constraint firstItem="ZIM-ml-HPg" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="XT5-Yx-gyo"/>
-            </constraints>
             <point key="canvasLocation" x="139" y="112"/>
         </view>
     </objects>

@@ -18,6 +18,7 @@
 		1A04A7BF28B7DB0100403B7F /* PostSectionQuoteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A04A7BD28B7DB0100403B7F /* PostSectionQuoteTableViewCell.xib */; };
 		1A04A7C228B7DB1400403B7F /* PostSectionDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A04A7C028B7DB1400403B7F /* PostSectionDescriptionTableViewCell.swift */; };
 		1A04A7C328B7DB1400403B7F /* PostSectionDescriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A04A7C128B7DB1400403B7F /* PostSectionDescriptionTableViewCell.xib */; };
+		1A04A7C528BA7B7700403B7F /* CVFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A04A7C428BA7B7700403B7F /* CVFile.swift */; };
 		1A7A59BB28A405B600D5667D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7A59BA28A405B600D5667D /* AppDelegate.swift */; };
 		1A7A59BD28A405B600D5667D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7A59BC28A405B600D5667D /* SceneDelegate.swift */; };
 		1A7A59C428A405B700D5667D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A7A59C328A405B700D5667D /* Assets.xcassets */; };
@@ -80,6 +81,7 @@
 		1A04A7BD28B7DB0100403B7F /* PostSectionQuoteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostSectionQuoteTableViewCell.xib; sourceTree = "<group>"; };
 		1A04A7C028B7DB1400403B7F /* PostSectionDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSectionDescriptionTableViewCell.swift; sourceTree = "<group>"; };
 		1A04A7C128B7DB1400403B7F /* PostSectionDescriptionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostSectionDescriptionTableViewCell.xib; sourceTree = "<group>"; };
+		1A04A7C428BA7B7700403B7F /* CVFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVFile.swift; sourceTree = "<group>"; };
 		1A7A59B728A405B600D5667D /* aitorzubizarret.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = aitorzubizarret.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A7A59BA28A405B600D5667D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A7A59BC28A405B600D5667D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 			children = (
 				1AC80F3428AB03730049E901 /* Photo.swift */,
 				1A04A7A728B7C61700403B7F /* PostSection.swift */,
+				1A04A7C428BA7B7700403B7F /* CVFile.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -563,6 +566,7 @@
 				1AC80F0D28A568F30049E901 /* ContactMeTableViewCell.swift in Sources */,
 				1AC80F3A28ABF5C40049E901 /* UIImageView+Extension.swift in Sources */,
 				1A04A7B628B7DADD00403B7F /* PostSectionTitleTableViewCell.swift in Sources */,
+				1A04A7C528BA7B7700403B7F /* CVFile.swift in Sources */,
 				1A7A59BD28A405B600D5667D /* SceneDelegate.swift in Sources */,
 				1A04A7BA28B7DAEF00403B7F /* PostSectionSubtitleTableViewCell.swift in Sources */,
 				1AC80EF828A407710049E901 /* MainViewController.swift in Sources */,
