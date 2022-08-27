@@ -38,6 +38,8 @@ class PostSectionQuoteTableViewCell: UITableViewCell {
     }
     
     private func initView() {
+        selectionStyle = .none
+        
         quoteTextLabel.text = ""
     }
     

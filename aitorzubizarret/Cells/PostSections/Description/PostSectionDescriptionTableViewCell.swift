@@ -43,6 +43,8 @@ class PostSectionDescriptionTableViewCell: UITableViewCell {
     }
     
     private func initView() {
+        selectionStyle = .none
+        
         descriptionLabel.text = ""
         descriptionLabel.attributedText = NSMutableAttributedString(string: "")
     }

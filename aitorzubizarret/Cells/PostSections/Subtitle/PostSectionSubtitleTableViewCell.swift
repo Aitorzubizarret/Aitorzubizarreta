@@ -38,6 +38,8 @@ class PostSectionSubtitleTableViewCell: UITableViewCell {
     }
     
     private func initView() {
+        selectionStyle = .none
+        
         subtitleLabel.text = ""
         subtitleLabel.attributedText = NSMutableAttributedString(string: "")
     }

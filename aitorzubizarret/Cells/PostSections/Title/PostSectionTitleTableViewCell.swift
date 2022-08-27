@@ -43,6 +43,8 @@ class PostSectionTitleTableViewCell: UITableViewCell {
     }
     
     private func initView() {
+        selectionStyle = .none
+        
         titleLabel.text = ""
         titleLabel.attributedText = NSMutableAttributedString(string: "")
     }
