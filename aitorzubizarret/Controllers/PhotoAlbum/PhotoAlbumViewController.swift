@@ -125,7 +125,8 @@ class PhotoAlbumViewController: UIViewController {
 extension PhotoAlbumViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Photo thumbnail selected at \(indexPath.item)")
+        let detailVC = PhotoAlbumDetailViewController()
+        show(detailVC, sender: self)
     }
     
 }
