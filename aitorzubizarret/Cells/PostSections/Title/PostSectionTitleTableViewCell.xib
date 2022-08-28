@@ -18,15 +18,15 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rWh-g2-5na">
-                        <rect key="frame" x="20" y="30" width="280" height="70"/>
-                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
+                        <rect key="frame" x="30" y="30" width="260" height="70"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="21"/>
                         <color key="textColor" name="myDarkGrey"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="rWh-g2-5na" secondAttribute="trailing" constant="20" id="EhZ-0q-3GG"/>
-                    <constraint firstItem="rWh-g2-5na" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="GHw-D5-Q1g"/>
+                    <constraint firstAttribute="trailing" secondItem="rWh-g2-5na" secondAttribute="trailing" constant="30" id="EhZ-0q-3GG"/>
+                    <constraint firstItem="rWh-g2-5na" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="GHw-D5-Q1g"/>
                     <constraint firstItem="rWh-g2-5na" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="30" id="hZ1-So-d5P"/>
                     <constraint firstAttribute="bottom" secondItem="rWh-g2-5na" secondAttribute="bottom" constant="10" id="koq-nG-FO3"/>
                 </constraints>

@@ -41,6 +41,8 @@ class PostSectionQuoteTableViewCell: UITableViewCell {
         selectionStyle = .none
         
         quoteTextLabel.text = ""
+        quoteOpeningImageView.alpha = 0.6
+        quoteClosingImageView.alpha = 0.6
     }
     
 }

@@ -27,10 +27,10 @@ class PhotoThumbnailCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        setupView()
+        initSetup()
     }
     
-    private func setupView() {
+    private func initSetup() {
         thumbnailImageView.image = UIImage(named: "photo-placecholder")
     }
     
