@@ -21,6 +21,7 @@
 		1A04A7C528BA7B7700403B7F /* CVFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A04A7C428BA7B7700403B7F /* CVFile.swift */; };
 		1A04A7C928BB72A200403B7F /* PhotoAlbumDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A04A7C728BB72A200403B7F /* PhotoAlbumDetailViewController.swift */; };
 		1A04A7CA28BB72A200403B7F /* PhotoAlbumDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A04A7C828BB72A200403B7F /* PhotoAlbumDetailViewController.xib */; };
+		1A0887C828BB8BC10065A3EB /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0887C728BB8BC10065A3EB /* CustomImageView.swift */; };
 		1A7A59BB28A405B600D5667D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7A59BA28A405B600D5667D /* AppDelegate.swift */; };
 		1A7A59BD28A405B600D5667D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7A59BC28A405B600D5667D /* SceneDelegate.swift */; };
 		1A7A59C428A405B700D5667D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A7A59C328A405B700D5667D /* Assets.xcassets */; };
@@ -86,6 +87,7 @@
 		1A04A7C428BA7B7700403B7F /* CVFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVFile.swift; sourceTree = "<group>"; };
 		1A04A7C728BB72A200403B7F /* PhotoAlbumDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAlbumDetailViewController.swift; sourceTree = "<group>"; };
 		1A04A7C828BB72A200403B7F /* PhotoAlbumDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoAlbumDetailViewController.xib; sourceTree = "<group>"; };
+		1A0887C728BB8BC10065A3EB /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		1A7A59B728A405B600D5667D /* aitorzubizarret.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = aitorzubizarret.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A7A59BA28A405B600D5667D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A7A59BC28A405B600D5667D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -214,6 +216,14 @@
 			path = Detail;
 			sourceTree = "<group>";
 		};
+		1A0887C628BB8BA20065A3EB /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				1A0887C728BB8BC10065A3EB /* CustomImageView.swift */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
 		1A7A59AE28A405B600D5667D = {
 			isa = PBXGroup;
 			children = (
@@ -245,6 +255,7 @@
 				1AC80EFA28A567AA0049E901 /* Cells */,
 				1AC80EF228A407330049E901 /* Controllers */,
 				1AC80F3828ABF5A90049E901 /* Extensions */,
+				1A0887C628BB8BA20065A3EB /* Custom */,
 				1A7A59C328A405B700D5667D /* Assets.xcassets */,
 				1A7A59C828A405B700D5667D /* Info.plist */,
 			);
@@ -589,6 +600,7 @@
 				1AC80F3328AB01180049E901 /* APIManager.swift in Sources */,
 				1AC80F2F28A949940049E901 /* PhotoThumbnailCollectionViewCell.swift in Sources */,
 				1AC80F0828A568D30049E901 /* CVTableViewCell.swift in Sources */,
+				1A0887C828BB8BC10065A3EB /* CustomImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
