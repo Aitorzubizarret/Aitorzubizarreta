@@ -279,6 +279,17 @@
 			path = aitorzubizarretUITests;
 			sourceTree = "<group>";
 		};
+		1A7B3B2128C14FF9008A41D6 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				1AC80F0028A568A40049E901 /* AboutMeCell */,
+				1AC80F0528A568C40049E901 /* CVCell */,
+				1AC80F0A28A568DC0049E901 /* ContactMeCell */,
+				1AC80F0F28A568FB0049E901 /* PhotosAlbumCell */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		1AC80EF228A407330049E901 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -302,9 +313,9 @@
 		1AC80EF428A4074D0049E901 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				1AC80F3428AB03730049E901 /* Photo.swift */,
 				1A04A7A728B7C61700403B7F /* PostSection.swift */,
 				1A04A7C428BA7B7700403B7F /* CVFile.swift */,
+				1AC80F3428AB03730049E901 /* Photo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -321,11 +332,8 @@
 		1AC80EFA28A567AA0049E901 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				1A7B3B2128C14FF9008A41D6 /* Main */,
 				1A04A7AB28B7D9E100403B7F /* PostSections */,
-				1AC80F0F28A568FB0049E901 /* PhotosAlbumCell */,
-				1AC80F0A28A568DC0049E901 /* ContactMeCell */,
-				1AC80F0528A568C40049E901 /* CVCell */,
-				1AC80F0028A568A40049E901 /* AboutMeCell */,
 				1AC80F2C28A949350049E901 /* PhotoThumbnailCell */,
 			);
 			path = Cells;

@@ -25,37 +25,6 @@ final class APIManager {
     
     // MARK: - Methods
     
-    func getPhotos() {
-        guard let photosSourceURL = URL(string: photosSource) else { return }
-        
-        let task = session.dataTask(with: photosSourceURL) { data, response, error in
-            
-            if let safeError = error {
-                print("Error \(safeError.localizedDescription)")
-                return
-            }
-            
-            if let safeResponse = response {
-                //print("Response \(safeResponse)")
-            }
-            
-            if let safeData = data {
-                // For debug purposes.
-                //let receivedData: String = String(data: safeData, encoding: .utf8) ?? ""
-                //debugPrint("DebugPrint - Data: \(receivedData) - Response: \(response) - Error: \(error)")
-                
-                do {
-                    let photos = try JSONDecoder().decode([Photo].self, from: safeData)
-                    DataManager.shared.photos = photos
-                } catch let error {
-                    print("Error JSONDecoder: \(error)")
-                }
-            }
-            
-        }
-        task.resume()
-    }
-    
     func getAboutMe() {
         guard let aboutMeSourceURL = URL(string: aboutMeSource) else { return }
         
@@ -66,7 +35,7 @@ final class APIManager {
                 return
             }
             
-            if let safeResponse = response {
+            if let _ = response {
                 //print("Response \(safeResponse)")
             }
             
@@ -97,7 +66,7 @@ final class APIManager {
                 return
             }
             
-            if let safeResponse = response {
+            if let _ = response {
                 //print("Response \(safeResponse)")
             }
             
@@ -109,6 +78,37 @@ final class APIManager {
                 do {
                     let cvFile = try JSONDecoder().decode(CVFile.self, from: safeData)
                     DataManager.shared.cvFile = cvFile
+                } catch let error {
+                    print("Error JSONDecoder: \(error)")
+                }
+            }
+            
+        }
+        task.resume()
+    }
+    
+    func getPhotos() {
+        guard let photosSourceURL = URL(string: photosSource) else { return }
+        
+        let task = session.dataTask(with: photosSourceURL) { data, response, error in
+            
+            if let safeError = error {
+                print("Error \(safeError.localizedDescription)")
+                return
+            }
+            
+            if let _ = response {
+                //print("Response \(safeResponse)")
+            }
+            
+            if let safeData = data {
+                // For debug purposes.
+                //let receivedData: String = String(data: safeData, encoding: .utf8) ?? ""
+                //debugPrint("DebugPrint - Data: \(receivedData) - Response: \(response) - Error: \(error)")
+                
+                do {
+                    let photos = try JSONDecoder().decode([Photo].self, from: safeData)
+                    DataManager.shared.photos = photos
                 } catch let error {
                     print("Error JSONDecoder: \(error)")
                 }
