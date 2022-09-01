@@ -126,6 +126,7 @@ extension PhotoAlbumViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let detailVC = PhotoAlbumDetailViewController()
+        detailVC.photo = DataManager.shared.photos[indexPath.row]
         show(detailVC, sender: self)
     }
     
