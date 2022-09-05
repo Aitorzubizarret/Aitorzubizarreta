@@ -24,6 +24,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let navigationController: UINavigationController = UINavigationController()
         navigationController.pushViewController(mainVC, animated: false)
         
+        navigationController.navigationBar.topItem?.backButtonTitle = "" // Deletes the "Back" text/title of the back button in the NavBar.
+        
         // Create the window and add the Navigation Controller as the root view.
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         if let window = window {
