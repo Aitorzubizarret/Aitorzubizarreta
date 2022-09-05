@@ -6,8 +6,9 @@
 //
 
 import UIKit
-import MessageUI // Used for opening Mail app and to create a new mail when the user taps on the email address.
-import AddressBookUI //
+import MessageUI     // Used for opening Mail app and to create a new mail when the user taps on the email address.
+import AddressBookUI // ¿?
+import Contacts      // Used to add a new Contact in Contacts.
 
 class ContactMeViewController: UIViewController {
     
@@ -102,7 +103,7 @@ class ContactMeViewController: UIViewController {
     /// Downloads the contact information to user's Contacts app.
     ///
     private func downloadContact() {
-        
+        checkContactsPermission()
     }
     
 }
@@ -138,6 +139,101 @@ extension ContactMeViewController: MFMailComposeViewControllerDelegate {
     
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true)
+    }
+    
+}
+
+// MARK: - Contacts
+
+extension ContactMeViewController {
+    
+    ///
+    /// Opens iPhone Settings  to change the Contacts permission for this App.
+    ///
+    private func openSettings(alert: UIAlertAction!) {
+        if let url = URL.init(string: UIApplication.openSettingsURLString) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
+
+    ///
+    /// Checks if the App has permission to access to Contacts.
+    /// If the App does NOT have permission, it will display an alert view with an option to go to iPhone Settings.
+    ///
+    private func checkContactsPermission() {
+        CNContactStore().requestAccess(for: .contacts) { access, error in
+            if access {
+                self.addNewContact()
+            } else {
+                DispatchQueue.main.async {
+                    let alertMessage = UIAlertController(title: "Error",
+                                                         message: "La app no tiene permiso para acceder a Contactos.",
+                                                         preferredStyle: .alert)
+
+                    alertMessage.addAction(UIAlertAction(title: "Ir a Ajustes",
+                                                         style: UIAlertAction.Style.default,
+                                                         handler: self.openSettings))
+                    alertMessage.addAction(UIAlertAction(title: "Cerrar",
+                                                         style: UIAlertAction.Style.default,
+                                                         handler: nil))
+                    
+                    self.present(alertMessage, animated: true)
+                }
+                
+                print("Error \(String(describing: error))")
+            }
+        }
+    }
+    
+    ///
+    /// Tries to save a new Contact in Contacts.
+    ///
+    private func addNewContact() {
+        // Create the mutable contact object.
+        let contact = CNMutableContact()
+        
+        let imageData = UIImage(named: "Me")?.pngData()
+        contact.imageData = imageData
+        
+        contact.givenName = "Aitor"
+        contact.familyName = "Zubizarreta Perez"
+        
+        contact.jobTitle = "iOS Developer"
+        
+        let workEmail = CNLabeledValue(label: CNLabelWork, value: "aitorzubizarreta@yahoo.es" as NSString)
+        contact.emailAddresses = [workEmail]
+        
+        let personalWeb = CNLabeledValue(label: CNLabelURLAddressHomePage, value: "https://www.aitorzubizarreta.eus" as NSString)
+        contact.urlAddresses = [personalWeb]
+        
+        var birthday = DateComponents()
+        birthday.day = 25
+        birthday.month = 4
+        birthday.year = 1984
+        contact.birthday = birthday
+        
+        let postalAddress = CNMutablePostalAddress()
+        postalAddress.city = "Madrid"
+        postalAddress.country = "Spain"
+        
+        contact.postalAddresses = [CNLabeledValue(label:CNLabelWork, value:postalAddress)]
+        
+        // Save the contact object in Contacts app.
+        let store = CNContactStore()
+        let saveRequest = CNSaveRequest()
+        saveRequest.add(contact, toContainerWithIdentifier: nil)
+        
+        do {
+            try store.execute(saveRequest)
+            
+            let controller = UIAlertController(title: "Contacto guardado",
+                                               message: nil,
+                                               preferredStyle: .alert)
+              controller.addAction(UIAlertAction(title: "De acuerdo", style: .default))
+              present(controller, animated: true)
+        } catch let error {
+            print("Error \(error)")
+        }
     }
     
 }
