@@ -43,7 +43,7 @@ class PhotoAlbumViewController: UIViewController {
             
             switch selectedViewType {
             case 1:
-                // FlowLayout.
+                // GroupView FlowLayout.
                 let cellSize = CGSize(width: (screenWidth - (spaceBetweenCells * 2)) / 3, height: (screenWidth - (spaceBetweenCells * 2)) / 3)
                 customFlowLayout.itemSize = cellSize
                 customFlowLayout.minimumLineSpacing = spaceBetweenCells
@@ -55,7 +55,7 @@ class PhotoAlbumViewController: UIViewController {
                 individualViewButton.backgroundColor = UIColor.white
                 individualViewButton.tintColor = UIColor(named: "myDarkGrey")
             case 2:
-                // FlowLayout.
+                // Individual FlowLayout.
                 let cellSize = CGSize(width: screenWidth, height: screenWidth)
                 customFlowLayout.itemSize = cellSize
                 customFlowLayout.minimumLineSpacing = spaceBetweenCells
@@ -67,10 +67,16 @@ class PhotoAlbumViewController: UIViewController {
                 individualViewButton.backgroundColor = UIColor(named: "myGrey")
                 individualViewButton.tintColor = UIColor(named: "myDarkGrey")
             default:
-                print("")
+                print("Error: Unknown 'selectedViewType'.")
             }
             
             collectionView.collectionViewLayout = customFlowLayout
+            
+            // If there are photos, scroll to the top.
+            if DataManager.shared.photos.count > 0 {
+                collectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
+            }
+            
         }
     }
     
