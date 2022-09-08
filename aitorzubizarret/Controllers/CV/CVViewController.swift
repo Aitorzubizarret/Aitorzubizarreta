@@ -14,7 +14,7 @@ class CVViewController: UIViewController {
     
     // MARK: - Properties
     
-    var webView: WKWebView?
+    private var webView: WKWebView?
     private lazy var activityIndicator: UIActivityIndicatorView = {
         let activityIndicator = UIActivityIndicatorView(style: .large)
         activityIndicator.hidesWhenStopped = true
