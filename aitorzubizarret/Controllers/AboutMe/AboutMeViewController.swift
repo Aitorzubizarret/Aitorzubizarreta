@@ -14,6 +14,11 @@ class AboutMeViewController: UIViewController {
     // MARK: - Properties
     
     private var tableView = UITableView()
+    private lazy var activityIndicator: UIActivityIndicatorView = {
+        let activityIndicator = UIActivityIndicatorView(style: .large)
+        activityIndicator.hidesWhenStopped = true
+        return activityIndicator
+    }()
     
     // MARK: - Methods
     
@@ -22,6 +27,7 @@ class AboutMeViewController: UIViewController {
         
         initView()
         initTableView()
+        initActivityIndicator()
         
         DataManager.shared.getAboutMe()
     }
@@ -36,6 +42,8 @@ class AboutMeViewController: UIViewController {
         super.viewWillDisappear(animated)
         
         NotificationCenter.default.removeObserver(self, name: Notification.Name("AboutMe"), object: nil)
+        
+        DataManager.shared.aboutMePostSections = []
     }
     
     private func initView() {
@@ -77,10 +85,27 @@ class AboutMeViewController: UIViewController {
         tableView.register(postSectionDescriptionCell, forCellReuseIdentifier: "PostSectionDescriptionTableViewCell")
     }
     
+    private func initActivityIndicator() {
+        view.addSubview(activityIndicator)
+        
+        activityIndicator.center = view.center
+        
+        showActivityIndicator()
+    }
+    
     @objc private func updateTableView() {
         DispatchQueue.main.async { [weak self] in
+            self?.activityIndicator.stopAnimating()
             self?.tableView.reloadData()
         }
+    }
+    
+    private func showActivityIndicator() {
+        activityIndicator.startAnimating()
+    }
+    
+    private func hideActivityIndicator() {
+        activityIndicator.stopAnimating()
     }
     
 }
