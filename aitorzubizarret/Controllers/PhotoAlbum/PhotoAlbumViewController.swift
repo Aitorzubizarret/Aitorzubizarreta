@@ -32,7 +32,12 @@ class PhotoAlbumViewController: UIViewController {
     
     // MARK: - Properties
     
-    var selectedViewType: Int = 0 {
+    private lazy var activityIndicator: UIActivityIndicatorView = {
+        let activityIndicator = UIActivityIndicatorView(style: .large)
+        activityIndicator.hidesWhenStopped = true
+        return activityIndicator
+    }()
+    private var selectedViewType: Int = 0 {
         didSet {
             let screenWidth = UIScreen.main.bounds.width
             let spaceBetweenCells: CGFloat = 4
@@ -87,6 +92,7 @@ class PhotoAlbumViewController: UIViewController {
         
         initView()
         initCollectionView()
+        initActivityIndicator()
         
         DataManager.shared.getPhotos()
     }
@@ -103,6 +109,9 @@ class PhotoAlbumViewController: UIViewController {
     
     private func initView() {
         title = "Fotos"
+        
+        // Label.
+        amountOfPhotosLabel.text = "-"
     }
     
     private func initCollectionView() {
@@ -116,12 +125,30 @@ class PhotoAlbumViewController: UIViewController {
         collectionView.register(photoThumbnailCell, forCellWithReuseIdentifier: "PhotoThumbnailCollectionViewCell")
     }
     
+    private func initActivityIndicator() {
+        view.addSubview(activityIndicator)
+        
+        activityIndicator.center = view.center
+        
+        showActivityIndicator()
+    }
+    
     @objc private func updateCollectionView() {
         DispatchQueue.main.async { [weak self] in
+            self?.hideActivityIndicator()
+            
             self?.collectionView.reloadData()
             
             self?.amountOfPhotosLabel.text = "\(DataManager.shared.photos.count)"
         }
+    }
+    
+    private func showActivityIndicator() {
+        activityIndicator.startAnimating()
+    }
+    
+    private func hideActivityIndicator() {
+        activityIndicator.stopAnimating()
     }
     
 }
