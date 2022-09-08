@@ -163,7 +163,9 @@ extension ContactMeViewController {
     private func checkContactsPermission() {
         CNContactStore().requestAccess(for: .contacts) { access, error in
             if access {
-                self.addNewContact()
+                DispatchQueue.main.async {
+                    self.addNewContact()
+                }
             } else {
                 DispatchQueue.main.async {
                     let alertMessage = UIAlertController(title: "Error",
