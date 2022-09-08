@@ -15,6 +15,11 @@ class CVViewController: UIViewController {
     // MARK: - Properties
     
     var webView: WKWebView?
+    private lazy var activityIndicator: UIActivityIndicatorView = {
+        let activityIndicator = UIActivityIndicatorView(style: .large)
+        activityIndicator.hidesWhenStopped = true
+        return activityIndicator
+    }()
     
     // MARK: - Methods
     
@@ -23,6 +28,7 @@ class CVViewController: UIViewController {
         
         initView()
         initWebView()
+        initActivityIndicator()
         
         DataManager.shared.getCV()
     }
@@ -63,15 +69,33 @@ class CVViewController: UIViewController {
         safeWebView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
     }
     
+    private func initActivityIndicator() {
+        view.addSubview(activityIndicator)
+        
+        activityIndicator.center = view.center
+        
+        showActivityIndicator()
+    }
+    
     @objc private func updateWebView() {
         DispatchQueue.main.async { [weak self] in
             guard let safeWebView = self?.webView,
                   let safeCVFile = DataManager.shared.cvFile,
                   let safeCVFileURL = URL(string: safeCVFile.pdf) else { return }
             
+            self?.hideActivityIndicator()
+            
             let myRequest = URLRequest(url: safeCVFileURL)
             safeWebView.load(myRequest)
         }
+    }
+    
+    private func showActivityIndicator() {
+        activityIndicator.startAnimating()
+    }
+    
+    private func hideActivityIndicator() {
+        activityIndicator.stopAnimating()
     }
     
 }
