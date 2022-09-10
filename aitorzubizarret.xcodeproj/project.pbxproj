@@ -99,6 +99,7 @@
 		1A7A59D728A405B700D5667D /* aitorzubizarretUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = aitorzubizarretUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A7A59DB28A405B700D5667D /* aitorzubizarretUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aitorzubizarretUITests.swift; sourceTree = "<group>"; };
 		1A7A59DD28A405B700D5667D /* aitorzubizarretUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aitorzubizarretUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		1A80DE5928CD435C00F2DED5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1AC80EF628A407710049E901 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		1AC80EF728A407710049E901 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		1AC80F0128A568BB0049E901 /* AboutMeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMeTableViewCell.swift; sourceTree = "<group>"; };
@@ -227,6 +228,7 @@
 		1A7A59AE28A405B600D5667D = {
 			isa = PBXGroup;
 			children = (
+				1A80DE5928CD435C00F2DED5 /* README.md */,
 				1A7A59B928A405B600D5667D /* aitorzubizarret */,
 				1A7A59D028A405B700D5667D /* aitorzubizarretTests */,
 				1A7A59DA28A405B700D5667D /* aitorzubizarretUITests */,
@@ -780,6 +782,7 @@
 				DEVELOPMENT_TEAM = V9WUS7ZBGW;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = aitorzubizarret/Info.plist;
+				INFOPLIST_KEY_NSContactsUsageDescription = "Para poder guardar entre tus contactos a Aitor Zubizarreta.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -809,6 +812,7 @@
 				DEVELOPMENT_TEAM = V9WUS7ZBGW;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = aitorzubizarret/Info.plist;
+				INFOPLIST_KEY_NSContactsUsageDescription = "Para poder guardar entre tus contactos a Aitor Zubizarreta.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
