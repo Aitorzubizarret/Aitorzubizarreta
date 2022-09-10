@@ -37,6 +37,18 @@ class CVViewController: UIViewController {
         activityIndicator.hidesWhenStopped = true
         return activityIndicator
     }()
+    private lazy var shareBarButton: UIBarButtonItem = {
+        let sharePDFBarButton = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.up"), style: .plain, target: self, action: #selector(sharePDF))
+        navigationItem.rightBarButtonItems = [sharePDFBarButton]
+        return sharePDFBarButton
+    }()
+    private var pdfURL: URL? {
+        didSet {
+            guard let _ = pdfURL else { return }
+            
+            shareBarButton.isEnabled = true
+        }
+    }
     
     // MARK: - Methods
     
@@ -80,9 +92,19 @@ class CVViewController: UIViewController {
             
             self?.hideActivityIndicator()
             
+            // Load the PDF into the WebView.
             let myRequest = URLRequest(url: safeCVFileURL)
             self?.webView.load(myRequest)
+            
+            self?.pdfURL = safeCVFileURL
         }
+    }
+    
+    @objc private func sharePDF() {
+        guard let safePDFUrl = pdfURL else { return }
+        
+        let activityViewController = UIActivityViewController(activityItems: [safePDFUrl], applicationActivities: nil)
+        present(activityViewController, animated: true)
     }
     
     private func showActivityIndicator() {
