@@ -23,6 +23,12 @@ class MainViewController: UIViewController {
         initTableView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        DataManager.shared.clearAllData()
+    }
+    
     private func initTableView() {
         self.view.addSubview(tableView)
         

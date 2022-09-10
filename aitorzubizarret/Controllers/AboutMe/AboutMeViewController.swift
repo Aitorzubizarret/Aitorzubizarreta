@@ -42,8 +42,6 @@ class AboutMeViewController: UIViewController {
         super.viewWillDisappear(animated)
         
         NotificationCenter.default.removeObserver(self, name: Notification.Name("AboutMe"), object: nil)
-        
-        DataManager.shared.aboutMePostSections = []
     }
     
     private func initView() {
