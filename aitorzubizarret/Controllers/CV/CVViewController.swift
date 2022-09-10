@@ -14,7 +14,24 @@ class CVViewController: UIViewController {
     
     // MARK: - Properties
     
-    private var webView: WKWebView?
+    private lazy var webView: WKWebView = {
+        let webConfiguration = WKWebViewConfiguration()
+        let webview = WKWebView(frame: .zero, configuration: webConfiguration)
+        
+        view.addSubview(webview)
+        
+        // Constraints.
+        let safeArea: UILayoutGuide = view.layoutMarginsGuide
+        
+        webview.translatesAutoresizingMaskIntoConstraints = false
+        
+        webview.topAnchor.constraint(equalTo: safeArea.topAnchor).isActive = true
+        webview.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        webview.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor).isActive = true
+        webview.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        
+        return webview
+    }()
     private lazy var activityIndicator: UIActivityIndicatorView = {
         let activityIndicator = UIActivityIndicatorView(style: .large)
         activityIndicator.hidesWhenStopped = true
@@ -27,7 +44,6 @@ class CVViewController: UIViewController {
         super.viewDidLoad()
         
         initView()
-        initWebView()
         initActivityIndicator()
         
         DataManager.shared.getCV()
@@ -49,26 +65,6 @@ class CVViewController: UIViewController {
         title = "CV"
     }
     
-    private func initWebView() {
-        let webConfiguration = WKWebViewConfiguration()
-        
-        webView = WKWebView(frame: .zero, configuration: webConfiguration)
-        
-        guard let safeWebView = webView else { return }
-        
-        view.addSubview(safeWebView)
-        
-        // Constraints.
-        let safeArea: UILayoutGuide = view.layoutMarginsGuide
-        
-        safeWebView.translatesAutoresizingMaskIntoConstraints = false
-        
-        safeWebView.topAnchor.constraint(equalTo: safeArea.topAnchor).isActive = true
-        safeWebView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        safeWebView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor).isActive = true
-        safeWebView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-    }
-    
     private func initActivityIndicator() {
         view.addSubview(activityIndicator)
         
@@ -79,14 +75,13 @@ class CVViewController: UIViewController {
     
     @objc private func updateWebView() {
         DispatchQueue.main.async { [weak self] in
-            guard let safeWebView = self?.webView,
-                  let safeCVFile = DataManager.shared.cvFile,
+            guard let safeCVFile = DataManager.shared.cvFile,
                   let safeCVFileURL = URL(string: safeCVFile.pdf) else { return }
             
             self?.hideActivityIndicator()
             
             let myRequest = URLRequest(url: safeCVFileURL)
-            safeWebView.load(myRequest)
+            self?.webView.load(myRequest)
         }
     }
     
