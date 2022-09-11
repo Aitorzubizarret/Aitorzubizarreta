@@ -6,9 +6,8 @@
 //
 
 import UIKit
-import MessageUI     // Used for opening Mail app and to create a new mail when the user taps on the email address.
-import AddressBookUI // ¿?
-import Contacts      // Used to add a new Contact in Contacts.
+import MessageUI  // Used for opening Mail app and to create a new mail when the user taps on the email address.
+import ContactsUI // Used for opening Contacts app with the CNContactViewController on screen and filled with my contact data.
 
 class ContactMeViewController: UIViewController {
     
@@ -220,22 +219,29 @@ extension ContactMeViewController {
         
         contact.postalAddresses = [CNLabeledValue(label:CNLabelWork, value:postalAddress)]
         
-        // Save the contact object in Contacts app.
-        let store = CNContactStore()
-        let saveRequest = CNSaveRequest()
-        saveRequest.add(contact, toContainerWithIdentifier: nil)
+        contact.note = "Contacto agregado desde la app 'aitorzubizarret' de la AppStore."
         
-        do {
-            try store.execute(saveRequest)
-            
-            let controller = UIAlertController(title: "Contacto guardado",
-                                               message: nil,
-                                               preferredStyle: .alert)
-              controller.addAction(UIAlertAction(title: "De acuerdo", style: .default))
-              present(controller, animated: true)
-        } catch let error {
-            print("Error \(error)")
-        }
+        // Display the original ContactViewController with my contact data on it.
+        let contactVC = CNContactViewController(forNewContact: contact)
+        contactVC.contactStore = CNContactStore()
+        contactVC.delegate = self
+        
+        let navController: UINavigationController = UINavigationController(rootViewController: contactVC)
+        present(navController, animated: true)
+    }
+    
+}
+
+// MARK: - CNContact ViewController.
+
+extension ContactMeViewController: CNContactViewControllerDelegate {
+    
+    func contactViewController(_ viewController: CNContactViewController, shouldPerformDefaultActionFor property: CNContactProperty) -> Bool {
+        return true
+    }
+    
+    func contactViewController(_ viewController: CNContactViewController, didCompleteWith contact: CNContact?) {
+        dismiss(animated: true)
     }
     
 }
