@@ -22,6 +22,7 @@ final class APIManager {
     private let aboutMeSource = "https://www.aitorzubizarreta.eus/projects/apps-content/aitorzubizarret/jsons/aboutme-V1.json"
     private let cvSource      = "https://www.aitorzubizarreta.eus/projects/apps-content/aitorzubizarret/jsons/cv-V1.json"
     private let photosSource  = "https://www.aitorzubizarreta.eus/projects/apps-content/aitorzubizarret/jsons/photos-V1.json"
+    private let postsSource   = "https://www.aitorzubizarreta.eus/projects/apps-content/aitorzubizarret/jsons/posts-V1.json"
     
     // MARK: - Methods
     
@@ -109,6 +110,37 @@ final class APIManager {
                 do {
                     let photos = try JSONDecoder().decode([Photo].self, from: safeData)
                     DataManager.shared.photos = photos
+                } catch let error {
+                    print("Error JSONDecoder: \(error)")
+                }
+            }
+            
+        }
+        task.resume()
+    }
+    
+    func getBlogPosts() {
+        guard let postsSourceURL = URL(string: postsSource) else { return }
+        
+        let task = session.dataTask(with: postsSourceURL) { data, response, error in
+            
+            if let safeError = error {
+                print("Error \(safeError.localizedDescription)")
+                return
+            }
+            
+            if let _ = response {
+                //print("Response \(safeResponse)")
+            }
+            
+            if let safeData = data {
+                // For debug purposes.
+                //let receivedData: String = String(data: safeData, encoding: .utf8) ?? ""
+                //debugPrint("DebugPrint - Data: \(receivedData) - Response: \(response) - Error: \(error)")
+                
+                do {
+                    let posts = try JSONDecoder().decode([BlogPost].self, from: safeData)
+                    DataManager.shared.blogPosts = posts
                 } catch let error {
                     print("Error JSONDecoder: \(error)")
                 }

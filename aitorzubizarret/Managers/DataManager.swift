@@ -30,6 +30,7 @@ final class DataManager {
             NotificationCenter.default.post(name: Notification.Name("Photos"), object: nil)
         }
     }
+    var blogPosts: [BlogPost] = []
     
     // MARK: - Methods
     

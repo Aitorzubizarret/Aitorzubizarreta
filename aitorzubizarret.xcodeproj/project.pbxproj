@@ -29,6 +29,9 @@
 		1A7A59D228A405B700D5667D /* aitorzubizarretTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7A59D128A405B700D5667D /* aitorzubizarretTests.swift */; };
 		1A7A59DC28A405B700D5667D /* aitorzubizarretUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7A59DB28A405B700D5667D /* aitorzubizarretUITests.swift */; };
 		1A7A59DE28A405B700D5667D /* aitorzubizarretUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7A59DD28A405B700D5667D /* aitorzubizarretUITestsLaunchTests.swift */; };
+		1A910E6228CE4FFE0078831E /* BlogPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A910E6128CE4FFE0078831E /* BlogPost.swift */; };
+		1A910E6428CE50370078831E /* BlogTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A910E6328CE50370078831E /* BlogTag.swift */; };
+		1A910E6628CE505A0078831E /* BlogDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A910E6528CE505A0078831E /* BlogDescription.swift */; };
 		1AC80EF828A407710049E901 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC80EF628A407710049E901 /* MainViewController.swift */; };
 		1AC80EF928A407710049E901 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AC80EF728A407710049E901 /* MainViewController.xib */; };
 		1AC80F0328A568BB0049E901 /* AboutMeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC80F0128A568BB0049E901 /* AboutMeTableViewCell.swift */; };
@@ -100,6 +103,9 @@
 		1A7A59DB28A405B700D5667D /* aitorzubizarretUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aitorzubizarretUITests.swift; sourceTree = "<group>"; };
 		1A7A59DD28A405B700D5667D /* aitorzubizarretUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aitorzubizarretUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		1A80DE5928CD435C00F2DED5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		1A910E6128CE4FFE0078831E /* BlogPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogPost.swift; sourceTree = "<group>"; };
+		1A910E6328CE50370078831E /* BlogTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogTag.swift; sourceTree = "<group>"; };
+		1A910E6528CE505A0078831E /* BlogDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogDescription.swift; sourceTree = "<group>"; };
 		1AC80EF628A407710049E901 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		1AC80EF728A407710049E901 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		1AC80F0128A568BB0049E901 /* AboutMeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMeTableViewCell.swift; sourceTree = "<group>"; };
@@ -318,6 +324,9 @@
 				1A04A7A728B7C61700403B7F /* PostSection.swift */,
 				1A04A7C428BA7B7700403B7F /* CVFile.swift */,
 				1AC80F3428AB03730049E901 /* Photo.swift */,
+				1A910E6128CE4FFE0078831E /* BlogPost.swift */,
+				1A910E6328CE50370078831E /* BlogTag.swift */,
+				1A910E6528CE505A0078831E /* BlogDescription.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -603,12 +612,15 @@
 				1AC80F0D28A568F30049E901 /* ContactMeTableViewCell.swift in Sources */,
 				1AC80F3A28ABF5C40049E901 /* UIImageView+Extension.swift in Sources */,
 				1A04A7B628B7DADD00403B7F /* PostSectionTitleTableViewCell.swift in Sources */,
+				1A910E6228CE4FFE0078831E /* BlogPost.swift in Sources */,
 				1A04A7C528BA7B7700403B7F /* CVFile.swift in Sources */,
 				1A7A59BD28A405B600D5667D /* SceneDelegate.swift in Sources */,
 				1A04A7BA28B7DAEF00403B7F /* PostSectionSubtitleTableViewCell.swift in Sources */,
 				1AC80EF828A407710049E901 /* MainViewController.swift in Sources */,
 				1AC80F3328AB01180049E901 /* APIManager.swift in Sources */,
 				1AC80F2F28A949940049E901 /* PhotoThumbnailCollectionViewCell.swift in Sources */,
+				1A910E6628CE505A0078831E /* BlogDescription.swift in Sources */,
+				1A910E6428CE50370078831E /* BlogTag.swift in Sources */,
 				1AC80F0828A568D30049E901 /* CVTableViewCell.swift in Sources */,
 				1A0887C828BB8BC10065A3EB /* CustomImageView.swift in Sources */,
 			);
@@ -708,7 +720,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -762,7 +774,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
