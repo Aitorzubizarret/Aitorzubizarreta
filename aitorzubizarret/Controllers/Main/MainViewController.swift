@@ -58,6 +58,9 @@ class MainViewController: UIViewController {
         
         let photosAlbum: UINib = UINib(nibName: "PhotosAlbumTableViewCell", bundle: nil)
         tableView.register(photosAlbum, forCellReuseIdentifier: "PhotosAlbumTableViewCell")
+        
+        let blogHeaderCell = UINib(nibName: "BlogHeaderTableViewCell", bundle: nil)
+        tableView.register(blogHeaderCell, forCellReuseIdentifier: "BlogHeaderTableViewCell")
     }
     
 }
@@ -76,6 +79,8 @@ extension MainViewController: UITableViewDelegate {
             return 80
         case 3:
             return 170
+        case 4:
+            return 70
         default:
             return 0
         }
@@ -111,7 +116,7 @@ extension MainViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -127,6 +132,9 @@ extension MainViewController: UITableViewDataSource {
             return cell
         case 3:
             let cell = tableView.dequeueReusableCell(withIdentifier: "PhotosAlbumTableViewCell", for: indexPath) as! PhotosAlbumTableViewCell
+            return cell
+        case 4:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "BlogHeaderTableViewCell", for: indexPath) as! BlogHeaderTableViewCell
             return cell
         default:
             return UITableViewCell()
