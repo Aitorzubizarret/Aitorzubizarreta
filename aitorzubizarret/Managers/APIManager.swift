@@ -67,18 +67,19 @@ final class APIManager {
         task.resume()
     }
     
-    func getCV() {
+    func fetchCVFile(completionHandler: @escaping(Result<CVFile, Error>) -> Void) {
         guard let cvSourceURL = URL(string: cvSource) else { return }
         
         let task = session.dataTask(with: cvSourceURL) { data, response, error in
             
-            if let safeError = error {
-                print("Error \(safeError.localizedDescription)")
-                return
-            }
-            
             if let _ = response {
                 //print("Response \(safeResponse)")
+            }
+            
+            if let safeError = error {
+                print("Error \(safeError.localizedDescription)")
+                completionHandler(.failure(safeError))
+                return
             }
             
             if let safeData = data {
@@ -88,11 +89,15 @@ final class APIManager {
                 
                 do {
                     let cvFile = try JSONDecoder().decode(CVFile.self, from: safeData)
-                    DataManager.shared.cvFile = cvFile
+                    completionHandler(.success(cvFile))
+                    return
                 } catch let error {
                     print("Error JSONDecoder: \(error)")
+                    completionHandler(.failure(error))
                 }
             }
+            
+            completionHandler(.failure(UnknownError.unknownError))
             
         }
         task.resume()

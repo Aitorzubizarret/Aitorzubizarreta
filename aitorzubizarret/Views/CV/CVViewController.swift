@@ -7,6 +7,7 @@
 
 import UIKit
 import WebKit
+import Combine
 
 class CVViewController: UIViewController {
     
@@ -50,27 +51,26 @@ class CVViewController: UIViewController {
         }
     }
     
+    private var viewModel = CVViewModel(apiManager: APIManager.shared)
+    private var subscribedTo: [AnyCancellable] = []
+    
+    private var cvFile: CVFile? = nil {
+        didSet {
+            updateWebView()
+        }
+    }
+    
     // MARK: - Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        subscriptions()
+        
         initView()
         initActivityIndicator()
         
-        DataManager.shared.getCV()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(updateWebView), name: Notification.Name("CV"), object: nil)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        NotificationCenter.default.removeObserver(self, name: Notification.Name("CV"), object: nil)
+        viewModel.fetchCVFile()
     }
     
     private func initView() {
@@ -87,16 +87,16 @@ class CVViewController: UIViewController {
     
     @objc private func updateWebView() {
         DispatchQueue.main.async { [weak self] in
-            guard let safeCVFile = DataManager.shared.cvFile,
-                  let safeCVFileURL = URL(string: safeCVFile.pdf) else { return }
+            guard let cvFile = self?.cvFile,
+                  let cvFileURL = URL(string: cvFile.pdf) else { return }
             
             self?.hideActivityIndicator()
             
             // Load the PDF into the WebView.
-            let myRequest = URLRequest(url: safeCVFileURL)
+            let myRequest = URLRequest(url: cvFileURL)
             self?.webView.load(myRequest)
             
-            self?.pdfURL = safeCVFileURL
+            self?.pdfURL = cvFileURL
         }
     }
     
@@ -113,6 +113,15 @@ class CVViewController: UIViewController {
     
     private func hideActivityIndicator() {
         activityIndicator.stopAnimating()
+    }
+    
+    private func subscriptions() {
+        viewModel.cvFile.sink { error in
+            print("Error : \(error)")
+        } receiveValue: { [weak self] cvFile in
+            self?.cvFile = cvFile
+        }.store(in: &subscribedTo)
+
     }
     
 }
