@@ -37,6 +37,8 @@
 		1AA268B328D7476700CE5FD9 /* AboutMeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA268B228D7476700CE5FD9 /* AboutMeViewModel.swift */; };
 		1AA268B528D7634100CE5FD9 /* CVViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA268B428D7634100CE5FD9 /* CVViewModel.swift */; };
 		1AA268B928D768CD00CE5FD9 /* PhotoAlbumViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA268B828D768CD00CE5FD9 /* PhotoAlbumViewModel.swift */; };
+		1AA268BD28D7709800CE5FD9 /* BlogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA268BB28D7709800CE5FD9 /* BlogViewController.swift */; };
+		1AA268BE28D7709800CE5FD9 /* BlogViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AA268BC28D7709800CE5FD9 /* BlogViewController.xib */; };
 		1AC80EF828A407710049E901 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC80EF628A407710049E901 /* MainViewController.swift */; };
 		1AC80EF928A407710049E901 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AC80EF728A407710049E901 /* MainViewController.xib */; };
 		1AC80F0328A568BB0049E901 /* AboutMeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC80F0128A568BB0049E901 /* AboutMeTableViewCell.swift */; };
@@ -59,7 +61,6 @@
 		1AC80F3028A949940049E901 /* PhotoThumbnailCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AC80F2E28A949940049E901 /* PhotoThumbnailCollectionViewCell.xib */; };
 		1AC80F3328AB01180049E901 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC80F3228AB01180049E901 /* APIManager.swift */; };
 		1AC80F3528AB03730049E901 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC80F3428AB03730049E901 /* Photo.swift */; };
-		1AC80F3728ABECBC0049E901 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC80F3628ABECBC0049E901 /* DataManager.swift */; };
 		1AC80F3A28ABF5C40049E901 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC80F3928ABF5C40049E901 /* UIImageView+Extension.swift */; };
 /* End PBXBuildFile section */
 
@@ -116,6 +117,8 @@
 		1AA268B228D7476700CE5FD9 /* AboutMeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMeViewModel.swift; sourceTree = "<group>"; };
 		1AA268B428D7634100CE5FD9 /* CVViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVViewModel.swift; sourceTree = "<group>"; };
 		1AA268B828D768CD00CE5FD9 /* PhotoAlbumViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAlbumViewModel.swift; sourceTree = "<group>"; };
+		1AA268BB28D7709800CE5FD9 /* BlogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogViewController.swift; sourceTree = "<group>"; };
+		1AA268BC28D7709800CE5FD9 /* BlogViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BlogViewController.xib; sourceTree = "<group>"; };
 		1AC80EF628A407710049E901 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		1AC80EF728A407710049E901 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		1AC80F0128A568BB0049E901 /* AboutMeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMeTableViewCell.swift; sourceTree = "<group>"; };
@@ -138,7 +141,6 @@
 		1AC80F2E28A949940049E901 /* PhotoThumbnailCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoThumbnailCollectionViewCell.xib; sourceTree = "<group>"; };
 		1AC80F3228AB01180049E901 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		1AC80F3428AB03730049E901 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
-		1AC80F3628ABECBC0049E901 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		1AC80F3928ABF5C40049E901 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -328,6 +330,15 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		1AA268BA28D7707700CE5FD9 /* Blog */ = {
+			isa = PBXGroup;
+			children = (
+				1AA268BB28D7709800CE5FD9 /* BlogViewController.swift */,
+				1AA268BC28D7709800CE5FD9 /* BlogViewController.xib */,
+			);
+			path = Blog;
+			sourceTree = "<group>";
+		};
 		1AC80EF328A407460049E901 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -337,6 +348,7 @@
 				1AC80F1928A906400049E901 /* CV */,
 				1AC80F1A28A9064E0049E901 /* ContactMe */,
 				1AC80F1B28A9065E0049E901 /* PhotoAlbum */,
+				1AA268BA28D7707700CE5FD9 /* Blog */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -459,7 +471,6 @@
 			isa = PBXGroup;
 			children = (
 				1AC80F3228AB01180049E901 /* APIManager.swift */,
-				1AC80F3628ABECBC0049E901 /* DataManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -594,6 +605,7 @@
 				1AC80F1828A906360049E901 /* AboutMeViewController.xib in Resources */,
 				1AC80F3028A949940049E901 /* PhotoThumbnailCollectionViewCell.xib in Resources */,
 				1A04A7B328B7DACA00403B7F /* PostSectionImageTableViewCell.xib in Resources */,
+				1AA268BE28D7709800CE5FD9 /* BlogViewController.xib in Resources */,
 				1A7A59C428A405B700D5667D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -623,7 +635,6 @@
 				1A04A7BE28B7DB0100403B7F /* PostSectionQuoteTableViewCell.swift in Sources */,
 				1A04A7A828B7C61700403B7F /* PostSection.swift in Sources */,
 				1AC80F3528AB03730049E901 /* Photo.swift in Sources */,
-				1AC80F3728ABECBC0049E901 /* DataManager.swift in Sources */,
 				1AC80F2A28A907240049E901 /* PhotoAlbumViewController.swift in Sources */,
 				1A7A59BB28A405B600D5667D /* AppDelegate.swift in Sources */,
 				1AC80F1E28A906850049E901 /* CVViewController.swift in Sources */,
@@ -642,6 +653,7 @@
 				1A04A7C528BA7B7700403B7F /* CVFile.swift in Sources */,
 				1A7A59BD28A405B600D5667D /* SceneDelegate.swift in Sources */,
 				1A04A7BA28B7DAEF00403B7F /* PostSectionSubtitleTableViewCell.swift in Sources */,
+				1AA268BD28D7709800CE5FD9 /* BlogViewController.swift in Sources */,
 				1AC80EF828A407710049E901 /* MainViewController.swift in Sources */,
 				1AC80F3328AB01180049E901 /* APIManager.swift in Sources */,
 				1AC80F2F28A949940049E901 /* PhotoThumbnailCollectionViewCell.swift in Sources */,

@@ -129,10 +129,22 @@ extension MainViewController: UITableViewDataSource {
             return cell
         case 4:
             let cell = tableView.dequeueReusableCell(withIdentifier: "BlogHeaderTableViewCell", for: indexPath) as! BlogHeaderTableViewCell
+            cell.delegate = self
             return cell
         default:
             return UITableViewCell()
         }
+    }
+    
+}
+
+// MARK: - Blog Header Cell Actions
+
+extension MainViewController: BlogHeaderCellActions {
+    
+    func goToBlogVC() {
+        let blogVC = BlogViewController()
+        show(blogVC, sender: nil)
     }
     
 }

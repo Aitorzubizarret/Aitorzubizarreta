@@ -161,7 +161,7 @@ final class APIManager {
                 
                 do {
                     let posts = try JSONDecoder().decode([BlogPost].self, from: safeData)
-                    DataManager.shared.blogPosts = posts
+                    
                 } catch let error {
                     print("Error JSONDecoder: \(error)")
                 }
