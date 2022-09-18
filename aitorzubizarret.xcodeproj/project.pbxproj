@@ -273,8 +273,8 @@
 				1AC80EF428A4074D0049E901 /* Models */,
 				1AC80F3128AB01090049E901 /* Managers */,
 				1AC80EF328A407460049E901 /* Views */,
+				1AA268B128D742C200CE5FD9 /* ViewModels */,
 				1AC80EFA28A567AA0049E901 /* Cells */,
-				1AC80EF228A407330049E901 /* Controllers */,
 				1AC80F3828ABF5A90049E901 /* Extensions */,
 				1A0887C628BB8BA20065A3EB /* Custom */,
 				1A7A59C328A405B700D5667D /* Assets.xcassets */,
@@ -312,22 +312,22 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
-		1AC80EF228A407330049E901 /* Controllers */ = {
+		1AA268B128D742C200CE5FD9 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				1AC80EF528A407580049E901 /* Main */,
-				1AC80F1428A906190049E901 /* AboutMe */,
-				1AC80F1928A906400049E901 /* CV */,
-				1AC80F1A28A9064E0049E901 /* ContactMe */,
-				1AC80F1B28A9065E0049E901 /* PhotoAlbum */,
 			);
-			path = Controllers;
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		1AC80EF328A407460049E901 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				1A7A59C528A405B700D5667D /* LaunchScreen.storyboard */,
+				1AC80EF528A407580049E901 /* Main */,
+				1AC80F1428A906190049E901 /* AboutMe */,
+				1AC80F1928A906400049E901 /* CV */,
+				1AC80F1A28A9064E0049E901 /* ContactMe */,
+				1AC80F1B28A9065E0049E901 /* PhotoAlbum */,
 			);
 			path = Views;
 			sourceTree = "<group>";
