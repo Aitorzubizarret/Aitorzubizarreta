@@ -35,7 +35,7 @@ final class APIManager {
         
         let task = session.dataTask(with: aboutMeSourceURL) { data, response, error in
             
-            if let response = response {
+            if let _ = response {
                 //print("Response \(safeResponse)")
             }
             
@@ -103,18 +103,19 @@ final class APIManager {
         task.resume()
     }
     
-    func getPhotos() {
+    func fetchAlbumPhotos(completionHandler: @escaping(Result<[Photo], Error>) -> Void) {
         guard let photosSourceURL = URL(string: photosSource) else { return }
         
         let task = session.dataTask(with: photosSourceURL) { data, response, error in
             
-            if let safeError = error {
-                print("Error \(safeError.localizedDescription)")
-                return
-            }
-            
             if let _ = response {
                 //print("Response \(safeResponse)")
+            }
+            
+            if let safeError = error {
+                print("Error \(safeError.localizedDescription)")
+                completionHandler(.failure(safeError))
+                return
             }
             
             if let safeData = data {
@@ -124,11 +125,16 @@ final class APIManager {
                 
                 do {
                     let photos = try JSONDecoder().decode([Photo].self, from: safeData)
-                    DataManager.shared.photos = photos
+                    completionHandler(.success(photos))
+                    return
                 } catch let error {
                     print("Error JSONDecoder: \(error)")
+                    completionHandler(.failure(error))
+                    return
                 }
             }
+            
+            completionHandler(.failure(UnknownError.unknownError))
             
         }
         task.resume()

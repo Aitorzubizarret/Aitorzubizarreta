@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 class PhotoAlbumViewController: UIViewController {
     
@@ -78,10 +79,19 @@ class PhotoAlbumViewController: UIViewController {
             collectionView.collectionViewLayout = customFlowLayout
             
             // If there are photos, scroll to the top.
-            if DataManager.shared.photos.count > 0 {
+            if photos.count > 0 {
                 collectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
             }
             
+        }
+    }
+    
+    private var viewModel = PhotoAlbumViewModel(apiManager: APIManager.shared)
+    private var subscribedTo: [AnyCancellable] = []
+    
+    private var photos: [Photo] = [] {
+        didSet {
+            updateCollectionView()
         }
     }
     
@@ -90,21 +100,13 @@ class PhotoAlbumViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        subscriptions()
+        
         initView()
         initCollectionView()
         initActivityIndicator()
         
-        DataManager.shared.getPhotos()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(updateCollectionView), name: Notification.Name("Photos"), object: nil)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        NotificationCenter.default.removeObserver(self, name: Notification.Name("Photos"), object: nil)
+        viewModel.fetchAlbumPhotos()
     }
     
     private func initView() {
@@ -139,7 +141,8 @@ class PhotoAlbumViewController: UIViewController {
             
             self?.collectionView.reloadData()
             
-            self?.amountOfPhotosLabel.text = "\(DataManager.shared.photos.count)"
+            guard let count = self?.photos.count else { return }
+            self?.amountOfPhotosLabel.text = "\(count)"
         }
     }
     
@@ -151,6 +154,15 @@ class PhotoAlbumViewController: UIViewController {
         activityIndicator.stopAnimating()
     }
     
+    private func subscriptions() {
+        viewModel.photos.sink { error in
+            print("Error : \(error)")
+        } receiveValue: { [weak self] photos in
+            self?.photos = photos
+        }.store(in: &subscribedTo)
+
+    }
+    
 }
 
 // MARK: - UICollectionView Delegate
@@ -159,7 +171,7 @@ extension PhotoAlbumViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let detailVC = PhotoAlbumDetailViewController()
-        detailVC.photo = DataManager.shared.photos[indexPath.row]
+        detailVC.photo = photos[indexPath.row]
         show(detailVC, sender: self)
     }
     
@@ -174,12 +186,12 @@ extension PhotoAlbumViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return DataManager.shared.photos.count
+        return self.photos.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoThumbnailCollectionViewCell", for: indexPath) as! PhotoThumbnailCollectionViewCell
-        cell.thumbnailURLString = DataManager.shared.photos[indexPath.item].thumbnailURL
+        cell.thumbnailURLString = photos[indexPath.item].thumbnailURL
         return cell
     }
     

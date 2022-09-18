@@ -13,21 +13,8 @@ final class DataManager {
     
     static var shared = DataManager()
     
-    var photos: [Photo] = [] {
-        didSet {
-            NotificationCenter.default.post(name: Notification.Name("Photos"), object: nil)
-        }
-    }
     var blogPosts: [BlogPost] = []
     
     // MARK: - Methods
-    
-    func getPhotos() {
-        APIManager.shared.getPhotos()
-    }
-    
-    func clearAllData() {
-        photos = []
-    }
     
 }
