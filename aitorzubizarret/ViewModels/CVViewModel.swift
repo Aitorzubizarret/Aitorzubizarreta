@@ -24,7 +24,7 @@ final class CVViewModel {
     }
     
     ///
-    /// Fetch CVFile from the server, and send them to the View that is observing the 'postSection' observable.
+    /// Fetch CVFile from the server, and send them to the View that is observing the 'cvFile' observable.
     ///
     func fetchCVFile() {
         guard let apiManager = apiManager else { return }
