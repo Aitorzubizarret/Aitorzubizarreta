@@ -13,11 +13,6 @@ final class DataManager {
     
     static var shared = DataManager()
     
-    var aboutMePostSections: [PostSection] = [] {
-        didSet {
-            NotificationCenter.default.post(name: Notification.Name("AboutMe"), object: nil)
-        }
-    }
     var cvFile: CVFile? = nil {
         didSet {
             guard let _ = cvFile else { return }
@@ -38,16 +33,11 @@ final class DataManager {
         APIManager.shared.getPhotos()
     }
     
-    func getAboutMe() {
-        APIManager.shared.getAboutMe()
-    }
-    
     func getCV() {
         APIManager.shared.getCV()
     }
     
     func clearAllData() {
-        aboutMePostSections = []
         cvFile = nil
         photos = []
     }

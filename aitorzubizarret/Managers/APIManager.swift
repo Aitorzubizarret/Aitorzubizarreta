@@ -24,20 +24,25 @@ final class APIManager {
     private let photosSource  = "https://www.aitorzubizarreta.eus/projects/apps-content/aitorzubizarret/jsons/photos-V1.json"
     private let postsSource   = "https://www.aitorzubizarreta.eus/projects/apps-content/aitorzubizarret/jsons/posts-V1.json"
     
+    enum UnknownError: Error {
+        case unknownError
+    }
+    
     // MARK: - Methods
     
-    func getAboutMe() {
+    func fetchAboutMe(completionHandler: @escaping(Result<[PostSection], Error>) -> Void) {
         guard let aboutMeSourceURL = URL(string: aboutMeSource) else { return }
         
         let task = session.dataTask(with: aboutMeSourceURL) { data, response, error in
             
-            if let safeError = error {
-                print("Error \(safeError.localizedDescription)")
-                return
+            if let response = response {
+                //print("Response \(safeResponse)")
             }
             
-            if let _ = response {
-                //print("Response \(safeResponse)")
+            if let safeError = error {
+                print("Error \(safeError.localizedDescription)")
+                completionHandler(.failure(safeError))
+                return
             }
             
             if let safeData = data {
@@ -47,11 +52,16 @@ final class APIManager {
                 
                 do {
                     let aboutMePostSections = try JSONDecoder().decode([PostSection].self, from: safeData)
-                    DataManager.shared.aboutMePostSections = aboutMePostSections
+                    completionHandler(.success(aboutMePostSections))
+                    return
                 } catch let error {
                     print("Error JSONDecoder: \(error)")
+                    completionHandler(.failure(error))
+                    return
                 }
             }
+            
+            completionHandler(.failure(UnknownError.unknownError))
             
         }
         task.resume()

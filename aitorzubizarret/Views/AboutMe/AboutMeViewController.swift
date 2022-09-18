@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 class AboutMeViewController: UIViewController {
     
@@ -20,28 +21,27 @@ class AboutMeViewController: UIViewController {
         return activityIndicator
     }()
     
+    private let viewModel = AboutMeViewModel(apiManager: APIManager.shared)
+    private var subscribedTo: [AnyCancellable] = []
+    
+    private var postSections: [PostSection] = [] {
+        didSet {
+            updateTableView()
+        }
+    }
+    
     // MARK: - Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        subscriptions()
+        
         initView()
         initTableView()
         initActivityIndicator()
         
-        DataManager.shared.getAboutMe()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(updateTableView), name: Notification.Name("AboutMe"), object: nil)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        NotificationCenter.default.removeObserver(self, name: Notification.Name("AboutMe"), object: nil)
+        viewModel.fetchPostSections()
     }
     
     private func initView() {
@@ -106,6 +106,15 @@ class AboutMeViewController: UIViewController {
         activityIndicator.stopAnimating()
     }
     
+    private func subscriptions() {
+        viewModel.postSections.sink { error in
+            print("Error \(error)")
+        } receiveValue: { [weak self] postSections in
+            self?.postSections = postSections
+        }.store(in: &subscribedTo)
+
+    }
+    
 }
 
 // MARK: - UITableView Delegate
@@ -121,11 +130,11 @@ extension AboutMeViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return DataManager.shared.aboutMePostSections.count
+        return self.postSections.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = DataManager.shared.aboutMePostSections[indexPath.row].getCustomTableViewCell(tableView: tableView, indexPath: indexPath)
+        let cell = self.postSections[indexPath.row].getCustomTableViewCell(tableView: tableView, indexPath: indexPath)
         return cell
     }
     
