@@ -10,63 +10,76 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="KGk-i7-Jjw" customClass="AboutMeTableViewCell" customModule="aitorzubizarret" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="120" id="KGk-i7-Jjw" customClass="AboutMeTableViewCell" customModule="aitorzubizarret" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="350" height="120"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                <rect key="frame" x="0.0" y="0.0" width="350" height="120"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oZe-Gg-Dfw">
-                        <rect key="frame" x="20" y="25" width="280" height="61"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SOBRE MÍ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eye-nf-2Mc">
-                                <rect key="frame" x="30" y="21.5" width="160" height="18"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
-                                <color key="textColor" name="myDarkBlue"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" name="myBlue"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="aitorzubizarret" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="koa-IE-Pel">
+                        <rect key="frame" x="24" y="20" width="202" height="22"/>
                         <constraints>
-                            <constraint firstItem="Eye-nf-2Mc" firstAttribute="centerY" secondItem="oZe-Gg-Dfw" secondAttribute="centerY" id="BJo-9n-3Tu"/>
-                            <constraint firstItem="Eye-nf-2Mc" firstAttribute="leading" secondItem="oZe-Gg-Dfw" secondAttribute="leading" constant="30" id="oyX-k1-0Nc"/>
+                            <constraint firstAttribute="height" constant="22" id="HDn-Z4-aXT"/>
                         </constraints>
-                    </view>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="body" translatesAutoresizingMaskIntoConstraints="NO" id="5xo-pu-pR3">
-                        <rect key="frame" x="230" y="0.0" width="60" height="85"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="26"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Me llamo Aitor Zubizarreta y soy desarrollador de aplicaciones iOS." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="37R-ar-bhJ">
+                        <rect key="frame" x="24" y="52" width="202" height="48"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="60" id="jwf-OL-LkT"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="18" id="Fac-JP-PL5"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                        <color key="textColor" name="myDarkGrey"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Me" translatesAutoresizingMaskIntoConstraints="NO" id="eYP-0D-1bD">
+                        <rect key="frame" x="236" y="25" width="70" height="70"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="70" id="j2T-Np-Hc8"/>
+                            <constraint firstAttribute="width" constant="70" id="jPV-9L-vCe"/>
+                            <constraint firstAttribute="width" secondItem="eYP-0D-1bD" secondAttribute="height" multiplier="1:1" id="qKf-Ut-NgS"/>
+                        </constraints>
+                    </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Ed6-bw-Y4Q">
+                        <rect key="frame" x="316" y="47" width="10" height="26.5"/>
+                        <color key="tintColor" name="myDarkGrey"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="FzS-9c-m23"/>
+                            <constraint firstAttribute="width" constant="10" id="quv-sw-dmv"/>
                         </constraints>
                     </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="5xo-pu-pR3" firstAttribute="leading" secondItem="Eye-nf-2Mc" secondAttribute="trailing" constant="20" id="0BW-LQ-2gO"/>
-                    <constraint firstItem="oZe-Gg-Dfw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="5xL-rO-otE"/>
-                    <constraint firstItem="oZe-Gg-Dfw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="25" id="WwL-PG-P3z"/>
-                    <constraint firstAttribute="bottom" secondItem="5xo-pu-pR3" secondAttribute="bottom" constant="15" id="WzK-RN-FSb"/>
-                    <constraint firstItem="5xo-pu-pR3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="oBd-xj-AKJ"/>
-                    <constraint firstAttribute="trailing" secondItem="5xo-pu-pR3" secondAttribute="trailing" constant="30" id="og8-Gr-tve"/>
-                    <constraint firstAttribute="bottom" secondItem="oZe-Gg-Dfw" secondAttribute="bottom" constant="14" id="xUh-Qp-nHZ"/>
-                    <constraint firstAttribute="trailing" secondItem="oZe-Gg-Dfw" secondAttribute="trailing" constant="20" id="z13-TO-Oef"/>
+                    <constraint firstItem="Ed6-bw-Y4Q" firstAttribute="leading" secondItem="eYP-0D-1bD" secondAttribute="trailing" constant="10" id="0DZ-9t-Xj6"/>
+                    <constraint firstAttribute="trailing" secondItem="Ed6-bw-Y4Q" secondAttribute="trailing" constant="24" id="ETE-V2-75d"/>
+                    <constraint firstItem="Ed6-bw-Y4Q" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="LqH-K2-oRG"/>
+                    <constraint firstItem="eYP-0D-1bD" firstAttribute="leading" secondItem="37R-ar-bhJ" secondAttribute="trailing" constant="10" id="NAZ-8L-gG0"/>
+                    <constraint firstAttribute="bottom" secondItem="37R-ar-bhJ" secondAttribute="bottom" constant="20" id="NnA-nJ-Ria"/>
+                    <constraint firstItem="koa-IE-Pel" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="U68-JP-fC9"/>
+                    <constraint firstItem="37R-ar-bhJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="dsz-eB-CJJ"/>
+                    <constraint firstItem="koa-IE-Pel" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="lMq-j9-4fp"/>
+                    <constraint firstItem="eYP-0D-1bD" firstAttribute="leading" secondItem="koa-IE-Pel" secondAttribute="trailing" constant="10" id="o7K-gh-U12"/>
+                    <constraint firstItem="37R-ar-bhJ" firstAttribute="top" secondItem="koa-IE-Pel" secondAttribute="bottom" constant="10" id="vCM-MU-869"/>
+                    <constraint firstItem="eYP-0D-1bD" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="xoz-85-MxX"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="cartoonImageView" destination="5xo-pu-pR3" id="Vmy-kO-9ZI"/>
-                <outlet property="colorView" destination="oZe-Gg-Dfw" id="HTh-fQ-X2f"/>
-                <outlet property="titleLabel" destination="Eye-nf-2Mc" id="vph-id-Z1f"/>
+                <outlet property="bigTitleLabel" destination="koa-IE-Pel" id="HfC-LX-gWu"/>
+                <outlet property="photoImageView" destination="eYP-0D-1bD" id="PlE-q2-pNF"/>
+                <outlet property="shortDescriptionLabel" destination="37R-ar-bhJ" id="Jtr-Jk-AbT"/>
             </connections>
-            <point key="canvasLocation" x="137.68115942028987" y="129.91071428571428"/>
+            <point key="canvasLocation" x="159.42028985507247" y="135.9375"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="body" width="335" height="723"/>
-        <namedColor name="myBlue">
-            <color red="0.83921568627450982" green="0.91764705882352937" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="myDarkBlue">
-            <color red="0.15686274509803921" green="0.45490196078431372" blue="0.65098039215686276" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <image name="Me" width="500" height="499"/>
+        <image name="chevron.right" catalog="system" width="96" height="128"/>
+        <namedColor name="myDarkGrey">
+            <color red="0.27450980392156865" green="0.28627450980392155" blue="0.29803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

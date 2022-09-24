@@ -11,9 +11,9 @@ class AboutMeTableViewCell: UITableViewCell {
     
     // MARK: - UI Elements
     
-    @IBOutlet weak var colorView: UIView!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var cartoonImageView: UIImageView!
+    @IBOutlet weak var bigTitleLabel: UILabel!
+    @IBOutlet weak var shortDescriptionLabel: UILabel!
+    @IBOutlet weak var photoImageView: UIImageView!
     
     // MARK: - Properties
     
@@ -34,7 +34,14 @@ class AboutMeTableViewCell: UITableViewCell {
     private func setupView() {
         self.selectionStyle = .none
         
-        colorView.layer.cornerRadius = 6
+        // Corner radius.
+        let width = photoImageView.layer.bounds.width
+        photoImageView.layer.cornerRadius = width / 2
+        
+        // Border.
+        photoImageView.layer.borderWidth = 1
+        photoImageView.layer.borderColor = UIColor.black.withAlphaComponent(0.05).cgColor
+        
     }
     
 }
