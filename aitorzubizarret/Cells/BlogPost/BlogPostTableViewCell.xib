@@ -3,42 +3,80 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="120" id="KGk-i7-Jjw" customClass="BlogPostTableViewCell" customModule="aitorzubizarret" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="160" id="KGk-i7-Jjw" customClass="BlogPostTableViewCell" customModule="aitorzubizarret" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="160"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="160"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="pkV-hk-3Ca">
-                        <rect key="frame" x="20" y="10" width="280" height="100"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Post Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IS9-53-mqG">
-                                <rect key="frame" x="0.0" y="0.0" width="280" height="79.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Post First Description" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CU1-Dl-bcG">
-                                <rect key="frame" x="0.0" y="79.5" width="280" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                    </stackView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25 DE SEPTIEMBRE, 2022" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A30-qy-vGq">
+                        <rect key="frame" x="24" y="16" width="272" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="50E-9M-dHY"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="11"/>
+                        <color key="textColor" name="myDarkGrey"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post Title" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IS9-53-mqG">
+                        <rect key="frame" x="24" y="34" width="252" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="24" id="Y1E-4w-h8d"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                        <color key="textColor" name="myDarkGrey"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post First Description" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CU1-Dl-bcG">
+                        <rect key="frame" x="24" y="68" width="252" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="szh-Xd-Sc9"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                        <color key="textColor" name="myDarkGrey"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="MKd-Hd-anx">
+                        <rect key="frame" x="286" y="67" width="10" height="26.5"/>
+                        <color key="tintColor" name="myDarkGrey"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="10" id="sUX-gH-9xG"/>
+                            <constraint firstAttribute="height" constant="30" id="xes-tL-K0j"/>
+                        </constraints>
+                    </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2nU-QC-Qtg">
+                        <rect key="frame" x="0.0" y="158" width="320" height="2"/>
+                        <color key="backgroundColor" name="myWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="2" id="fz2-8E-hAt"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
+                <color key="backgroundColor" name="myGrey"/>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="pkV-hk-3Ca" secondAttribute="bottom" constant="10" id="HuR-Cx-ArW"/>
-                    <constraint firstAttribute="trailing" secondItem="pkV-hk-3Ca" secondAttribute="trailing" constant="20" id="UEa-03-2ae"/>
-                    <constraint firstItem="pkV-hk-3Ca" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="gbH-BH-6ed"/>
-                    <constraint firstItem="pkV-hk-3Ca" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="vN8-I2-Z5S"/>
+                    <constraint firstItem="CU1-Dl-bcG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="0PQ-8t-Jlc"/>
+                    <constraint firstAttribute="trailing" secondItem="2nU-QC-Qtg" secondAttribute="trailing" id="5ZT-kp-OYA"/>
+                    <constraint firstAttribute="trailing" secondItem="A30-qy-vGq" secondAttribute="trailing" constant="24" id="9qJ-bm-8L5"/>
+                    <constraint firstItem="A30-qy-vGq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="Dpo-bl-iGO"/>
+                    <constraint firstItem="A30-qy-vGq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="ESS-Xx-KR3"/>
+                    <constraint firstItem="CU1-Dl-bcG" firstAttribute="top" secondItem="IS9-53-mqG" secondAttribute="bottom" constant="10" id="JiO-r8-XHM"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="CU1-Dl-bcG" secondAttribute="bottom" constant="16" id="Kvq-nI-BLw"/>
+                    <constraint firstItem="MKd-Hd-anx" firstAttribute="leading" secondItem="IS9-53-mqG" secondAttribute="trailing" constant="10" id="LS5-lf-VtO"/>
+                    <constraint firstAttribute="bottom" secondItem="2nU-QC-Qtg" secondAttribute="bottom" id="Leb-9R-76O"/>
+                    <constraint firstAttribute="trailing" secondItem="MKd-Hd-anx" secondAttribute="trailing" constant="24" id="Owt-bd-DRw"/>
+                    <constraint firstItem="2nU-QC-Qtg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ZQK-lZ-NBW"/>
+                    <constraint firstItem="MKd-Hd-anx" firstAttribute="leading" secondItem="CU1-Dl-bcG" secondAttribute="trailing" constant="10" id="e6j-xY-TU6"/>
+                    <constraint firstItem="IS9-53-mqG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="kDW-Fr-uGR"/>
+                    <constraint firstItem="MKd-Hd-anx" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="tmm-4z-DA4"/>
+                    <constraint firstItem="IS9-53-mqG" firstAttribute="top" secondItem="A30-qy-vGq" secondAttribute="bottom" constant="2" id="vE2-Ox-IWj"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -46,7 +84,19 @@
                 <outlet property="postFirstDescriptionLabel" destination="CU1-Dl-bcG" id="CaH-zI-L2p"/>
                 <outlet property="postTitleLabel" destination="IS9-53-mqG" id="r5R-nf-HMC"/>
             </connections>
-            <point key="canvasLocation" x="137.68115942028987" y="137.27678571428569"/>
+            <point key="canvasLocation" x="137.68115942028987" y="150"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="chevron.right" catalog="system" width="96" height="128"/>
+        <namedColor name="myDarkGrey">
+            <color red="0.27450980392156865" green="0.28627450980392155" blue="0.29803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="myGrey">
+            <color red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="myWhite">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
