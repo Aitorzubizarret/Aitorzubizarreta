@@ -54,9 +54,9 @@ class BlogViewController: UIViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         
         tableView.topAnchor.constraint(equalTo: safeArea.topAnchor).isActive = true
-        tableView.rightAnchor.constraint(equalTo: safeArea.rightAnchor).isActive = true
+        tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor).isActive = true
-        tableView.leftAnchor.constraint(equalTo: safeArea.leftAnchor).isActive = true
+        tableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         
         tableView.separatorStyle = .none
         
@@ -71,7 +71,6 @@ class BlogViewController: UIViewController {
         } receiveValue: { [weak self] posts in
             self?.posts = posts
         }.store(in: &subscribedTo)
-
     }
     
     private func updateTableView() {
