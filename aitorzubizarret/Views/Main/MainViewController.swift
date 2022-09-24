@@ -96,7 +96,8 @@ extension MainViewController: UITableViewDelegate {
             show(aboutMeVC, sender: nil)
         case 1:
             if indexPath.row != 0 {
-                print("Go to Blog detail")
+                let blogDetailVC = BlogDetailViewController()
+                show(blogDetailVC, sender: nil)
             }
         default:
             print("")

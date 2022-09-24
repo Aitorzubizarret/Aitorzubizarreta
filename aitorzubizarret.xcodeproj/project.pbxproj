@@ -22,6 +22,8 @@
 		1A04A7C928BB72A200403B7F /* PhotoAlbumDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A04A7C728BB72A200403B7F /* PhotoAlbumDetailViewController.swift */; };
 		1A04A7CA28BB72A200403B7F /* PhotoAlbumDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A04A7C828BB72A200403B7F /* PhotoAlbumDetailViewController.xib */; };
 		1A0887C828BB8BC10065A3EB /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0887C728BB8BC10065A3EB /* CustomImageView.swift */; };
+		1A68D14628DFBAA900E911C8 /* BlogDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A68D14428DFBAA900E911C8 /* BlogDetailViewController.swift */; };
+		1A68D14728DFBAA900E911C8 /* BlogDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A68D14528DFBAA900E911C8 /* BlogDetailViewController.xib */; };
 		1A734F6D28CFC8F900BC4BE2 /* BlogHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A734F6B28CFC8F900BC4BE2 /* BlogHeaderTableViewCell.swift */; };
 		1A734F6E28CFC8F900BC4BE2 /* BlogHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A734F6C28CFC8F900BC4BE2 /* BlogHeaderTableViewCell.xib */; };
 		1A7A59BB28A405B600D5667D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7A59BA28A405B600D5667D /* AppDelegate.swift */; };
@@ -100,6 +102,8 @@
 		1A04A7C728BB72A200403B7F /* PhotoAlbumDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAlbumDetailViewController.swift; sourceTree = "<group>"; };
 		1A04A7C828BB72A200403B7F /* PhotoAlbumDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoAlbumDetailViewController.xib; sourceTree = "<group>"; };
 		1A0887C728BB8BC10065A3EB /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
+		1A68D14428DFBAA900E911C8 /* BlogDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogDetailViewController.swift; sourceTree = "<group>"; };
+		1A68D14528DFBAA900E911C8 /* BlogDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BlogDetailViewController.xib; sourceTree = "<group>"; };
 		1A734F6B28CFC8F900BC4BE2 /* BlogHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		1A734F6C28CFC8F900BC4BE2 /* BlogHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BlogHeaderTableViewCell.xib; sourceTree = "<group>"; };
 		1A7A59B728A405B600D5667D /* aitorzubizarret.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = aitorzubizarret.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -249,6 +253,15 @@
 			path = Custom;
 			sourceTree = "<group>";
 		};
+		1A68D14328DFBA6F00E911C8 /* BlogDetail */ = {
+			isa = PBXGroup;
+			children = (
+				1A68D14428DFBAA900E911C8 /* BlogDetailViewController.swift */,
+				1A68D14528DFBAA900E911C8 /* BlogDetailViewController.xib */,
+			);
+			path = BlogDetail;
+			sourceTree = "<group>";
+		};
 		1A734F6A28CFC76900BC4BE2 /* BlogHeaderCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -365,6 +378,7 @@
 				1AC80F1A28A9064E0049E901 /* ContactMe */,
 				1AC80F1B28A9065E0049E901 /* PhotoAlbum */,
 				1AA268BA28D7707700CE5FD9 /* Blog */,
+				1A68D14328DFBA6F00E911C8 /* BlogDetail */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -613,6 +627,7 @@
 				1A04A7BB28B7DAEF00403B7F /* PostSectionSubtitleTableViewCell.xib in Resources */,
 				1AC80F0928A568D30049E901 /* CVTableViewCell.xib in Resources */,
 				1A7A59C728A405B700D5667D /* LaunchScreen.storyboard in Resources */,
+				1A68D14728DFBAA900E911C8 /* BlogDetailViewController.xib in Resources */,
 				1AC80F2328A906980049E901 /* ContactMeViewController.xib in Resources */,
 				1AC80F0428A568BB0049E901 /* AboutMeTableViewCell.xib in Resources */,
 				1AC80EF928A407710049E901 /* MainViewController.xib in Resources */,
@@ -680,6 +695,7 @@
 				1A910E6628CE505A0078831E /* BlogDescription.swift in Sources */,
 				1AA268B928D768CD00CE5FD9 /* PhotoAlbumViewModel.swift in Sources */,
 				1AA268B328D7476700CE5FD9 /* AboutMeViewModel.swift in Sources */,
+				1A68D14628DFBAA900E911C8 /* BlogDetailViewController.swift in Sources */,
 				1A910E6428CE50370078831E /* BlogTag.swift in Sources */,
 				1AC80F0828A568D30049E901 /* CVTableViewCell.swift in Sources */,
 				1A0887C828BB8BC10065A3EB /* CustomImageView.swift in Sources */,
