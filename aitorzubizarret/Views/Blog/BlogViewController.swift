@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 class BlogViewController: UIViewController {
     
@@ -15,13 +16,26 @@ class BlogViewController: UIViewController {
     
     private var tableView = UITableView()
     
+    private var viewModel = BlogViewModel(apiManager: APIManager.shared)
+    private var subscribedTo: [AnyCancellable] = []
+    
+    private var posts: [BlogPost] = [] {
+        didSet {
+            updateTableView()
+        }
+    }
+    
     // MARK: - Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        subscriptions()
+        
         initView()
         initTableView()
+        
+        viewModel.fetchBlogPosts()
     }
     
     private func initView() {
@@ -45,6 +59,25 @@ class BlogViewController: UIViewController {
         tableView.leftAnchor.constraint(equalTo: safeArea.leftAnchor).isActive = true
         
         tableView.separatorStyle = .none
+        
+        // Register cells.
+        let blogPostCell = UINib(nibName: "BlogPostTableViewCell", bundle: nil)
+        tableView.register(blogPostCell, forCellReuseIdentifier: "BlogPostTableViewCell")
+    }
+    
+    private func subscriptions() {
+        viewModel.blogPosts.sink { error in
+            print("Error : \(error)")
+        } receiveValue: { [weak self] posts in
+            self?.posts = posts
+        }.store(in: &subscribedTo)
+
+    }
+    
+    private func updateTableView() {
+        DispatchQueue.main.async { [weak self ] in
+            self?.tableView.reloadData()
+        }
     }
     
 }
@@ -62,11 +95,13 @@ extension BlogViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return posts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "BlogPostTableViewCell", for: indexPath) as! BlogPostTableViewCell
+        cell.post = posts[indexPath.row]
+        return cell
     }
     
 }

@@ -140,18 +140,19 @@ final class APIManager {
         task.resume()
     }
     
-    func getBlogPosts() {
+    func fetchBlogPosts(completionHandler: @escaping(Result<[BlogPost], Error>) -> Void) {
         guard let postsSourceURL = URL(string: postsSource) else { return }
         
         let task = session.dataTask(with: postsSourceURL) { data, response, error in
             
-            if let safeError = error {
-                print("Error \(safeError.localizedDescription)")
-                return
-            }
-            
             if let _ = response {
                 //print("Response \(safeResponse)")
+            }
+            
+            if let safeError = error {
+                print("Error \(safeError.localizedDescription)")
+                completionHandler(.failure(safeError))
+                return
             }
             
             if let safeData = data {
@@ -161,11 +162,16 @@ final class APIManager {
                 
                 do {
                     let posts = try JSONDecoder().decode([BlogPost].self, from: safeData)
-                    
+                    completionHandler(.success(posts))
+                    return
                 } catch let error {
                     print("Error JSONDecoder: \(error)")
+                    completionHandler(.failure(error))
+                    return
                 }
             }
+            
+            completionHandler(.failure(UnknownError.unknownError))
             
         }
         task.resume()
