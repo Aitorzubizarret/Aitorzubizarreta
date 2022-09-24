@@ -44,15 +44,6 @@ class MainViewController: UIViewController {
         let aboutMeCell: UINib = UINib(nibName: "AboutMeTableViewCell", bundle: nil)
         tableView.register(aboutMeCell, forCellReuseIdentifier: "AboutMeTableViewCell")
         
-        let cvCell: UINib = UINib(nibName: "CVTableViewCell", bundle: nil)
-        tableView.register(cvCell, forCellReuseIdentifier: "CVTableViewCell")
-        
-        let contactMeCell: UINib = UINib(nibName: "ContactMeTableViewCell", bundle: nil)
-        tableView.register(contactMeCell, forCellReuseIdentifier: "ContactMeTableViewCell")
-        
-        let photosAlbum: UINib = UINib(nibName: "PhotosAlbumTableViewCell", bundle: nil)
-        tableView.register(photosAlbum, forCellReuseIdentifier: "PhotosAlbumTableViewCell")
-        
         let blogHeaderCell = UINib(nibName: "BlogHeaderTableViewCell", bundle: nil)
         tableView.register(blogHeaderCell, forCellReuseIdentifier: "BlogHeaderTableViewCell")
     }
@@ -68,12 +59,6 @@ extension MainViewController: UITableViewDelegate {
         case 0:
             return 100
         case 1:
-            return 80
-        case 2:
-            return 80
-        case 3:
-            return 170
-        case 4:
             return 70
         default:
             return 0
@@ -85,15 +70,6 @@ extension MainViewController: UITableViewDelegate {
         case 0:
             let aboutMeVC = AboutMeViewController()
             show(aboutMeVC, sender: nil)
-        case 1:
-            let cvVC = CVViewController()
-            show(cvVC, sender: nil)
-        case 2:
-            let contactMeVC = ContactMeViewController()
-            show(contactMeVC, sender: nil)
-        case 3:
-            let photoAlbumVC = PhotoAlbumViewController()
-            show(photoAlbumVC, sender: nil)
         default:
             print("")
         }
@@ -110,7 +86,7 @@ extension MainViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -119,15 +95,6 @@ extension MainViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "AboutMeTableViewCell", for: indexPath) as! AboutMeTableViewCell
             return cell
         case 1:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "CVTableViewCell", for: indexPath) as! CVTableViewCell
-            return cell
-        case 2:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ContactMeTableViewCell", for: indexPath) as! ContactMeTableViewCell
-            return cell
-        case 3:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "PhotosAlbumTableViewCell", for: indexPath) as! PhotosAlbumTableViewCell
-            return cell
-        case 4:
             let cell = tableView.dequeueReusableCell(withIdentifier: "BlogHeaderTableViewCell", for: indexPath) as! BlogHeaderTableViewCell
             cell.delegate = self
             return cell
