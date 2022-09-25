@@ -46,6 +46,14 @@ class MainViewController: UIViewController {
         viewModel.fetchBlogPosts()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = false
+    }
+    
     private func initTableView() {
         self.view.addSubview(tableView)
         
