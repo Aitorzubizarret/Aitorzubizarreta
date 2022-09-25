@@ -21,6 +21,15 @@ class MainViewController: UIViewController {
     
     private var posts: [BlogPost] = [] {
         didSet {
+            if posts.count > 5 {
+                postsForHomeSection = Array(posts.prefix(5))
+            } else {
+                postsForHomeSection = posts
+            }
+        }
+    }
+    private var postsForHomeSection: [BlogPost] = [] {
+        didSet {
             updateTableView()
         }
     }
@@ -118,7 +127,7 @@ extension MainViewController: UITableViewDataSource {
         if section == 0 {
             return 1 // "About Me" section.
         } else {
-            return 1 + posts.count // "Blog" section.
+            return 1 + postsForHomeSection.count // "Blog" section.
         }
     }
     
@@ -151,6 +160,7 @@ extension MainViewController: BlogHeaderCellActions {
     
     func goToBlogVC() {
         let blogVC = BlogViewController()
+        blogVC.posts = posts
         show(blogVC, sender: nil)
     }
     

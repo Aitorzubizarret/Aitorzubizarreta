@@ -16,10 +16,7 @@ class BlogViewController: UIViewController {
     
     private var tableView = UITableView()
     
-    private var viewModel = BlogViewModel(apiManager: APIManager.shared)
-    private var subscribedTo: [AnyCancellable] = []
-    
-    private var posts: [BlogPost] = [] {
+    var posts: [BlogPost] = [] {
         didSet {
             updateTableView()
         }
@@ -30,12 +27,8 @@ class BlogViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        subscriptions()
-        
         initView()
         initTableView()
-        
-        viewModel.fetchBlogPosts()
     }
     
     private func initView() {
@@ -63,14 +56,6 @@ class BlogViewController: UIViewController {
         // Register cells.
         let blogPostCell = UINib(nibName: "BlogPostTableViewCell", bundle: nil)
         tableView.register(blogPostCell, forCellReuseIdentifier: "BlogPostTableViewCell")
-    }
-    
-    private func subscriptions() {
-        viewModel.blogPosts.sink { error in
-            print("Error : \(error)")
-        } receiveValue: { [weak self] posts in
-            self?.posts = posts
-        }.store(in: &subscribedTo)
     }
     
     private func updateTableView() {
