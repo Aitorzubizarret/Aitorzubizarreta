@@ -25,6 +25,17 @@ class BlogHeaderTableViewCell: UITableViewCell {
     // MARK: - Properties
     
     var delegate: BlogHeaderCellActions?
+    var numberOfPosts: Int = 0 {
+        didSet {
+            // Attributed Button Title.
+            let buttonText: String = "VER \(numberOfPosts) POSTS"
+            let font = UIFont(name: "Helvetica Neue Bold", size: 12.0)
+            let attributes = [NSAttributedString.Key.font: font]
+            let attributedButtonText = NSAttributedString(string: buttonText, attributes: attributes as [NSAttributedString.Key : Any])
+            
+            allBlogPostsButton.setAttributedTitle(attributedButtonText, for: .normal)
+        }
+    }
     
     // MARK: - Methods
     
