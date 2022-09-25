@@ -23,6 +23,7 @@ final class APIManager {
     private let cvSource      = "https://www.aitorzubizarreta.eus/projects/apps-content/aitorzubizarret/jsons/cv-V1.json"
     private let photosSource  = "https://www.aitorzubizarreta.eus/projects/apps-content/aitorzubizarret/jsons/photos-V1.json"
     private let postsSource   = "https://www.aitorzubizarreta.eus/projects/apps-content/aitorzubizarret/jsons/posts-V1.json"
+    private let appsSource    = "https://www.aitorzubizarreta.eus/projects/apps-content/aitorzubizarret/jsons/apps-V1.json"
     
     enum UnknownError: Error {
         case unknownError
@@ -172,6 +173,38 @@ final class APIManager {
             }
             
             completionHandler(.failure(UnknownError.unknownError))
+            
+        }
+        task.resume()
+    }
+    
+    func fetchApps(completionHandler: @escaping(Result<[App], Error>) -> Void) {
+        guard let appsSourceURL = URL(string: appsSource) else { return }
+        
+        let task = session.dataTask(with: appsSourceURL) { data, response, error in
+            
+            if let _ = response {
+                //print("Response \(safeResponse)")
+            }
+            
+            if let error = error {
+                print("Error \(error.localizedDescription)")
+                completionHandler(.failure(error))
+                return
+            }
+            
+            if let data = data {
+                // For debug purposes.
+                //let receivedData: String = String(data: data, encoding: .utf8) ?? ""
+                //debugPrint("DebugPrint - Data: \(receivedData) - Response: \(response) - Error: \(error)")
+                
+                do {
+                    let apps = try JSONDecoder().decode([App].self, from: data)
+                    completionHandler(.success(apps))
+                } catch let error {
+                    print("Error JSONDecoder: \(error)")
+                }
+            }
             
         }
         task.resume()

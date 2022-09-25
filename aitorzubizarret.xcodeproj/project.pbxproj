@@ -43,7 +43,6 @@
 		1AA268BE28D7709800CE5FD9 /* BlogViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AA268BC28D7709800CE5FD9 /* BlogViewController.xib */; };
 		1AA268C228D776E700CE5FD9 /* BlogPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA268C028D776E700CE5FD9 /* BlogPostTableViewCell.swift */; };
 		1AA268C328D776E700CE5FD9 /* BlogPostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AA268C128D776E700CE5FD9 /* BlogPostTableViewCell.xib */; };
-		1AA268C528D7791D00CE5FD9 /* BlogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA268C428D7791D00CE5FD9 /* BlogViewModel.swift */; };
 		1AC80EF828A407710049E901 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC80EF628A407710049E901 /* MainViewController.swift */; };
 		1AC80EF928A407710049E901 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AC80EF728A407710049E901 /* MainViewController.xib */; };
 		1AC80F0328A568BB0049E901 /* AboutMeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC80F0128A568BB0049E901 /* AboutMeTableViewCell.swift */; };
@@ -67,6 +66,13 @@
 		1AC80F3328AB01180049E901 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC80F3228AB01180049E901 /* APIManager.swift */; };
 		1AC80F3528AB03730049E901 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC80F3428AB03730049E901 /* Photo.swift */; };
 		1AC80F3A28ABF5C40049E901 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC80F3928ABF5C40049E901 /* UIImageView+Extension.swift */; };
+		1AF7355228E09F640038290E /* AppTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF7355028E09F640038290E /* AppTableViewCell.swift */; };
+		1AF7355328E09F640038290E /* AppTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AF7355128E09F640038290E /* AppTableViewCell.xib */; };
+		1AF7355528E09FD60038290E /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF7355428E09FD60038290E /* App.swift */; };
+		1AF7355728E0A3520038290E /* AppsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF7355628E0A3520038290E /* AppsViewModel.swift */; };
+		1AF7355928E0A6A30038290E /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF7355828E0A6A30038290E /* MainViewModel.swift */; };
+		1AF7355D28E0AE1A0038290E /* AppsHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF7355B28E0AE1A0038290E /* AppsHeaderTableViewCell.swift */; };
+		1AF7355E28E0AE1A0038290E /* AppsHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AF7355C28E0AE1A0038290E /* AppsHeaderTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,7 +134,6 @@
 		1AA268BC28D7709800CE5FD9 /* BlogViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BlogViewController.xib; sourceTree = "<group>"; };
 		1AA268C028D776E700CE5FD9 /* BlogPostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogPostTableViewCell.swift; sourceTree = "<group>"; };
 		1AA268C128D776E700CE5FD9 /* BlogPostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BlogPostTableViewCell.xib; sourceTree = "<group>"; };
-		1AA268C428D7791D00CE5FD9 /* BlogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogViewModel.swift; sourceTree = "<group>"; };
 		1AC80EF628A407710049E901 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		1AC80EF728A407710049E901 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		1AC80F0128A568BB0049E901 /* AboutMeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMeTableViewCell.swift; sourceTree = "<group>"; };
@@ -152,6 +157,13 @@
 		1AC80F3228AB01180049E901 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		1AC80F3428AB03730049E901 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		1AC80F3928ABF5C40049E901 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		1AF7355028E09F640038290E /* AppTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTableViewCell.swift; sourceTree = "<group>"; };
+		1AF7355128E09F640038290E /* AppTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppTableViewCell.xib; sourceTree = "<group>"; };
+		1AF7355428E09FD60038290E /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		1AF7355628E0A3520038290E /* AppsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsViewModel.swift; sourceTree = "<group>"; };
+		1AF7355828E0A6A30038290E /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		1AF7355B28E0AE1A0038290E /* AppsHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		1AF7355C28E0AE1A0038290E /* AppsHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppsHeaderTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -335,6 +347,7 @@
 				1AC80F0A28A568DC0049E901 /* ContactMeCell */,
 				1AC80F0F28A568FB0049E901 /* PhotosAlbumCell */,
 				1A734F6A28CFC76900BC4BE2 /* BlogHeaderCell */,
+				1AF7355A28E0ADFC0038290E /* AppsHeaderCell */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -342,10 +355,11 @@
 		1AA268B128D742C200CE5FD9 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				1AF7355828E0A6A30038290E /* MainViewModel.swift */,
 				1AA268B228D7476700CE5FD9 /* AboutMeViewModel.swift */,
 				1AA268B428D7634100CE5FD9 /* CVViewModel.swift */,
 				1AA268B828D768CD00CE5FD9 /* PhotoAlbumViewModel.swift */,
-				1AA268C428D7791D00CE5FD9 /* BlogViewModel.swift */,
+				1AF7355628E0A3520038290E /* AppsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -392,6 +406,7 @@
 				1A910E6128CE4FFE0078831E /* BlogPost.swift */,
 				1A910E6328CE50370078831E /* BlogTag.swift */,
 				1A910E6528CE505A0078831E /* BlogDescription.swift */,
+				1AF7355428E09FD60038290E /* App.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -412,6 +427,7 @@
 				1A04A7AB28B7D9E100403B7F /* PostSections */,
 				1AC80F2C28A949350049E901 /* PhotoThumbnailCell */,
 				1AA268BF28D776C600CE5FD9 /* BlogPost */,
+				1AF7354F28E09EE80038290E /* App */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -512,6 +528,24 @@
 				1AC80F3928ABF5C40049E901 /* UIImageView+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1AF7354F28E09EE80038290E /* App */ = {
+			isa = PBXGroup;
+			children = (
+				1AF7355028E09F640038290E /* AppTableViewCell.swift */,
+				1AF7355128E09F640038290E /* AppTableViewCell.xib */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		1AF7355A28E0ADFC0038290E /* AppsHeaderCell */ = {
+			isa = PBXGroup;
+			children = (
+				1AF7355B28E0AE1A0038290E /* AppsHeaderTableViewCell.swift */,
+				1AF7355C28E0AE1A0038290E /* AppsHeaderTableViewCell.xib */,
+			);
+			path = AppsHeaderCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -622,6 +656,7 @@
 				1AA268C328D776E700CE5FD9 /* BlogPostTableViewCell.xib in Resources */,
 				1AC80F2B28A907240049E901 /* PhotoAlbumViewController.xib in Resources */,
 				1AC80F0E28A568F30049E901 /* ContactMeTableViewCell.xib in Resources */,
+				1AF7355E28E0AE1A0038290E /* AppsHeaderTableViewCell.xib in Resources */,
 				1A04A7C328B7DB1400403B7F /* PostSectionDescriptionTableViewCell.xib in Resources */,
 				1A04A7CA28BB72A200403B7F /* PhotoAlbumDetailViewController.xib in Resources */,
 				1A04A7BB28B7DAEF00403B7F /* PostSectionSubtitleTableViewCell.xib in Resources */,
@@ -630,6 +665,7 @@
 				1A68D14728DFBAA900E911C8 /* BlogDetailViewController.xib in Resources */,
 				1AC80F2328A906980049E901 /* ContactMeViewController.xib in Resources */,
 				1AC80F0428A568BB0049E901 /* AboutMeTableViewCell.xib in Resources */,
+				1AF7355328E09F640038290E /* AppTableViewCell.xib in Resources */,
 				1AC80EF928A407710049E901 /* MainViewController.xib in Resources */,
 				1AC80F1328A569170049E901 /* PhotosAlbumTableViewCell.xib in Resources */,
 				1A734F6E28CFC8F900BC4BE2 /* BlogHeaderTableViewCell.xib in Resources */,
@@ -669,19 +705,22 @@
 				1A04A7A828B7C61700403B7F /* PostSection.swift in Sources */,
 				1AC80F3528AB03730049E901 /* Photo.swift in Sources */,
 				1AC80F2A28A907240049E901 /* PhotoAlbumViewController.swift in Sources */,
+				1AF7355928E0A6A30038290E /* MainViewModel.swift in Sources */,
+				1AF7355228E09F640038290E /* AppTableViewCell.swift in Sources */,
 				1AA268C228D776E700CE5FD9 /* BlogPostTableViewCell.swift in Sources */,
+				1AF7355D28E0AE1A0038290E /* AppsHeaderTableViewCell.swift in Sources */,
 				1A7A59BB28A405B600D5667D /* AppDelegate.swift in Sources */,
 				1AC80F1E28A906850049E901 /* CVViewController.swift in Sources */,
 				1AC80F1228A569170049E901 /* PhotosAlbumTableViewCell.swift in Sources */,
 				1A04A7B228B7DACA00403B7F /* PostSectionImageTableViewCell.swift in Sources */,
 				1AC80F1728A906360049E901 /* AboutMeViewController.swift in Sources */,
 				1AC80F0328A568BB0049E901 /* AboutMeTableViewCell.swift in Sources */,
-				1AA268C528D7791D00CE5FD9 /* BlogViewModel.swift in Sources */,
 				1A04A7C928BB72A200403B7F /* PhotoAlbumDetailViewController.swift in Sources */,
 				1AC80F2228A906980049E901 /* ContactMeViewController.swift in Sources */,
 				1AA268B528D7634100CE5FD9 /* CVViewModel.swift in Sources */,
 				1AC80F0D28A568F30049E901 /* ContactMeTableViewCell.swift in Sources */,
 				1AC80F3A28ABF5C40049E901 /* UIImageView+Extension.swift in Sources */,
+				1AF7355528E09FD60038290E /* App.swift in Sources */,
 				1A734F6D28CFC8F900BC4BE2 /* BlogHeaderTableViewCell.swift in Sources */,
 				1A04A7B628B7DADD00403B7F /* PostSectionTitleTableViewCell.swift in Sources */,
 				1A910E6228CE4FFE0078831E /* BlogPost.swift in Sources */,
@@ -698,6 +737,7 @@
 				1A68D14628DFBAA900E911C8 /* BlogDetailViewController.swift in Sources */,
 				1A910E6428CE50370078831E /* BlogTag.swift in Sources */,
 				1AC80F0828A568D30049E901 /* CVTableViewCell.swift in Sources */,
+				1AF7355728E0A3520038290E /* AppsViewModel.swift in Sources */,
 				1A0887C828BB8BC10065A3EB /* CustomImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

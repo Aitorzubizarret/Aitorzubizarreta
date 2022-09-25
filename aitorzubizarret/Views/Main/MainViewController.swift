@@ -16,7 +16,7 @@ class MainViewController: UIViewController {
     
     private var tableView = UITableView()
     
-    private var viewModel = BlogViewModel(apiManager: APIManager.shared)
+    private var viewModel = MainViewModel(apiManager: APIManager.shared)
     private var subscribedTo: [AnyCancellable] = []
     
     private var posts: [BlogPost] = [] {
@@ -33,6 +33,20 @@ class MainViewController: UIViewController {
             updateTableView()
         }
     }
+    private var apps: [App] = [] {
+        didSet {
+            if apps.count > 3 {
+                appsForHomeSection = Array(apps.prefix(3))
+            } else {
+                appsForHomeSection = apps
+            }
+        }
+    }
+    private var appsForHomeSection: [App] = [] {
+        didSet {
+            updateTableView()
+        }
+    }
     
     // MARK: - Methods
     
@@ -44,6 +58,7 @@ class MainViewController: UIViewController {
         initTableView()
         
         viewModel.fetchBlogPosts()
+        viewModel.fetchApps()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -80,6 +95,13 @@ class MainViewController: UIViewController {
         
         let blogPostCell = UINib(nibName: "BlogPostTableViewCell", bundle: nil)
         tableView.register(blogPostCell, forCellReuseIdentifier: "BlogPostTableViewCell")
+        
+        let appsHeaderCell = UINib(nibName: "AppsHeaderTableViewCell", bundle: nil)
+        tableView.register(appsHeaderCell, forCellReuseIdentifier: "AppsHeaderTableViewCell")
+        
+        let appCell = UINib(nibName: "AppTableViewCell", bundle: nil)
+        tableView.register(appCell, forCellReuseIdentifier: "AppTableViewCell")
+        
     }
     
     private func updateTableView() {
@@ -93,6 +115,12 @@ class MainViewController: UIViewController {
             print("Error : \(error)")
         } receiveValue: { [weak self] posts in
             self?.posts = posts
+        }.store(in: &subscribedTo)
+        
+        viewModel.apps.sink { error in
+            print("Error : \(error)")
+        } receiveValue: { [weak self] apps in
+            self?.apps = apps
         }.store(in: &subscribedTo)
     }
     
@@ -128,14 +156,15 @@ extension MainViewController: UITableViewDelegate {
 extension MainViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            return 1 // "About Me" section.
-        } else {
-            return 1 + postsForHomeSection.count // "Blog" section.
+        switch section {
+        case 0: return 1 // "About Me" section.
+        case 1: return 1 + postsForHomeSection.count // "Blog" section.
+        case 2: return 1 + appsForHomeSection.count // "Apps" section.
+        default: return 0
         }
     }
     
@@ -154,6 +183,15 @@ extension MainViewController: UITableViewDataSource {
             default:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "BlogPostTableViewCell", for: indexPath) as! BlogPostTableViewCell
                 cell.post = posts[indexPath.row - 1]
+                return cell
+            }
+        case 2: // "Apps" section
+            switch indexPath.row {
+            case 0:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "AppsHeaderTableViewCell", for: indexPath) as! AppsHeaderTableViewCell
+                return cell
+            default:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "AppTableViewCell", for: indexPath) as! AppTableViewCell
                 return cell
             }
         default:

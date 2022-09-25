@@ -1,21 +1,21 @@
 //
-//  BlogViewModel.swift
+//  AppsViewModel.swift
 //  aitorzubizarret
 //
-//  Created by Aitor Zubizarreta on 18/9/22.
+//  Created by Aitor Zubizarreta on 25/9/22.
 //
 
 import Foundation
 import Combine
 
-final class BlogViewModel {
+final class AppsViewModel {
     
     // MARK: - Properties
     
     var apiManager: APIManager?
     
     // Observable object.
-    var blogPosts = PassthroughSubject<[BlogPost], Error>()
+    var apps = PassthroughSubject<[App], Error>()
     
     // MARK: - Methods
     
@@ -23,15 +23,15 @@ final class BlogViewModel {
         self.apiManager = apiManager
     }
     
-    func fetchBlogPosts() {
+    func fetchApps() {
         guard let apiManager = apiManager else { return }
         
-        apiManager.fetchBlogPosts { [weak self] result in
+        apiManager.fetchApps { [weak self] result in
             switch result {
-            case .success(let posts):
-                self?.blogPosts.send(posts)
+            case .success(let apps):
+                self?.apps.send(apps)
             case .failure(let error):
-                print("Error : \(error)")
+                print("Error : \(error)")
             }
         }
     }
