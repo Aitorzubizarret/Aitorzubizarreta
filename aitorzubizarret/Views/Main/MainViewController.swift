@@ -192,6 +192,7 @@ extension MainViewController: UITableViewDataSource {
                 return cell
             default:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "AppTableViewCell", for: indexPath) as! AppTableViewCell
+                cell.app = appsForHomeSection[indexPath.row - 1]
                 return cell
             }
         default:
