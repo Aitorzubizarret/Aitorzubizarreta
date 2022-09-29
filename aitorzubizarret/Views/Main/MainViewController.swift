@@ -189,6 +189,7 @@ extension MainViewController: UITableViewDataSource {
             switch indexPath.row {
             case 0:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "AppsHeaderTableViewCell", for: indexPath) as! AppsHeaderTableViewCell
+                cell.delegate = self
                 return cell
             default:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "AppTableViewCell", for: indexPath) as! AppTableViewCell
@@ -212,4 +213,17 @@ extension MainViewController: BlogHeaderCellActions {
         show(blogVC, sender: nil)
     }
     
+}
+
+
+// MARK: - Apps Header Cell Actions
+
+extension MainViewController: AppsHeaderCellActions {
+
+    func goToAppsListVC() {
+        let appsVC = AppsViewController()
+        appsVC.apps = apps
+        show(appsVC, sender: nil)
+    }
+
 }

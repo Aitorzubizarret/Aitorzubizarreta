@@ -23,7 +23,7 @@ class AppsHeaderTableViewCell: UITableViewCell {
     
     // MARK: - Properties
     
-    var delegate: AppsHeaderTableViewCell?
+    var delegate: AppsHeaderCellActions?
     
     // MARK: - Methods
     
