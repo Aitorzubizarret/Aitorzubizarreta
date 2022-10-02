@@ -68,7 +68,14 @@ class BlogViewController: UIViewController {
 
 // MARK: - UITableView Delegate
 
-extension BlogViewController: UITableViewDelegate {}
+extension BlogViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let blogDetailVC = BlogDetailViewController()
+        show(blogDetailVC, sender: nil)
+    }
+    
+}
 
 // MARK: - UITableView Data Source
 
