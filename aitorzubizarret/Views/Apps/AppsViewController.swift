@@ -67,7 +67,14 @@ class AppsViewController: UIViewController {
 
 // MARK: - UITableView Delegate
 
-extension AppsViewController: UITableViewDelegate {}
+extension AppsViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let appDetailVC = AppDetailViewController()
+        show(appDetailVC, sender: nil)
+    }
+    
+}
 
 // MARK: - UITableView Data Source
 

@@ -144,6 +144,11 @@ extension MainViewController: UITableViewDelegate {
                 let blogDetailVC = BlogDetailViewController()
                 show(blogDetailVC, sender: nil)
             }
+        case 2:
+            if indexPath.row != 0 {
+                let appDetailVC = AppDetailViewController()
+                show(appDetailVC, sender: nil)
+            }
         default:
             print("")
         }

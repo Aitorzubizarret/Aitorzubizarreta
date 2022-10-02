@@ -68,6 +68,8 @@
 		1AC80F3328AB01180049E901 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC80F3228AB01180049E901 /* APIManager.swift */; };
 		1AC80F3528AB03730049E901 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC80F3428AB03730049E901 /* Photo.swift */; };
 		1AC80F3A28ABF5C40049E901 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC80F3928ABF5C40049E901 /* UIImageView+Extension.swift */; };
+		1AD4B62E28E9FD610059ECDB /* AppDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD4B62C28E9FD610059ECDB /* AppDetailViewController.swift */; };
+		1AD4B62F28E9FD610059ECDB /* AppDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AD4B62D28E9FD610059ECDB /* AppDetailViewController.xib */; };
 		1AF7355228E09F640038290E /* AppTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF7355028E09F640038290E /* AppTableViewCell.swift */; };
 		1AF7355328E09F640038290E /* AppTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AF7355128E09F640038290E /* AppTableViewCell.xib */; };
 		1AF7355528E09FD60038290E /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF7355428E09FD60038290E /* App.swift */; };
@@ -161,6 +163,8 @@
 		1AC80F3228AB01180049E901 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		1AC80F3428AB03730049E901 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		1AC80F3928ABF5C40049E901 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		1AD4B62C28E9FD610059ECDB /* AppDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailViewController.swift; sourceTree = "<group>"; };
+		1AD4B62D28E9FD610059ECDB /* AppDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppDetailViewController.xib; sourceTree = "<group>"; };
 		1AF7355028E09F640038290E /* AppTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTableViewCell.swift; sourceTree = "<group>"; };
 		1AF7355128E09F640038290E /* AppTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppTableViewCell.xib; sourceTree = "<group>"; };
 		1AF7355428E09FD60038290E /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
@@ -407,6 +411,7 @@
 				1AA268BA28D7707700CE5FD9 /* Blog */,
 				1A68D14328DFBA6F00E911C8 /* BlogDetail */,
 				1A0A702328E629A800B6D9A6 /* Apps */,
+				1AD4B62B28E9FD480059ECDB /* AppDetail */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -544,6 +549,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		1AD4B62B28E9FD480059ECDB /* AppDetail */ = {
+			isa = PBXGroup;
+			children = (
+				1AD4B62C28E9FD610059ECDB /* AppDetailViewController.swift */,
+				1AD4B62D28E9FD610059ECDB /* AppDetailViewController.xib */,
+			);
+			path = AppDetail;
+			sourceTree = "<group>";
+		};
 		1AF7354F28E09EE80038290E /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -667,6 +681,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A04A7B728B7DADD00403B7F /* PostSectionTitleTableViewCell.xib in Resources */,
+				1AD4B62F28E9FD610059ECDB /* AppDetailViewController.xib in Resources */,
 				1AA268C328D776E700CE5FD9 /* BlogPostTableViewCell.xib in Resources */,
 				1AC80F2B28A907240049E901 /* PhotoAlbumViewController.xib in Resources */,
 				1AC80F0E28A568F30049E901 /* ContactMeTableViewCell.xib in Resources */,
@@ -748,6 +763,7 @@
 				1AC80F3328AB01180049E901 /* APIManager.swift in Sources */,
 				1AC80F2F28A949940049E901 /* PhotoThumbnailCollectionViewCell.swift in Sources */,
 				1A910E6628CE505A0078831E /* BlogDescription.swift in Sources */,
+				1AD4B62E28E9FD610059ECDB /* AppDetailViewController.swift in Sources */,
 				1AA268B928D768CD00CE5FD9 /* PhotoAlbumViewModel.swift in Sources */,
 				1AA268B328D7476700CE5FD9 /* AboutMeViewModel.swift in Sources */,
 				1A68D14628DFBAA900E911C8 /* BlogDetailViewController.swift in Sources */,
