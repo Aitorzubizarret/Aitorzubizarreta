@@ -8,7 +8,21 @@
 import UIKit
 
 class AppDetailViewController: UIViewController {
-
+    
+    // MARK: - UI Elements
+    
+    // MARK: - Properties
+    
+    var app: App? {
+        didSet {
+            guard let app = app else { return }
+            
+            print("App title: \(app.title)")
+        }
+    }
+    
+    // MARK: - Methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

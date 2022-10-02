@@ -71,6 +71,7 @@ extension AppsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let appDetailVC = AppDetailViewController()
+        appDetailVC.app = apps[indexPath.row]
         show(appDetailVC, sender: nil)
     }
     

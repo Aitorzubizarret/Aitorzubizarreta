@@ -147,6 +147,7 @@ extension MainViewController: UITableViewDelegate {
         case 2:
             if indexPath.row != 0 {
                 let appDetailVC = AppDetailViewController()
+                appDetailVC.app = appsForHomeSection[indexPath.row - 1]
                 show(appDetailVC, sender: nil)
             }
         default:
