@@ -41,6 +41,9 @@ class PostSectionImageTableViewCell: UITableViewCell {
         selectionStyle = .none
         
         customPhotoURLString = ""
+        
+        // UIIImageView.
+        photoImageView.layer.cornerRadius = 8
     }
     
 }

@@ -17,7 +17,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dM8-K5-S0q">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
+                        <rect key="frame" x="24" y="0.0" width="272" height="300"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="300" id="IG4-VV-oIo"/>
                         </constraints>
@@ -26,8 +26,8 @@
                 <constraints>
                     <constraint firstItem="dM8-K5-S0q" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="CPL-yB-lFz"/>
                     <constraint firstAttribute="bottom" secondItem="dM8-K5-S0q" secondAttribute="bottom" id="G5X-k9-dxV"/>
-                    <constraint firstItem="dM8-K5-S0q" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Tkc-UC-MLr"/>
-                    <constraint firstAttribute="trailing" secondItem="dM8-K5-S0q" secondAttribute="trailing" id="YZF-4I-NQZ"/>
+                    <constraint firstItem="dM8-K5-S0q" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="Tkc-UC-MLr"/>
+                    <constraint firstAttribute="trailing" secondItem="dM8-K5-S0q" secondAttribute="trailing" constant="24" id="YZF-4I-NQZ"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

@@ -18,16 +18,16 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ncf-OE-Ij4">
-                        <rect key="frame" x="30" y="5" width="260" height="89"/>
+                        <rect key="frame" x="30" y="10" width="260" height="79"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                         <color key="textColor" name="myDarkGrey"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="ncf-OE-Ij4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="L62-bZ-1ng"/>
+                    <constraint firstItem="ncf-OE-Ij4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="L62-bZ-1ng"/>
                     <constraint firstItem="ncf-OE-Ij4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="U2j-Ol-ffP"/>
-                    <constraint firstAttribute="bottom" secondItem="ncf-OE-Ij4" secondAttribute="bottom" constant="5" id="UDi-1R-i3a"/>
+                    <constraint firstAttribute="bottom" secondItem="ncf-OE-Ij4" secondAttribute="bottom" constant="10" id="UDi-1R-i3a"/>
                     <constraint firstAttribute="trailing" secondItem="ncf-OE-Ij4" secondAttribute="trailing" constant="30" id="mCU-MM-xZI"/>
                 </constraints>
             </tableViewCellContentView>
