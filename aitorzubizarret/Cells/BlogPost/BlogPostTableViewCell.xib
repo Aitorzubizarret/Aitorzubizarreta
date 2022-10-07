@@ -22,25 +22,25 @@
                         <constraints>
                             <constraint firstAttribute="height" constant="16" id="50E-9M-dHY"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="11"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                         <color key="textColor" name="myDarkGrey"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post Title" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IS9-53-mqG">
-                        <rect key="frame" x="24" y="34" width="252" height="24"/>
+                        <rect key="frame" x="24" y="35" width="252" height="24"/>
                         <constraints>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="24" id="Y1E-4w-h8d"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="19"/>
                         <color key="textColor" name="myDarkGrey"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post First Description" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CU1-Dl-bcG">
-                        <rect key="frame" x="24" y="68" width="252" height="20"/>
+                        <rect key="frame" x="24" y="69" width="252" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="szh-Xd-Sc9"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                         <color key="textColor" name="myDarkGrey"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -76,7 +76,7 @@
                     <constraint firstItem="MKd-Hd-anx" firstAttribute="leading" secondItem="CU1-Dl-bcG" secondAttribute="trailing" constant="10" id="e6j-xY-TU6"/>
                     <constraint firstItem="IS9-53-mqG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="kDW-Fr-uGR"/>
                     <constraint firstItem="MKd-Hd-anx" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="tmm-4z-DA4"/>
-                    <constraint firstItem="IS9-53-mqG" firstAttribute="top" secondItem="A30-qy-vGq" secondAttribute="bottom" constant="2" id="vE2-Ox-IWj"/>
+                    <constraint firstItem="IS9-53-mqG" firstAttribute="top" secondItem="A30-qy-vGq" secondAttribute="bottom" constant="3" id="vE2-Ox-IWj"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
