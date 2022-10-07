@@ -13,12 +13,12 @@ struct App: Codable {
     
     let title: String
     let description: String
-    let appStoreId: String
+    let appStoreProductId: String
     
     // MARK: - Methods
     
-    func getAppStoreURL() -> String {
-        return "https://apps.apple.com/es/app/\(appStoreId)?platform=iphone"
+    static func createWebAddress(appStoreProductId: String) -> String {
+        return "https://apps.apple.com/es/app/id" + "\(appStoreProductId)"
     }
     
 }
