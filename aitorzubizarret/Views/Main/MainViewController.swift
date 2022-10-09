@@ -142,6 +142,7 @@ extension MainViewController: UITableViewDelegate {
         case 1:
             if indexPath.row != 0 {
                 let blogDetailVC = BlogDetailViewController()
+                blogDetailVC.blogPost = postsForHomeSection[indexPath.row - 1]
                 show(blogDetailVC, sender: nil)
             }
         case 2:
