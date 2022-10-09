@@ -11,6 +11,7 @@ class BlogPostTableViewCell: UITableViewCell {
     
     // MARK: - UI Elements
     
+    @IBOutlet weak var postDateLabel: UILabel!
     @IBOutlet weak var postTitleLabel: UILabel!
     @IBOutlet weak var postFirstDescriptionLabel: UILabel!
     
@@ -20,7 +21,8 @@ class BlogPostTableViewCell: UITableViewCell {
         didSet {
             guard let post = post,
                   let firstDescription = post.descriptions.first else { return }
-
+            
+            postDateLabel.text = post.getFormattedDate()
             postTitleLabel.text = post.title
             postFirstDescriptionLabel.text = firstDescription.description
         }

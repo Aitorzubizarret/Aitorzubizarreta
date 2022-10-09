@@ -15,13 +15,7 @@ class BlogDetailViewController: UIViewController {
     
     private weak var tableView: UITableView!
     
-    var blogPost: BlogPost? {
-        didSet {
-            guard let blogPost = blogPost else { return }
-            
-            print("BlogPost : \(blogPost.title)")
-        }
-    }
+    var blogPost: BlogPost?
     
     // MARK: - Methods
     
@@ -111,7 +105,7 @@ extension BlogDetailViewController: UITableViewDataSource {
         case 1: // Date
             let cell = tableView.dequeueReusableCell(withIdentifier: "PostSectionDateTableViewCell", for: indexPath) as! PostSectionDateTableViewCell
             if let blogPost = blogPost {
-                cell.customDateString = blogPost.date
+                cell.customDateString = blogPost.getFormattedDate()
             }
             return cell
         case 2: // Tags
