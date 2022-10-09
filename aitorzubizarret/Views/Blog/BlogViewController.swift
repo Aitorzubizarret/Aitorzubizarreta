@@ -72,6 +72,7 @@ extension BlogViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let blogDetailVC = BlogDetailViewController()
+        blogDetailVC.blogPost = posts[indexPath.row]
         show(blogDetailVC, sender: nil)
     }
     
