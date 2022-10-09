@@ -14,6 +14,17 @@ final class MainViewModel {
     
     var apiManager: APIManager?
     
+    var unorderedBlogPosts: [BlogPost] = [] {
+        didSet {
+            var orderedBlogPosts: [BlogPost] = []
+            
+            // Order the array of posts by date.
+            orderedBlogPosts = unorderedBlogPosts.sorted(by: { $0.getFormattedDate() > $1.getFormattedDate() } )
+            
+            self.blogPosts.send(orderedBlogPosts)
+        }
+    }
+    
     // Observable subjects.
     var blogPosts = PassthroughSubject<[BlogPost], Error>()
     var apps = PassthroughSubject<[App], Error>()
@@ -30,7 +41,8 @@ final class MainViewModel {
         apiManager.fetchBlogPosts { [weak self] result in
             switch result {
             case .success(let blogPosts):
-                self?.blogPosts.send(blogPosts)
+                //self?.blogPosts.send(blogPosts)
+                self?.unorderedBlogPosts = blogPosts
             case .failure(let error):
                 print("Error : \(error)")
             }
