@@ -47,7 +47,6 @@
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="MKd-Hd-anx">
                         <rect key="frame" x="286" y="67" width="10" height="26.5"/>
-                        <color key="tintColor" name="myDarkGrey"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="10" id="sUX-gH-9xG"/>
                             <constraint firstAttribute="height" constant="30" id="xes-tL-K0j"/>
@@ -55,13 +54,13 @@
                     </imageView>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2nU-QC-Qtg">
                         <rect key="frame" x="0.0" y="158" width="320" height="2"/>
-                        <color key="backgroundColor" name="myWhite"/>
+                        <color key="backgroundColor" name="myGrey"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="2" id="fz2-8E-hAt"/>
                         </constraints>
                     </imageView>
                 </subviews>
-                <color key="backgroundColor" name="myGrey"/>
+                <color key="backgroundColor" name="myWhite"/>
                 <constraints>
                     <constraint firstItem="CU1-Dl-bcG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="0PQ-8t-Jlc"/>
                     <constraint firstAttribute="trailing" secondItem="2nU-QC-Qtg" secondAttribute="trailing" id="5ZT-kp-OYA"/>

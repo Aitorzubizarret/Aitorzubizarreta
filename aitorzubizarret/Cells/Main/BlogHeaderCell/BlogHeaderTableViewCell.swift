@@ -29,7 +29,7 @@ class BlogHeaderTableViewCell: UITableViewCell {
         didSet {
             // Attributed Button Title.
             let buttonText: String = "VER \(numberOfPosts) POSTS"
-            let font = UIFont(name: "Helvetica Neue Bold", size: 12.0)
+            let font = UIFont(name: "Helvetica Neue Bold", size: 14.0)
             let attributes = [NSAttributedString.Key.font: font]
             let attributedButtonText = NSAttributedString(string: buttonText, attributes: attributes as [NSAttributedString.Key : Any])
             

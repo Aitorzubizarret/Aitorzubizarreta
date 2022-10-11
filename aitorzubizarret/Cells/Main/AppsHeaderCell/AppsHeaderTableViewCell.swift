@@ -44,7 +44,7 @@ class AppsHeaderTableViewCell: UITableViewCell {
         
         // Attributed Button Title.
         let buttonText: String = "TODAS"
-        let font = UIFont(name: "Helvetica Neue Bold", size: 12.0)
+        let font = UIFont(name: "Helvetica Neue Bold", size: 14.0)
         let attributes = [NSAttributedString.Key.font: font]
         let attributedButtonText = NSAttributedString(string: buttonText, attributes: attributes as [NSAttributedString.Key : Any])
         
