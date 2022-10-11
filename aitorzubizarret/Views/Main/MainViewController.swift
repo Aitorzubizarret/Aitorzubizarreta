@@ -21,8 +21,8 @@ class MainViewController: UIViewController {
     
     private var posts: [BlogPost] = [] {
         didSet {
-            if posts.count > 5 {
-                postsForHomeSection = Array(posts.prefix(5))
+            if posts.count > 4 {
+                postsForHomeSection = Array(posts.prefix(4))
             } else {
                 postsForHomeSection = posts
             }
