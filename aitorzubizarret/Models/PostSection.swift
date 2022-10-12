@@ -18,5 +18,6 @@ struct PostSection: Codable {
     let quote: String?
     let description: String?
     let cvButton: String?
+    let contactButton: String?
     
 }

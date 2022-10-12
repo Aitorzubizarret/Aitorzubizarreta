@@ -84,6 +84,9 @@ class AboutMeViewController: UIViewController {
         
         let postSectionCVCell = UINib(nibName: "PostSectionCVTableViewCell", bundle: nil)
         tableView.register(postSectionCVCell, forCellReuseIdentifier: "PostSectionCVTableViewCell")
+        
+        let postSectionContactButtonNib = UINib(nibName: "PostSectionContactButtonTableViewCell", bundle: nil)
+        tableView.register(postSectionContactButtonNib, forCellReuseIdentifier: "PostSectionContactButtonTableViewCell")
     }
     
     private func initActivityIndicator() {
@@ -163,6 +166,10 @@ extension AboutMeViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "PostSectionCVTableViewCell", for: indexPath) as! PostSectionCVTableViewCell
             cell.delegate = self
             return cell
+        } else if let _ = postSection.contactButton {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "PostSectionContactButtonTableViewCell", for: indexPath) as! PostSectionContactButtonTableViewCell
+            cell.delegate = self
+            return cell
         } else {
             return UITableViewCell()
         }
@@ -177,6 +184,17 @@ extension AboutMeViewController: PostSectionCVCellActions {
     func goToCVDetailVC() {
         let cvDetailVC = CVViewController()
         show(cvDetailVC, sender: nil)
+    }
+    
+}
+
+// MARK: - PostSection Contact Cell Actions
+
+extension AboutMeViewController: PostSectionContactButtonCellActions {
+    
+    func goToContactDetailVC() {
+        let contactDetailVC = ContactMeViewController()
+        show(contactDetailVC, sender: nil)
     }
     
 }

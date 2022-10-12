@@ -49,8 +49,6 @@
 		1AC80EF928A407710049E901 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AC80EF728A407710049E901 /* MainViewController.xib */; };
 		1AC80F0328A568BB0049E901 /* AboutMeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC80F0128A568BB0049E901 /* AboutMeTableViewCell.swift */; };
 		1AC80F0428A568BB0049E901 /* AboutMeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AC80F0228A568BB0049E901 /* AboutMeTableViewCell.xib */; };
-		1AC80F0D28A568F30049E901 /* ContactMeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC80F0B28A568F30049E901 /* ContactMeTableViewCell.swift */; };
-		1AC80F0E28A568F30049E901 /* ContactMeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AC80F0C28A568F30049E901 /* ContactMeTableViewCell.xib */; };
 		1AC80F1228A569170049E901 /* PhotosAlbumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC80F1028A569170049E901 /* PhotosAlbumTableViewCell.swift */; };
 		1AC80F1328A569170049E901 /* PhotosAlbumTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AC80F1128A569170049E901 /* PhotosAlbumTableViewCell.xib */; };
 		1AC80F1728A906360049E901 /* AboutMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC80F1528A906360049E901 /* AboutMeViewController.swift */; };
@@ -72,6 +70,8 @@
 		1ACACB0F28F2156B00F51F6F /* PostSectionTagsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1ACACB0D28F2156B00F51F6F /* PostSectionTagsTableViewCell.xib */; };
 		1ACB9EF528F6226F007BA22A /* PostSectionCVTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACB9EF328F6226F007BA22A /* PostSectionCVTableViewCell.swift */; };
 		1ACB9EF628F6226F007BA22A /* PostSectionCVTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1ACB9EF428F6226F007BA22A /* PostSectionCVTableViewCell.xib */; };
+		1ACB9EFA28F71C56007BA22A /* PostSectionContactButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACB9EF828F71C56007BA22A /* PostSectionContactButtonTableViewCell.swift */; };
+		1ACB9EFB28F71C56007BA22A /* PostSectionContactButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1ACB9EF928F71C56007BA22A /* PostSectionContactButtonTableViewCell.xib */; };
 		1AD4B62E28E9FD610059ECDB /* AppDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD4B62C28E9FD610059ECDB /* AppDetailViewController.swift */; };
 		1AD4B62F28E9FD610059ECDB /* AppDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AD4B62D28E9FD610059ECDB /* AppDetailViewController.xib */; };
 		1AD4B63428EA0FB20059ECDB /* AppTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD4B63228EA0FB20059ECDB /* AppTitleTableViewCell.swift */; };
@@ -154,8 +154,6 @@
 		1AC80EF728A407710049E901 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		1AC80F0128A568BB0049E901 /* AboutMeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMeTableViewCell.swift; sourceTree = "<group>"; };
 		1AC80F0228A568BB0049E901 /* AboutMeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutMeTableViewCell.xib; sourceTree = "<group>"; };
-		1AC80F0B28A568F30049E901 /* ContactMeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactMeTableViewCell.swift; sourceTree = "<group>"; };
-		1AC80F0C28A568F30049E901 /* ContactMeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactMeTableViewCell.xib; sourceTree = "<group>"; };
 		1AC80F1028A569170049E901 /* PhotosAlbumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosAlbumTableViewCell.swift; sourceTree = "<group>"; };
 		1AC80F1128A569170049E901 /* PhotosAlbumTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotosAlbumTableViewCell.xib; sourceTree = "<group>"; };
 		1AC80F1528A906360049E901 /* AboutMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMeViewController.swift; sourceTree = "<group>"; };
@@ -177,6 +175,8 @@
 		1ACACB0D28F2156B00F51F6F /* PostSectionTagsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostSectionTagsTableViewCell.xib; sourceTree = "<group>"; };
 		1ACB9EF328F6226F007BA22A /* PostSectionCVTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSectionCVTableViewCell.swift; sourceTree = "<group>"; };
 		1ACB9EF428F6226F007BA22A /* PostSectionCVTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostSectionCVTableViewCell.xib; sourceTree = "<group>"; };
+		1ACB9EF828F71C56007BA22A /* PostSectionContactButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSectionContactButtonTableViewCell.swift; sourceTree = "<group>"; };
+		1ACB9EF928F71C56007BA22A /* PostSectionContactButtonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostSectionContactButtonTableViewCell.xib; sourceTree = "<group>"; };
 		1AD4B62C28E9FD610059ECDB /* AppDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailViewController.swift; sourceTree = "<group>"; };
 		1AD4B62D28E9FD610059ECDB /* AppDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppDetailViewController.xib; sourceTree = "<group>"; };
 		1AD4B63228EA0FB20059ECDB /* AppTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTitleTableViewCell.swift; sourceTree = "<group>"; };
@@ -239,6 +239,7 @@
 				1A04A7AE28B7DA0500403B7F /* Quote */,
 				1A04A7AF28B7DA0D00403B7F /* Description */,
 				1ACB9EF228F6224E007BA22A /* CV */,
+				1ACB9EF728F71C03007BA22A /* ContactButton */,
 			);
 			path = PostSections;
 			sourceTree = "<group>";
@@ -383,7 +384,6 @@
 			isa = PBXGroup;
 			children = (
 				1AC80F0028A568A40049E901 /* AboutMeCell */,
-				1AC80F0A28A568DC0049E901 /* ContactMeCell */,
 				1AC80F0F28A568FB0049E901 /* PhotosAlbumCell */,
 				1A734F6A28CFC76900BC4BE2 /* BlogHeaderCell */,
 				1AF7355A28E0ADFC0038290E /* AppsHeaderCell */,
@@ -483,15 +483,6 @@
 			path = AboutMeCell;
 			sourceTree = "<group>";
 		};
-		1AC80F0A28A568DC0049E901 /* ContactMeCell */ = {
-			isa = PBXGroup;
-			children = (
-				1AC80F0B28A568F30049E901 /* ContactMeTableViewCell.swift */,
-				1AC80F0C28A568F30049E901 /* ContactMeTableViewCell.xib */,
-			);
-			path = ContactMeCell;
-			sourceTree = "<group>";
-		};
 		1AC80F0F28A568FB0049E901 /* PhotosAlbumCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -588,6 +579,15 @@
 				1ACB9EF428F6226F007BA22A /* PostSectionCVTableViewCell.xib */,
 			);
 			path = CV;
+			sourceTree = "<group>";
+		};
+		1ACB9EF728F71C03007BA22A /* ContactButton */ = {
+			isa = PBXGroup;
+			children = (
+				1ACB9EF828F71C56007BA22A /* PostSectionContactButtonTableViewCell.swift */,
+				1ACB9EF928F71C56007BA22A /* PostSectionContactButtonTableViewCell.xib */,
+			);
+			path = ContactButton;
 			sourceTree = "<group>";
 		};
 		1AD4B62B28E9FD480059ECDB /* AppDetail */ = {
@@ -758,6 +758,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1ACB9EFB28F71C56007BA22A /* PostSectionContactButtonTableViewCell.xib in Resources */,
 				1ACACB0F28F2156B00F51F6F /* PostSectionTagsTableViewCell.xib in Resources */,
 				1AD4B63A28EA12E20059ECDB /* AppDescriptionTableViewCell.xib in Resources */,
 				1A04A7B728B7DADD00403B7F /* PostSectionTitleTableViewCell.xib in Resources */,
@@ -766,7 +767,6 @@
 				1AD4B63F28EA15CB0059ECDB /* AppGoToAppStoreTableViewCell.xib in Resources */,
 				1ACB9EF628F6226F007BA22A /* PostSectionCVTableViewCell.xib in Resources */,
 				1AC80F2B28A907240049E901 /* PhotoAlbumViewController.xib in Resources */,
-				1AC80F0E28A568F30049E901 /* ContactMeTableViewCell.xib in Resources */,
 				1AF7355E28E0AE1A0038290E /* AppsHeaderTableViewCell.xib in Resources */,
 				1A04A7C328B7DB1400403B7F /* PostSectionDescriptionTableViewCell.xib in Resources */,
 				1A04A7CA28BB72A200403B7F /* PhotoAlbumDetailViewController.xib in Resources */,
@@ -838,7 +838,6 @@
 				1A04A7C928BB72A200403B7F /* PhotoAlbumDetailViewController.swift in Sources */,
 				1AC80F2228A906980049E901 /* ContactMeViewController.swift in Sources */,
 				1AA268B528D7634100CE5FD9 /* CVViewModel.swift in Sources */,
-				1AC80F0D28A568F30049E901 /* ContactMeTableViewCell.swift in Sources */,
 				1AC80F3A28ABF5C40049E901 /* UIImageView+Extension.swift in Sources */,
 				1AF7355528E09FD60038290E /* App.swift in Sources */,
 				1A734F6D28CFC8F900BC4BE2 /* BlogHeaderTableViewCell.swift in Sources */,
@@ -846,6 +845,7 @@
 				1A910E6228CE4FFE0078831E /* BlogPost.swift in Sources */,
 				1A04A7C528BA7B7700403B7F /* CVFile.swift in Sources */,
 				1A7A59BD28A405B600D5667D /* SceneDelegate.swift in Sources */,
+				1ACB9EFA28F71C56007BA22A /* PostSectionContactButtonTableViewCell.swift in Sources */,
 				1A04A7BA28B7DAEF00403B7F /* PostSectionSubtitleTableViewCell.swift in Sources */,
 				1AA268BD28D7709800CE5FD9 /* BlogViewController.swift in Sources */,
 				1AC80EF828A407710049E901 /* MainViewController.swift in Sources */,
