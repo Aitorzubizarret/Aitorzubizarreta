@@ -47,7 +47,7 @@ class PostSectionCVTableViewCell: UITableViewCell {
         mainView.layer.borderWidth = 1
         mainView.layer.borderColor = UIColor(named: "myLightGrey")!.cgColor
         
-        // Tap Gesture Recognizer
+        // Tap Gesture Recognizer.
         let tapGR = UITapGestureRecognizer(target: self, action: #selector(goToCVDetailVCButtonTapped))
         mainView.addGestureRecognizer(tapGR)
     }
