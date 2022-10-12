@@ -105,7 +105,7 @@ class MainViewController: UIViewController {
     }
     
     private func updateTableView() {
-        DispatchQueue.main.async { [weak self ] in
+        DispatchQueue.main.async { [weak self] in
             self?.tableView.reloadData()
         }
     }

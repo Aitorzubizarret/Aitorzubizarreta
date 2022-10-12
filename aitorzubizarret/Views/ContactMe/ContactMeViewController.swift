@@ -162,23 +162,23 @@ extension ContactMeViewController {
     private func checkContactsPermission() {
         CNContactStore().requestAccess(for: .contacts) { access, error in
             if access {
-                DispatchQueue.main.async {
-                    self.addNewContact()
+                DispatchQueue.main.async { [weak self] in
+                    self?.addNewContact()
                 }
             } else {
-                DispatchQueue.main.async {
+                DispatchQueue.main.async { [weak self] in
                     let alertMessage = UIAlertController(title: "Error",
                                                          message: "La app no tiene permiso para acceder a Contactos.",
                                                          preferredStyle: .alert)
 
                     alertMessage.addAction(UIAlertAction(title: "Ir a Ajustes",
                                                          style: UIAlertAction.Style.default,
-                                                         handler: self.openSettings))
+                                                         handler: self?.openSettings))
                     alertMessage.addAction(UIAlertAction(title: "Cerrar",
                                                          style: UIAlertAction.Style.default,
                                                          handler: nil))
                     
-                    self.present(alertMessage, animated: true)
+                    self?.present(alertMessage, animated: true)
                 }
                 
                 print("Error \(String(describing: error))")
