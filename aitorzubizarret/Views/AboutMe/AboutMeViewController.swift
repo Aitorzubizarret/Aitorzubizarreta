@@ -96,7 +96,7 @@ class AboutMeViewController: UIViewController {
     
     @objc private func updateTableView() {
         DispatchQueue.main.async { [weak self] in
-            self?.activityIndicator.stopAnimating()
+            self?.hideActivityIndicator()
             self?.tableView.reloadData()
         }
     }
