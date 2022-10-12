@@ -17,33 +17,6 @@ struct PostSection: Codable {
     let subtitle: String?
     let quote: String?
     let description: String?
-    
-    // MARK: - Methods
-    
-    func getCustomTableViewCell(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
-        if let safeImage = image {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "PostSectionImageTableViewCell", for: indexPath) as! PostSectionImageTableViewCell
-            cell.customPhotoURLString = safeImage
-            return cell
-        } else if let safeTitle  = title {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "PostSectionTitleTableViewCell", for: indexPath) as! PostSectionTitleTableViewCell
-            cell.customTitle = safeTitle
-            return cell
-        } else if let safeSubtitle = subtitle {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "PostSectionSubtitleTableViewCell", for: indexPath) as! PostSectionSubtitleTableViewCell
-            cell.customSubtitle = safeSubtitle
-            return cell
-        } else if let safeQuote = quote {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "PostSectionQuoteTableViewCell", for: indexPath) as! PostSectionQuoteTableViewCell
-            cell.customQuote = safeQuote
-            return cell
-        } else if let safeDescription = description {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "PostSectionDescriptionTableViewCell", for: indexPath) as! PostSectionDescriptionTableViewCell
-            cell.customDescription = safeDescription
-            return cell
-        } else {
-            return UITableViewCell()
-        }
-    }
+    let cvButton: String?
     
 }

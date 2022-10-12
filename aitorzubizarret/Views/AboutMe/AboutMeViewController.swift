@@ -81,6 +81,9 @@ class AboutMeViewController: UIViewController {
         
         let postSectionDescriptionCell = UINib(nibName: "PostSectionDescriptionTableViewCell", bundle: nil)
         tableView.register(postSectionDescriptionCell, forCellReuseIdentifier: "PostSectionDescriptionTableViewCell")
+        
+        let postSectionCVCell = UINib(nibName: "PostSectionCVTableViewCell", bundle: nil)
+        tableView.register(postSectionCVCell, forCellReuseIdentifier: "PostSectionCVTableViewCell")
     }
     
     private func initActivityIndicator() {
@@ -134,8 +137,46 @@ extension AboutMeViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.postSections[indexPath.row].getCustomTableViewCell(tableView: tableView, indexPath: indexPath)
-        return cell
+        let postSection: PostSection = postSections[indexPath.row]
+        
+        if let image = postSection.image {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "PostSectionImageTableViewCell", for: indexPath) as! PostSectionImageTableViewCell
+            cell.customPhotoURLString = image
+            return cell
+        } else if let title  = postSection.title {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "PostSectionTitleTableViewCell", for: indexPath) as! PostSectionTitleTableViewCell
+            cell.customTitle = title
+            return cell
+        } else if let subtitle = postSection.subtitle {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "PostSectionSubtitleTableViewCell", for: indexPath) as! PostSectionSubtitleTableViewCell
+            cell.customSubtitle = subtitle
+            return cell
+        } else if let quote = postSection.quote {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "PostSectionQuoteTableViewCell", for: indexPath) as! PostSectionQuoteTableViewCell
+            cell.customQuote = quote
+            return cell
+        } else if let description = postSection.description {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "PostSectionDescriptionTableViewCell", for: indexPath) as! PostSectionDescriptionTableViewCell
+            cell.customDescription = description
+            return cell
+        } else if let _ = postSection.cvButton {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "PostSectionCVTableViewCell", for: indexPath) as! PostSectionCVTableViewCell
+            cell.delegate = self
+            return cell
+        } else {
+            return UITableViewCell()
+        }
+    }
+    
+}
+
+// MARK: - PostSection CV Cell Actions
+
+extension AboutMeViewController: PostSectionCVCellActions {
+    
+    func goToCVDetailVC() {
+        let cvDetailVC = CVViewController()
+        show(cvDetailVC, sender: nil)
     }
     
 }
