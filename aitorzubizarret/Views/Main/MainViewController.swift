@@ -24,16 +24,8 @@ class MainViewController: UIViewController {
             updateTableView()
         }
     }
+    private var postCount: Int = 0
     private var apps: [App] = [] {
-        didSet {
-            if apps.count > 3 {
-                appsForHomeSection = Array(apps.prefix(3))
-            } else {
-                appsForHomeSection = apps
-            }
-        }
-    }
-    private var appsForHomeSection: [App] = [] {
         didSet {
             updateTableView()
         }
@@ -108,6 +100,13 @@ class MainViewController: UIViewController {
             self?.posts = posts
         }.store(in: &subscribedTo)
         
+        viewModel.blogPostsCount.sink { error in
+            print("Error : \(error)")
+        } receiveValue: { [weak self] blogPostCount in
+            self?.postCount = blogPostCount
+        }.store(in: &subscribedTo)
+
+        
         viewModel.apps.sink { error in
             print("Error : \(error)")
         } receiveValue: { [weak self] apps in
@@ -139,7 +138,7 @@ extension MainViewController: UITableViewDelegate {
         case 2:
             if indexPath.row != 0 {
                 let appDetailVC = AppDetailViewController()
-                appDetailVC.app = appsForHomeSection[indexPath.row - 1]
+                appDetailVC.app = apps[indexPath.row - 1]
                 show(appDetailVC, sender: nil)
             }
         default:
@@ -161,7 +160,7 @@ extension MainViewController: UITableViewDataSource {
         switch section {
         case 0: return 1 // "About Me" section.
         case 1: return 1 + posts.count // "Blog" section.
-        case 2: return 1 + appsForHomeSection.count // "Apps" section.
+        case 2: return 1 + apps.count // "Apps" section.
         default: return 0
         }
     }
@@ -176,7 +175,7 @@ extension MainViewController: UITableViewDataSource {
             case 0:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "BlogHeaderTableViewCell", for: indexPath) as! BlogHeaderTableViewCell
                 cell.delegate = self
-                cell.numberOfPosts = posts.count
+                cell.numberOfPosts = postCount
                 return cell
             default:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "BlogPostTableViewCell", for: indexPath) as! BlogPostTableViewCell
@@ -191,7 +190,7 @@ extension MainViewController: UITableViewDataSource {
                 return cell
             default:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "AppTableViewCell", for: indexPath) as! AppTableViewCell
-                cell.app = appsForHomeSection[indexPath.row - 1]
+                cell.app = apps[indexPath.row - 1]
                 return cell
             }
         default:
@@ -207,7 +206,6 @@ extension MainViewController: BlogHeaderCellActions {
     
     func goToBlogVC() {
         let blogVC = BlogViewController()
-        blogVC.posts = posts
         show(blogVC, sender: nil)
     }
     
@@ -220,7 +218,6 @@ extension MainViewController: AppsHeaderCellActions {
 
     func goToAppsListVC() {
         let appsVC = AppsViewController()
-        appsVC.apps = apps
         show(appsVC, sender: nil)
     }
 

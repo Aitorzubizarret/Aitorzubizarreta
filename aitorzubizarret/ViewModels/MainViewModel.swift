@@ -16,6 +16,8 @@ final class MainViewModel {
     
     var allBlogPosts: [BlogPost] = [] {
         didSet {
+            let totalBlogPosts: Int = allBlogPosts.count
+            
             // Order the array of posts by date.
             allBlogPosts = allBlogPosts.sorted(by: { $0.getFormattedDate() > $1.getFormattedDate() } )
             
@@ -25,6 +27,7 @@ final class MainViewModel {
             }
             
             self.blogPosts.send(allBlogPosts)
+            self.blogPostsCount.send(totalBlogPosts)
         }
     }
     var allApps: [App] = [] {
@@ -40,6 +43,7 @@ final class MainViewModel {
     
     // Observable subjects.
     var blogPosts = PassthroughSubject<[BlogPost], Error>()
+    var blogPostsCount = PassthroughSubject<Int, Error>()
     var apps = PassthroughSubject<[App], Error>()
     
     // MARK: - Methods
