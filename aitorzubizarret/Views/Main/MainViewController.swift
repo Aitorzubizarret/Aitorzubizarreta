@@ -21,15 +21,6 @@ class MainViewController: UIViewController {
     
     private var posts: [BlogPost] = [] {
         didSet {
-            if posts.count > 4 {
-                postsForHomeSection = Array(posts.prefix(4))
-            } else {
-                postsForHomeSection = posts
-            }
-        }
-    }
-    private var postsForHomeSection: [BlogPost] = [] {
-        didSet {
             updateTableView()
         }
     }
@@ -57,7 +48,7 @@ class MainViewController: UIViewController {
         
         initTableView()
         
-        viewModel.fetchBlogPosts()
+        viewModel.fetch4BlogPosts()
         viewModel.fetchApps()
     }
     
@@ -142,7 +133,7 @@ extension MainViewController: UITableViewDelegate {
         case 1:
             if indexPath.row != 0 {
                 let blogDetailVC = BlogDetailViewController()
-                blogDetailVC.blogPost = postsForHomeSection[indexPath.row - 1]
+                blogDetailVC.blogPost = posts[indexPath.row - 1]
                 show(blogDetailVC, sender: nil)
             }
         case 2:
@@ -169,7 +160,7 @@ extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0: return 1 // "About Me" section.
-        case 1: return 1 + postsForHomeSection.count // "Blog" section.
+        case 1: return 1 + posts.count // "Blog" section.
         case 2: return 1 + appsForHomeSection.count // "Apps" section.
         default: return 0
         }

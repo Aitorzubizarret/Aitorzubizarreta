@@ -14,14 +14,17 @@ final class MainViewModel {
     
     var apiManager: APIManager?
     
-    var unorderedBlogPosts: [BlogPost] = [] {
+    var allBlogPosts: [BlogPost] = [] {
         didSet {
-            var orderedBlogPosts: [BlogPost] = []
-            
             // Order the array of posts by date.
-            orderedBlogPosts = unorderedBlogPosts.sorted(by: { $0.getFormattedDate() > $1.getFormattedDate() } )
+            allBlogPosts = allBlogPosts.sorted(by: { $0.getFormattedDate() > $1.getFormattedDate() } )
             
-            self.blogPosts.send(orderedBlogPosts)
+            // Get 4 or less for the MainViewController.
+            if allBlogPosts.count > 4 {
+                allBlogPosts = Array(allBlogPosts.prefix(4))
+            }
+            
+            self.blogPosts.send(allBlogPosts)
         }
     }
     
@@ -35,14 +38,13 @@ final class MainViewModel {
         self.apiManager = apiManager
     }
     
-    func fetchBlogPosts() {
+    func fetch4BlogPosts() {
         guard let apiManager = apiManager else { return }
         
         apiManager.fetchBlogPosts { [weak self] result in
             switch result {
             case .success(let blogPosts):
-                //self?.blogPosts.send(blogPosts)
-                self?.unorderedBlogPosts = blogPosts
+                self?.allBlogPosts = blogPosts
             case .failure(let error):
                 print("Error : \(error)")
             }
