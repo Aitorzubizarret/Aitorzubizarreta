@@ -19,12 +19,22 @@ final class MainViewModel {
             // Order the array of posts by date.
             allBlogPosts = allBlogPosts.sorted(by: { $0.getFormattedDate() > $1.getFormattedDate() } )
             
-            // Get 4 or less for the MainViewController.
+            // Get 4 or less posts.
             if allBlogPosts.count > 4 {
                 allBlogPosts = Array(allBlogPosts.prefix(4))
             }
             
             self.blogPosts.send(allBlogPosts)
+        }
+    }
+    var allApps: [App] = [] {
+        didSet {
+            // Get 3 or less apps.
+            if allApps.count > 3 {
+                allApps = Array(allApps.prefix(3))
+            }
+            
+            self.apps.send(allApps)
         }
     }
     
@@ -51,13 +61,13 @@ final class MainViewModel {
         }
     }
     
-    func fetchApps() {
+    func fetch4Apps() {
         guard let apiManager = apiManager else { return }
         
         apiManager.fetchApps { [weak self] result in
             switch result {
             case .success(let apps):
-                self?.apps.send(apps)
+                self?.allApps = apps
             case .failure(let error):
                 print("Error : \(error)")
             }

@@ -49,7 +49,7 @@ class MainViewController: UIViewController {
         initTableView()
         
         viewModel.fetch4BlogPosts()
-        viewModel.fetchApps()
+        viewModel.fetch4Apps()
     }
     
     override func viewWillAppear(_ animated: Bool) {
