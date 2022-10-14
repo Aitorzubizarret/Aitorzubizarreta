@@ -33,8 +33,8 @@ class MainViewController: UIViewController {
     
     // MARK: - Methods
     
-    init(apiManager: APIManagerProtocol) {
-        self.viewModel = MainViewModel(apiManager: apiManager)
+    init(viewModel: MainViewModel) {
+        self.viewModel = viewModel
         
         super.init(nibName: nil, bundle: nil)
     }

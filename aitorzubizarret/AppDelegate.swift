@@ -17,8 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Create an instance of the ViewModel.
         let apiManager: APIManagerProtocol = APIManager()
         
+        // Create an instance of the ViewModel.
+        let mainViewModel: MainViewModel = MainViewModel(apiManager: apiManager)
+        
         // Create an instance of the Main VC.
-        let mainVC: MainViewController = MainViewController(apiManager: apiManager)
+        let mainVC: MainViewController = MainViewController(viewModel: mainViewModel)
         
         // Create the Navigation Controller and add the Main VC to it.
         let navigationController: UINavigationController = UINavigationController()

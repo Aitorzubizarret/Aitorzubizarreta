@@ -64,8 +64,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                                                                 mockBlogPosts: mockBlogPosts,
                                                                 mockApps: mockApps)
         
+        // Create an instance of the ViewModel.
+        let mainViewModel: MainViewModel = MainViewModel(apiManager: mockAPIManager)
+        
         // Create an instance of the Main VC.
-        let mainVC: MainViewController = MainViewController(apiManager: mockAPIManager)
+        let mainVC: MainViewController = MainViewController(viewModel: mainViewModel)
         
         // Create the Navigation Controller and add the Main VC to it.
         let navigationController: UINavigationController = UINavigationController()
