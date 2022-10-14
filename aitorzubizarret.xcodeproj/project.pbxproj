@@ -72,6 +72,7 @@
 		1ACB9EF628F6226F007BA22A /* PostSectionCVTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1ACB9EF428F6226F007BA22A /* PostSectionCVTableViewCell.xib */; };
 		1ACB9EFA28F71C56007BA22A /* PostSectionContactButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACB9EF828F71C56007BA22A /* PostSectionContactButtonTableViewCell.swift */; };
 		1ACB9EFB28F71C56007BA22A /* PostSectionContactButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1ACB9EF928F71C56007BA22A /* PostSectionContactButtonTableViewCell.xib */; };
+		1ACB9EFD28F9BCEA007BA22A /* APIManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACB9EFC28F9BCEA007BA22A /* APIManagerProtocol.swift */; };
 		1AD4B62E28E9FD610059ECDB /* AppDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD4B62C28E9FD610059ECDB /* AppDetailViewController.swift */; };
 		1AD4B62F28E9FD610059ECDB /* AppDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AD4B62D28E9FD610059ECDB /* AppDetailViewController.xib */; };
 		1AD4B63428EA0FB20059ECDB /* AppTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD4B63228EA0FB20059ECDB /* AppTitleTableViewCell.swift */; };
@@ -177,6 +178,7 @@
 		1ACB9EF428F6226F007BA22A /* PostSectionCVTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostSectionCVTableViewCell.xib; sourceTree = "<group>"; };
 		1ACB9EF828F71C56007BA22A /* PostSectionContactButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSectionContactButtonTableViewCell.swift; sourceTree = "<group>"; };
 		1ACB9EF928F71C56007BA22A /* PostSectionContactButtonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostSectionContactButtonTableViewCell.xib; sourceTree = "<group>"; };
+		1ACB9EFC28F9BCEA007BA22A /* APIManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManagerProtocol.swift; sourceTree = "<group>"; };
 		1AD4B62C28E9FD610059ECDB /* AppDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailViewController.swift; sourceTree = "<group>"; };
 		1AD4B62D28E9FD610059ECDB /* AppDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppDetailViewController.xib; sourceTree = "<group>"; };
 		1AD4B63228EA0FB20059ECDB /* AppTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTitleTableViewCell.swift; sourceTree = "<group>"; };
@@ -541,6 +543,7 @@
 		1AC80F3128AB01090049E901 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				1ACB9EFC28F9BCEA007BA22A /* APIManagerProtocol.swift */,
 				1AC80F3228AB01180049E901 /* APIManager.swift */,
 			);
 			path = Managers;
@@ -859,6 +862,7 @@
 				1A910E6428CE50370078831E /* BlogTag.swift in Sources */,
 				1AF7355728E0A3520038290E /* AppsViewModel.swift in Sources */,
 				1A0887C828BB8BC10065A3EB /* CustomImageView.swift in Sources */,
+				1ACB9EFD28F9BCEA007BA22A /* APIManagerProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

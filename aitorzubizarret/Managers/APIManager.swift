@@ -11,8 +11,6 @@ final class APIManager {
     
     // MARK: - Properties
     
-    static let shared = APIManager()
-    
     private var session: URLSession {
         let configuration = URLSessionConfiguration.ephemeral // Doesn't persist data.
         let session = URLSession(configuration: configuration)
@@ -29,9 +27,11 @@ final class APIManager {
         case unknownError
     }
     
-    // MARK: - Methods
+}
+
+extension APIManager: APIManagerProtocol {
     
-    func fetchAboutMe(completionHandler: @escaping(Result<[PostSection], Error>) -> Void) {
+    func fetchAboutMe(completionHandler: @escaping (Result<[PostSection], Error>) -> Void) {
         guard let aboutMeSourceURL = URL(string: aboutMeSource) else { return }
         
         let task = session.dataTask(with: aboutMeSourceURL) { data, response, error in
@@ -68,7 +68,7 @@ final class APIManager {
         task.resume()
     }
     
-    func fetchCVFile(completionHandler: @escaping(Result<CVFile, Error>) -> Void) {
+    func fetchCVFile(completionHandler: @escaping (Result<CVFile, Error>) -> Void) {
         guard let cvSourceURL = URL(string: cvSource) else { return }
         
         let task = session.dataTask(with: cvSourceURL) { data, response, error in
@@ -104,7 +104,7 @@ final class APIManager {
         task.resume()
     }
     
-    func fetchAlbumPhotos(completionHandler: @escaping(Result<[Photo], Error>) -> Void) {
+    func fetchAlbumPhotos(completionHandler: @escaping (Result<[Photo], Error>) -> Void) {
         guard let photosSourceURL = URL(string: photosSource) else { return }
         
         let task = session.dataTask(with: photosSourceURL) { data, response, error in
@@ -141,7 +141,7 @@ final class APIManager {
         task.resume()
     }
     
-    func fetchBlogPosts(completionHandler: @escaping(Result<[BlogPost], Error>) -> Void) {
+    func fetchBlogPosts(completionHandler: @escaping (Result<[BlogPost], Error>) -> Void) {
         guard let postsSourceURL = URL(string: postsSource) else { return }
         
         let task = session.dataTask(with: postsSourceURL) { data, response, error in
@@ -178,7 +178,7 @@ final class APIManager {
         task.resume()
     }
     
-    func fetchApps(completionHandler: @escaping(Result<[App], Error>) -> Void) {
+    func fetchApps(completionHandler: @escaping (Result<[App], Error>) -> Void) {
         guard let appsSourceURL = URL(string: appsSource) else { return }
         
         let task = session.dataTask(with: appsSourceURL) { data, response, error in

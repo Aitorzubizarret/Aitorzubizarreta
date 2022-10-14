@@ -51,7 +51,7 @@ class CVViewController: UIViewController {
         }
     }
     
-    private var viewModel = CVViewModel(apiManager: APIManager.shared)
+    private var viewModel = CVViewModel(apiManager: APIManager())
     private var subscribedTo: [AnyCancellable] = []
     
     private var cvFile: CVFile? = nil {

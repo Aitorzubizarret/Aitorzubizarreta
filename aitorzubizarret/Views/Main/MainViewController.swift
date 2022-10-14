@@ -16,7 +16,7 @@ class MainViewController: UIViewController {
     
     private var tableView = UITableView()
     
-    private var viewModel = MainViewModel(apiManager: APIManager.shared)
+    private var viewModel = MainViewModel(apiManager: APIManager())
     private var subscribedTo: [AnyCancellable] = []
     
     private var posts: [BlogPost] = [] {

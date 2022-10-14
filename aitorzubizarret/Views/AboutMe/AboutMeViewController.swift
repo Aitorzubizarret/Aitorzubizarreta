@@ -21,7 +21,7 @@ class AboutMeViewController: UIViewController {
         return activityIndicator
     }()
     
-    private let viewModel = AboutMeViewModel(apiManager: APIManager.shared)
+    private let viewModel = AboutMeViewModel(apiManager: APIManager())
     private var subscribedTo: [AnyCancellable] = []
     
     private var postSections: [PostSection] = [] {

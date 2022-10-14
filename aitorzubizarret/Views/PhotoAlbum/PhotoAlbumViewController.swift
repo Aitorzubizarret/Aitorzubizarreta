@@ -86,7 +86,7 @@ class PhotoAlbumViewController: UIViewController {
         }
     }
     
-    private var viewModel = PhotoAlbumViewModel(apiManager: APIManager.shared)
+    private var viewModel = PhotoAlbumViewModel(apiManager: APIManager())
     private var subscribedTo: [AnyCancellable] = []
     
     private var photos: [Photo] = [] {
