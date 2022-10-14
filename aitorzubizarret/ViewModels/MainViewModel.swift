@@ -12,7 +12,7 @@ final class MainViewModel {
     
     // MARK: - Properties
     
-    var apiManager: APIManager?
+    var apiManager: APIManagerProtocol
     
     var allBlogPosts: [BlogPost] = [] {
         didSet {
@@ -48,13 +48,11 @@ final class MainViewModel {
     
     // MARK: - Methods
     
-    init(apiManager: APIManager) {
+    init(apiManager: APIManagerProtocol) {
         self.apiManager = apiManager
     }
     
     func fetch4BlogPosts() {
-        guard let apiManager = apiManager else { return }
-        
         apiManager.fetchBlogPosts { [weak self] result in
             switch result {
             case .success(let blogPosts):
@@ -66,8 +64,6 @@ final class MainViewModel {
     }
     
     func fetch4Apps() {
-        guard let apiManager = apiManager else { return }
-        
         apiManager.fetchApps { [weak self] result in
             switch result {
             case .success(let apps):

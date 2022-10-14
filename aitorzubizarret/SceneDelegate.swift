@@ -17,8 +17,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
+        // Create an instance of the ViewModel.
+        let apiManager: APIManagerProtocol = APIManager()
+        
         // Create an instance of the Main VC.
-        let mainVC: MainViewController = MainViewController()
+        let mainVC: MainViewController = MainViewController(apiManager: apiManager)
         
         // Create the Navigation Controller and add the Main VC to it.
         let navigationController: UINavigationController = UINavigationController()

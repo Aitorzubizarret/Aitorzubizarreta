@@ -14,8 +14,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        // Create an instance of the ViewModel.
+        let apiManager: APIManagerProtocol = APIManager()
+        
         // Create an instance of the Main VC.
-        let mainVC: MainViewController = MainViewController()
+        let mainVC: MainViewController = MainViewController(apiManager: apiManager)
         
         // Create the Navigation Controller and add the Main VC to it.
         let navigationController: UINavigationController = UINavigationController()
