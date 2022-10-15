@@ -63,7 +63,7 @@ final class MainViewModel {
         }
     }
     
-    func fetch4Apps() {
+    func fetch3Apps() {
         apiManager.fetchApps { [weak self] result in
             switch result {
             case .success(let apps):
