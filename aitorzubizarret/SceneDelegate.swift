@@ -17,55 +17,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        // Create an instance of the ViewModel.
-        //let apiManager: APIManagerProtocol = APIManager()
-        
-        // AboutMe.
-        let mockPostSections: [PostSection] = []
-        
-        // CV.
-        let mockCVFile: CVFile = CVFile(pdf: "https://www.google.es")
-        
-        // Photo gallery.
-        let mockPhotos: [Photo] = []
-        
-        // Posts.
-        let post1Tag1: BlogTag = BlogTag(tag: "Post 1 Tag 1")
-        let post1Tag2: BlogTag = BlogTag(tag: "Post 1 Tag 2")
-        let post1Description1: BlogDescription = BlogDescription(description: "Test Blog Post 1 Description 1")
-        let post1Description2: BlogDescription = BlogDescription(description: "Test Blog Post 1 Description 2")
-        let post1: BlogPost = BlogPost(title: "Test Blog Post 1",
-                                       date: "2022-10-14T20:08:00+0200",
-                                       tags: [post1Tag1, post1Tag2],
-                                       descriptions: [post1Description1, post1Description2])
-        
-        let post2Tag1: BlogTag = BlogTag(tag: "Post 2 Tag 1")
-        let post2Tag2: BlogTag = BlogTag(tag: "Post 2 Tag 2")
-        let post2Description1: BlogDescription = BlogDescription(description: "Test Blog Post 2 Description 1")
-        let post2Description2: BlogDescription = BlogDescription(description: "Test Blog Post 2 Description 2")
-        let post2: BlogPost = BlogPost(title: "Test Blog Post 2",
-                                       date: "2022-10-14T20:12:00+0200",
-                                       tags: [post2Tag1, post2Tag2],
-                                       descriptions: [post2Description1, post2Description2])
-        
-        let mockBlogPosts: [BlogPost] = [post1, post2]
-        
-        // Apps.
-        let app1: App = App(title: "Test App 1", description: "This is a description for the Test App 1", appStoreProductId: "")
-        
-        let app2: App = App(title: "Test App 2", description: "This is a description for the Test App 2", appStoreProductId: "")
-        
-        let mockApps: [App] = [app1, app2]
-        
-        // Mock APIManager
-        let mockAPIManager: APIManagerProtocol = MockAPIManager(mockPostSections: mockPostSections,
-                                                                mockCVFile: mockCVFile,
-                                                                mockPhotos: mockPhotos,
-                                                                mockBlogPosts: mockBlogPosts,
-                                                                mockApps: mockApps)
+        // Create an instance of the APIManager.
+        let apiManager: APIManagerProtocol = APIManager()
         
         // Create an instance of the ViewModel.
-        let mainViewModel: MainViewModel = MainViewModel(apiManager: mockAPIManager)
+        let mainViewModel: MainViewModel = MainViewModel(apiManager: apiManager)
         
         // Create an instance of the Main VC.
         let mainVC: MainViewController = MainViewController(viewModel: mainViewModel)
