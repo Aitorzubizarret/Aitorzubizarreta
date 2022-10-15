@@ -119,4 +119,115 @@ final class MainViewModelTests: XCTestCase {
         wait(for: [ex], timeout: 10)
     }
     
+    func testFetchBlogPosts_LessThanFour() {
+        // Given.
+        let blogPost1: BlogPost = BlogPost(title: "Blog Post 1", date: "", tags: [], descriptions: [])
+        let blogPost2: BlogPost = BlogPost(title: "Blog Post 2", date: "", tags: [], descriptions: [])
+        let blogPost3: BlogPost = BlogPost(title: "Blog Post 3", date: "", tags: [], descriptions: [])
+        let blogPosts: [BlogPost] = [blogPost1, blogPost2, blogPost3]
+        apiManager = MockAPIManager(mockPostSections: [],
+                                    mockCVFile: CVFile(pdf: ""),
+                                    mockPhotos: [],
+                                    mockBlogPosts: blogPosts,
+                                    mockApps: [])
+        sut = MainViewModel(apiManager: apiManager)
+        
+        // When.
+        sut.fetch4BlogPosts()
+        
+        // Then.
+        let ex1 = XCTestExpectation()
+        sut.blogPosts.sink { error in
+        } receiveValue: { blogPosts in
+            if blogPosts.count == 3 {
+                ex1.fulfill()
+            }
+        }.store(in: &subscriptions)
+        
+        let ex2 = XCTestExpectation()
+        sut.blogPostsCount.sink { error in
+        } receiveValue: { blogPostsCount in
+            if blogPostsCount == 3 {
+                ex2.fulfill()
+            }
+        }.store(in: &subscriptions)
+        
+        wait(for: [ex1, ex2], timeout: 10)
+    }
+    
+    func testFetchBlogPosts_MoreThanFour() {
+        // Given.
+        let blogPost1: BlogPost = BlogPost(title: "Blog Post 1", date: "", tags: [], descriptions: [])
+        let blogPost2: BlogPost = BlogPost(title: "Blog Post 2", date: "", tags: [], descriptions: [])
+        let blogPost3: BlogPost = BlogPost(title: "Blog Post 3", date: "", tags: [], descriptions: [])
+        let blogPost4: BlogPost = BlogPost(title: "Blog Post 4", date: "", tags: [], descriptions: [])
+        let blogPost5: BlogPost = BlogPost(title: "Blog Post 5", date: "", tags: [], descriptions: [])
+        let blogPosts: [BlogPost] = [blogPost1, blogPost2, blogPost3, blogPost4, blogPost5]
+        apiManager = MockAPIManager(mockPostSections: [],
+                                    mockCVFile: CVFile(pdf: ""),
+                                    mockPhotos: [],
+                                    mockBlogPosts: blogPosts,
+                                    mockApps: [])
+        sut = MainViewModel(apiManager: apiManager)
+        
+        // When.
+        sut.fetch4BlogPosts()
+        
+        // Then.
+        let ex1 = XCTestExpectation()
+        sut.blogPosts.sink { error in
+        } receiveValue: { blogPosts in
+            if blogPosts.count == 4 {
+                ex1.fulfill()
+            }
+        }.store(in: &subscriptions)
+        
+        let ex2 = XCTestExpectation()
+        sut.blogPostsCount.sink { error in
+        } receiveValue: { blogPostsCount in
+            if blogPostsCount == 5 {
+                ex2.fulfill()
+            }
+        }.store(in: &subscriptions)
+        
+        wait(for: [ex1, ex2], timeout: 10)
+    }
+    
+    func testFetchBlogPosts_ExactFour() {
+        // Given.
+        let blogPost1: BlogPost = BlogPost(title: "Blog Post 1", date: "", tags: [], descriptions: [])
+        let blogPost2: BlogPost = BlogPost(title: "Blog Post 2", date: "", tags: [], descriptions: [])
+        let blogPost3: BlogPost = BlogPost(title: "Blog Post 3", date: "", tags: [], descriptions: [])
+        let blogPost4: BlogPost = BlogPost(title: "Blog Post 4", date: "", tags: [], descriptions: [])
+        let blogPosts: [BlogPost] = [blogPost1, blogPost2, blogPost3, blogPost4]
+        apiManager = MockAPIManager(mockPostSections: [],
+                                    mockCVFile: CVFile(pdf: ""),
+                                    mockPhotos: [],
+                                    mockBlogPosts: blogPosts,
+                                    mockApps: [])
+        sut = MainViewModel(apiManager: apiManager)
+        
+        // When.
+        sut.fetch4BlogPosts()
+        
+        // Then.
+        let ex1 = XCTestExpectation()
+        sut.blogPosts.sink { error in
+        } receiveValue: { blogPosts in
+            if blogPosts.count == 4 {
+                ex1.fulfill()
+            }
+        }.store(in: &subscriptions)
+        
+        let ex2 = XCTestExpectation()
+        sut.blogPostsCount.sink { error in
+        } receiveValue: { blogPostsCount in
+            if blogPostsCount == 4 {
+                ex2.fulfill()
+            }
+        }.store(in: &subscriptions)
+        
+        wait(for: [ex1, ex2], timeout: 10)
+    }
+    
 }
