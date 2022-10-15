@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 class AppsViewController: UIViewController {
     
@@ -16,6 +17,7 @@ class AppsViewController: UIViewController {
     private var tableView = UITableView()
     
     private var viewModel: AppsViewModel
+    private var subscribedTo: [AnyCancellable] = []
     
     var apps: [App] = [] {
         didSet {
@@ -38,8 +40,12 @@ class AppsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        subscriptions()
+        
         initView()
         initTableView()
+        
+        viewModel.fetchApps()
     }
     
     private func initView() {
@@ -73,6 +79,15 @@ class AppsViewController: UIViewController {
         DispatchQueue.main.async { [weak self] in
             self?.tableView.reloadData()
         }
+    }
+    
+    private func subscriptions() {
+        viewModel.apps.sink { error in
+            print("Error : \(error)")
+        } receiveValue: { [weak self] apps in
+            self?.apps = apps
+        }.store(in: &subscribedTo)
+
     }
     
 }
