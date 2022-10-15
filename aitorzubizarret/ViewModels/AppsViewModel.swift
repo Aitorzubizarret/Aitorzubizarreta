@@ -12,20 +12,18 @@ final class AppsViewModel {
     
     // MARK: - Properties
     
-    var apiManager: APIManager?
+    var apiManager: APIManagerProtocol
     
     // Observable object.
     var apps = PassthroughSubject<[App], Error>()
     
     // MARK: - Methods
     
-    init(apiManager: APIManager) {
+    init(apiManager: APIManagerProtocol) {
         self.apiManager = apiManager
     }
     
     func fetchApps() {
-        guard let apiManager = apiManager else { return }
-        
         apiManager.fetchApps { [weak self] result in
             switch result {
             case .success(let apps):

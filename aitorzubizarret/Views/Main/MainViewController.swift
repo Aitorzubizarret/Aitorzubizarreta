@@ -227,7 +227,14 @@ extension MainViewController: BlogHeaderCellActions {
 extension MainViewController: AppsHeaderCellActions {
 
     func goToAppsListVC() {
-        let appsVC = AppsViewController()
+        // Create an instance of the APIManager.
+        let apiManager: APIManagerProtocol = APIManager()
+        
+        // Create an instance of the ViewModel.
+        let appsViewModel: AppsViewModel = AppsViewModel(apiManager: apiManager)
+        
+        // Create an instance of Apps VC.
+        let appsVC = AppsViewController(viewModel: appsViewModel)
         show(appsVC, sender: nil)
     }
 

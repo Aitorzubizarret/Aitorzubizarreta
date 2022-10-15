@@ -15,6 +15,8 @@ class AppsViewController: UIViewController {
     
     private var tableView = UITableView()
     
+    private var viewModel: AppsViewModel
+    
     var apps: [App] = [] {
         didSet {
             updateTableView()
@@ -22,6 +24,16 @@ class AppsViewController: UIViewController {
     }
     
     // MARK: - Methods
+    
+    init(viewModel: AppsViewModel) {
+        self.viewModel = viewModel
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
