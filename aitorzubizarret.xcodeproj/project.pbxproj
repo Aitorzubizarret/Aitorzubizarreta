@@ -90,6 +90,7 @@
 		1AF7355928E0A6A30038290E /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF7355828E0A6A30038290E /* MainViewModel.swift */; };
 		1AF7355D28E0AE1A0038290E /* AppsHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF7355B28E0AE1A0038290E /* AppsHeaderTableViewCell.swift */; };
 		1AF7355E28E0AE1A0038290E /* AppsHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AF7355C28E0AE1A0038290E /* AppsHeaderTableViewCell.xib */; };
+		1AF9C85F28FB5F3D00CE2404 /* BlogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF9C85E28FB5F3D00CE2404 /* BlogViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -198,6 +199,7 @@
 		1AF7355828E0A6A30038290E /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		1AF7355B28E0AE1A0038290E /* AppsHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		1AF7355C28E0AE1A0038290E /* AppsHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppsHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		1AF9C85E28FB5F3D00CE2404 /* BlogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -406,6 +408,7 @@
 				1AA268B428D7634100CE5FD9 /* CVViewModel.swift */,
 				1AA268B828D768CD00CE5FD9 /* PhotoAlbumViewModel.swift */,
 				1AF7355628E0A3520038290E /* AppsViewModel.swift */,
+				1AF9C85E28FB5F3D00CE2404 /* BlogViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -844,6 +847,7 @@
 				1AD4B63428EA0FB20059ECDB /* AppTitleTableViewCell.swift in Sources */,
 				1AC80F1728A906360049E901 /* AboutMeViewController.swift in Sources */,
 				1AC80F0328A568BB0049E901 /* AboutMeTableViewCell.swift in Sources */,
+				1AF9C85F28FB5F3D00CE2404 /* BlogViewModel.swift in Sources */,
 				1ACACB0E28F2156B00F51F6F /* PostSectionTagsTableViewCell.swift in Sources */,
 				1A04A7C928BB72A200403B7F /* PhotoAlbumDetailViewController.swift in Sources */,
 				1AC80F2228A906980049E901 /* ContactMeViewController.swift in Sources */,

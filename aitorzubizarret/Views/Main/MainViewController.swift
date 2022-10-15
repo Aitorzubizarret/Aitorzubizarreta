@@ -215,7 +215,14 @@ extension MainViewController: UITableViewDataSource {
 extension MainViewController: BlogHeaderCellActions {
     
     func goToBlogVC() {
-        let blogVC = BlogViewController()
+        // Create an instance of the APIManager.
+        let apiManager: APIManagerProtocol = APIManager()
+        
+        // Create an instance of the ViewModel.
+        let viewModel = BlogViewModel(apiManager: apiManager)
+        
+        // Create an instance of Blog VC.
+        let blogVC = BlogViewController(viewModel: viewModel)
         show(blogVC, sender: nil)
     }
     

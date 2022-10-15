@@ -16,6 +16,9 @@ class BlogViewController: UIViewController {
     
     private var tableView = UITableView()
     
+    private var viewModel: BlogViewModel
+    private var subscribedTo: [AnyCancellable] = []
+    
     var posts: [BlogPost] = [] {
         didSet {
             updateTableView()
@@ -24,11 +27,25 @@ class BlogViewController: UIViewController {
     
     // MARK: - Methods
     
+    init(viewModel: BlogViewModel) {
+        self.viewModel = viewModel
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        subscriptions()
+        
         initView()
         initTableView()
+        
+        viewModel.fetchBlogs()
     }
     
     private func initView() {
@@ -62,6 +79,14 @@ class BlogViewController: UIViewController {
         DispatchQueue.main.async { [weak self] in
             self?.tableView.reloadData()
         }
+    }
+    
+    private func subscriptions() {
+        viewModel.blogPosts.sink { error in
+            print("Error : \(error)")
+        } receiveValue: { [weak self] blogPosts in
+            self?.posts = blogPosts
+        }.store(in: &subscribedTo)
     }
     
 }
