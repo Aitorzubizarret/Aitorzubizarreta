@@ -12,14 +12,14 @@ final class AboutMeViewModel {
     
     // MARK: - Properties
     
-    var apiManager: APIManager?
+    var apiManager: APIManagerProtocol
     
     // Observable subject.
     var postSections = PassthroughSubject<[PostSection], Error>()
     
     // MARK: - Methods
     
-    init(apiManager: APIManager) {
+    init(apiManager: APIManagerProtocol) {
         self.apiManager = apiManager
     }
     
@@ -27,8 +27,6 @@ final class AboutMeViewModel {
     /// Fetch Post Sections from the server, and send them to the View that is observing the 'postSection' observable.
     ///
     func fetchPostSections() {
-        guard let apiManager = apiManager else { return }
-
         apiManager.fetchAboutMe { [weak self] result in
             switch result {
             case .success(let postSections):

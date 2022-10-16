@@ -137,7 +137,14 @@ extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.section {
         case 0:
-            let aboutMeVC = AboutMeViewController()
+            // Create an instance of the APIManager.
+            let apiManager: APIManagerProtocol = APIManager()
+            
+            // Create an instance of the ViewModel.
+            let viewModel = AboutMeViewModel(apiManager: apiManager)
+            
+            // Create an instance of the AboutMe VC.
+            let aboutMeVC = AboutMeViewController(viewModel: viewModel)
             show(aboutMeVC, sender: nil)
         case 1:
             if indexPath.row != 0 {
