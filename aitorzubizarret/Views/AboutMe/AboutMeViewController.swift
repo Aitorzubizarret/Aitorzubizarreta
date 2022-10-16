@@ -192,7 +192,15 @@ extension AboutMeViewController: UITableViewDataSource {
 extension AboutMeViewController: PostSectionCVCellActions {
     
     func goToCVDetailVC() {
-        let cvDetailVC = CVViewController()
+        // Create an instance of the APIManager.
+        let apiManager: APIManagerProtocol = APIManager()
+        
+        // Create an instance of the ViewModel.
+        let viewModel = CVViewModel(apiManager: apiManager)
+        
+        // Create an instance of CV VC.
+        let cvDetailVC = CVViewController(viewModel: viewModel)
+        
         show(cvDetailVC, sender: nil)
     }
     

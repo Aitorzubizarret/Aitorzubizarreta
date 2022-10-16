@@ -51,7 +51,7 @@ class CVViewController: UIViewController {
         }
     }
     
-    private var viewModel = CVViewModel(apiManager: APIManager())
+    private var viewModel: CVViewModel
     private var subscribedTo: [AnyCancellable] = []
     
     private var cvFile: CVFile? = nil {
@@ -61,6 +61,16 @@ class CVViewController: UIViewController {
     }
     
     // MARK: - Methods
+    
+    init(viewModel: CVViewModel) {
+        self.viewModel = viewModel
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

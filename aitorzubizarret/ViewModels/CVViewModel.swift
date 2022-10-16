@@ -12,14 +12,14 @@ final class CVViewModel {
     
     // MARK: - Properties
     
-    var apiManager: APIManager?
+    var apiManager: APIManagerProtocol
     
     // Observable subject.
     var cvFile = PassthroughSubject<CVFile, Error>()
     
     // MARK: - Methods
     
-    init(apiManager: APIManager) {
+    init(apiManager: APIManagerProtocol) {
         self.apiManager = apiManager
     }
     
@@ -27,8 +27,6 @@ final class CVViewModel {
     /// Fetch CVFile from the server, and send them to the View that is observing the 'cvFile' observable.
     ///
     func fetchCVFile() {
-        guard let apiManager = apiManager else { return }
-        
         apiManager.fetchCVFile { [weak self] result in
             switch result {
             case .success(let cvFile):
