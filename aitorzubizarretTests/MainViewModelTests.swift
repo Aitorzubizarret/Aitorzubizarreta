@@ -212,7 +212,7 @@ final class MainViewModelTests: XCTestCase {
         
         // Then.
         let ex1 = XCTestExpectation()
-        sut.blogPosts.sink { error in
+        sut.blogPosts.sink { completion in
         } receiveValue: { blogPosts in
             if blogPosts.count == 4 {
                 ex1.fulfill()
@@ -220,7 +220,7 @@ final class MainViewModelTests: XCTestCase {
         }.store(in: &subscriptions)
         
         let ex2 = XCTestExpectation()
-        sut.blogPostsCount.sink { error in
+        sut.blogPostsCount.sink { completion in
         } receiveValue: { blogPostsCount in
             if blogPostsCount == 4 {
                 ex2.fulfill()
@@ -228,6 +228,34 @@ final class MainViewModelTests: XCTestCase {
         }.store(in: &subscriptions)
         
         wait(for: [ex1, ex2], timeout: 10)
+    }
+    
+    func testFetchBlogPosts_OrderByDate() {
+        // Given.
+        let blogPost1: BlogPost = BlogPost(title: "Blog Post 1", date: "2022-09-14T20:08:00+0200", tags: [], descriptions: [])
+        let blogPost2: BlogPost = BlogPost(title: "Blog Post 2", date: "2022-11-14T20:08:00+0200", tags: [], descriptions: [])
+        let blogPost3: BlogPost = BlogPost(title: "Blog Post 3", date: "2022-10-14T20:08:00+0200", tags: [], descriptions: [])
+        let blogPosts: [BlogPost] = [blogPost1, blogPost2, blogPost3]
+        apiManager = MockAPIManager(mockPostSections: [],
+                                    mockCVFile: CVFile(pdf: ""),
+                                    mockPhotos: [],
+                                    mockBlogPosts: blogPosts,
+                                    mockApps: [])
+        sut = MainViewModel(apiManager: apiManager)
+        
+        // When.
+        sut.fetch4BlogPosts()
+        
+        // Then.
+        let ex = XCTestExpectation()
+        sut.blogPosts.sink { completion in
+        } receiveValue: { blogPosts in
+            if (blogPosts[0].title == "Blog Post 2") && (blogPosts[1].title == "Blog Post 3") && (blogPosts[2].title == "Blog Post 1") {
+                ex.fulfill()
+            }
+        }.store(in: &subscriptions)
+        
+        wait(for: [ex], timeout: 10)
     }
     
 }
