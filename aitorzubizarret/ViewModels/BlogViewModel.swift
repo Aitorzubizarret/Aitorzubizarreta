@@ -17,9 +17,7 @@ final class BlogViewModel {
     
     var allBlogPosts: [BlogPost] = [] {
         didSet {
-            // Order the array of posts by date.
-            allBlogPosts = allBlogPosts.sorted(by: { $0.getFormattedDate() > $1.getFormattedDate() } )
-            
+            allBlogPosts = orderArrayByDate(unorderedArray: allBlogPosts)
             self.blogPosts.send(allBlogPosts)
         }
     }
@@ -42,6 +40,13 @@ final class BlogViewModel {
                 print("Error : \(error)")
             }
         }
+    }
+    
+    ///
+    /// Order the array of Blog posts by date.
+    ///
+    private func orderArrayByDate(unorderedArray: [BlogPost]) -> [BlogPost] {
+        return allBlogPosts.sorted(by: { $0.getFormattedDate() > $1.getFormattedDate() } )
     }
     
 }
