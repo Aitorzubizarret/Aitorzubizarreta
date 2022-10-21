@@ -19,12 +19,10 @@ final class MainViewModel {
             let totalBlogPosts: Int = allBlogPosts.count
             
             // Order the array of posts by date.
-            allBlogPosts = allBlogPosts.sorted(by: { $0.getFormattedDate() > $1.getFormattedDate() } )
+            allBlogPosts = sortBlogPostByDate(allBlogPosts: allBlogPosts)
             
             // Get 4 or less posts.
-            if allBlogPosts.count > 4 {
-                allBlogPosts = Array(allBlogPosts.prefix(4))
-            }
+            allBlogPosts = filterArrayByQuantity(elements: allBlogPosts, quantity: 4)
             
             self.blogPosts.send(allBlogPosts)
             self.blogPostsCount.send(totalBlogPosts)
@@ -32,12 +30,7 @@ final class MainViewModel {
     }
     var allApps: [App] = [] {
         didSet {
-            // Get 3 or less apps.
-            if allApps.count > 3 {
-                allApps = Array(allApps.prefix(3))
-            }
-            
-            self.apps.send(allApps)
+            self.apps.send(filterArrayByQuantity(elements: allApps, quantity: 3))
         }
     }
     
@@ -52,7 +45,7 @@ final class MainViewModel {
         self.apiManager = apiManager
     }
     
-    func fetch4BlogPosts() {
+    func fetchBlogPosts() {
         apiManager.fetchBlogPosts { [weak self] result in
             switch result {
             case .success(let blogPosts):
@@ -63,7 +56,7 @@ final class MainViewModel {
         }
     }
     
-    func fetch3Apps() {
+    func fetchApps() {
         apiManager.fetchApps { [weak self] result in
             switch result {
             case .success(let apps):
@@ -72,6 +65,17 @@ final class MainViewModel {
                 print("Error : \(error)")
             }
         }
+    }
+    
+    ///
+    /// Orders the array of blog posts by date.
+    ///
+    func sortBlogPostByDate(allBlogPosts: [BlogPost]) -> [BlogPost] {
+        return allBlogPosts.sorted(by: { $0.getFormattedDate() > $1.getFormattedDate() } )
+    }
+    
+    func filterArrayByQuantity<T>(elements: [T], quantity: Int) -> [T] {
+        return elements.count > quantity ? Array(elements.prefix(quantity)) : elements
     }
     
 }

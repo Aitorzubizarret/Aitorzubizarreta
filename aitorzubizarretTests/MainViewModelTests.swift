@@ -48,7 +48,7 @@ final class MainViewModelTests: XCTestCase {
         sut = MainViewModel(apiManager: apiManager)
         
         // When.
-        sut.fetch3Apps()
+        sut.fetchApps()
         
         // Then.
         let ex = XCTestExpectation()
@@ -77,7 +77,7 @@ final class MainViewModelTests: XCTestCase {
         sut = MainViewModel(apiManager: apiManager)
         
         // When.
-        sut.fetch3Apps()
+        sut.fetchApps()
         
         // Then.
         let ex = XCTestExpectation()
@@ -105,7 +105,7 @@ final class MainViewModelTests: XCTestCase {
         sut = MainViewModel(apiManager: apiManager)
         
         // When.
-        sut.fetch3Apps()
+        sut.fetchApps()
         
         // Then.
         let ex = XCTestExpectation()
@@ -133,7 +133,7 @@ final class MainViewModelTests: XCTestCase {
         sut = MainViewModel(apiManager: apiManager)
         
         // When.
-        sut.fetch4BlogPosts()
+        sut.fetchBlogPosts()
         
         // Then.
         let ex1 = XCTestExpectation()
@@ -171,7 +171,7 @@ final class MainViewModelTests: XCTestCase {
         sut = MainViewModel(apiManager: apiManager)
         
         // When.
-        sut.fetch4BlogPosts()
+        sut.fetchBlogPosts()
         
         // Then.
         let ex1 = XCTestExpectation()
@@ -208,7 +208,7 @@ final class MainViewModelTests: XCTestCase {
         sut = MainViewModel(apiManager: apiManager)
         
         // When.
-        sut.fetch4BlogPosts()
+        sut.fetchBlogPosts()
         
         // Then.
         let ex1 = XCTestExpectation()
@@ -244,7 +244,7 @@ final class MainViewModelTests: XCTestCase {
         sut = MainViewModel(apiManager: apiManager)
         
         // When.
-        sut.fetch4BlogPosts()
+        sut.fetchBlogPosts()
         
         // Then.
         let ex = XCTestExpectation()
