@@ -22,14 +22,14 @@ final class MainViewModel {
             allBlogPosts = sortBlogPostByDate(allBlogPosts: allBlogPosts)
             
             // Get 4 or less posts.
-            allBlogPosts = filterArrayByQuantity(elements: allBlogPosts, quantity: 4)
+            self.blogPosts.send(filterArrayByQuantity(elements: allBlogPosts, quantity: 4))
             
-            self.blogPosts.send(allBlogPosts)
             self.blogPostsCount.send(totalBlogPosts)
         }
     }
     var allApps: [App] = [] {
         didSet {
+            // Get 3 or less apps.
             self.apps.send(filterArrayByQuantity(elements: allApps, quantity: 3))
         }
     }
