@@ -6,14 +6,12 @@
 //
 
 import XCTest
-import Combine
 @testable import aitorzubizarret
 
 final class MainViewModelTests: XCTestCase {
     
     private var sut: MainViewModel! // System Under Test
     private var apiManager: MockAPIManager!
-    private var subscriptions = Set<AnyCancellable>()
     
     override func setUpWithError() throws {
         // Mock APIManager
@@ -26,136 +24,60 @@ final class MainViewModelTests: XCTestCase {
         
         try super.setUpWithError()
     }
-
+    
     override func tearDownWithError() throws {
         sut = nil
         apiManager = nil
-        subscriptions = []
         
         try super.tearDownWithError()
     }
-
-    func testFetchApps_LessThanThree() {
+    
+    func testSortBlogPostsArray_ByDate() {
         // Given.
-        let app1: App = App(title: "Title 1", description: "Description 1", appStoreProductId: "ProductId 1")
-        let app2: App = App(title: "Title 2", description: "Description 2", appStoreProductId: "ProductId 2")
-        let mockApps: [App] = [app1, app2]
-        apiManager = MockAPIManager(mockPostSections: [],
-                                    mockCVFile: CVFile(pdf: ""),
-                                    mockPhotos: [],
-                                    mockBlogPosts: [],
-                                    mockApps: mockApps)
-        sut = MainViewModel(apiManager: apiManager)
+        let blogPost1: BlogPost = BlogPost(title: "Blog Post 1", date: "2022-09-14T20:08:00+0200", tags: [], descriptions: [])
+        let blogPost2: BlogPost = BlogPost(title: "Blog Post 2", date: "2022-11-14T20:08:00+0200", tags: [], descriptions: [])
+        let blogPost3: BlogPost = BlogPost(title: "Blog Post 3", date: "2022-10-14T20:08:00+0200", tags: [], descriptions: [])
+        let blogPosts: [BlogPost] = [blogPost1, blogPost2, blogPost3]
         
         // When.
-        sut.fetchApps()
+        let sortedBlogPostsByDate = sut.sortBlogPostByDate(allBlogPosts: blogPosts)
         
         // Then.
-        let ex = XCTestExpectation()
-        sut.apps.sink { error in
-        } receiveValue: { apps in
-            if apps.count == 2 {
-                ex.fulfill()
-            }
-        }.store(in: &subscriptions)
-        
-        wait(for: [ex], timeout: 10)
+        XCTAssertEqual(sortedBlogPostsByDate[0].title, "Blog Post 2")
+        XCTAssertEqual(sortedBlogPostsByDate[1].title, "Blog Post 3")
+        XCTAssertEqual(sortedBlogPostsByDate[2].title, "Blog Post 1")
     }
     
-    func testFetchApps_MoreThanThree() {
+    func testFilterBlogPostsArray_ByQuantity_Four() {
         // Given.
-        let app1: App = App(title: "Title 1", description: "Description 1", appStoreProductId: "ProductId 1")
-        let app2: App = App(title: "Title 2", description: "Description 2", appStoreProductId: "ProductId 2")
-        let app3: App = App(title: "Title 3", description: "Description 3", appStoreProductId: "ProductId 3")
-        let app4: App = App(title: "Title 4", description: "Description 4", appStoreProductId: "ProductId 4")
-        let mockApps: [App] = [app1, app2, app3, app4]
-        apiManager = MockAPIManager(mockPostSections: [],
-                                    mockCVFile: CVFile(pdf: ""),
-                                    mockPhotos: [],
-                                    mockBlogPosts: [],
-                                    mockApps: mockApps)
-        sut = MainViewModel(apiManager: apiManager)
+        let blogPost1: BlogPost = BlogPost(title: "Blog Post 1", date: "", tags: [], descriptions: [])
+        let blogPost2: BlogPost = BlogPost(title: "Blog Post 2", date: "", tags: [], descriptions: [])
+        let blogPost3: BlogPost = BlogPost(title: "Blog Post 3", date: "", tags: [], descriptions: [])
+        let blogPost4: BlogPost = BlogPost(title: "Blog Post 4", date: "", tags: [], descriptions: [])
+        let blogPosts: [BlogPost] = [blogPost1, blogPost2, blogPost3, blogPost4]
         
         // When.
-        sut.fetchApps()
+        let fourBlogPosts = sut.filterArrayByQuantity(elements: blogPosts, quantity: 4)
         
         // Then.
-        let ex = XCTestExpectation()
-        sut.apps.sink { error in
-        } receiveValue: { apps in
-            if apps.count == 3 {
-                ex.fulfill()
-            }
-        }.store(in: &subscriptions)
-        
-        wait(for: [ex], timeout: 10)
+        XCTAssertEqual(fourBlogPosts.count, 4)
     }
     
-    func testFetchApps_ExactThree() {
-        // Given.
-        let app1: App = App(title: "Title 1", description: "Description 1", appStoreProductId: "ProductId 1")
-        let app2: App = App(title: "Title 2", description: "Description 2", appStoreProductId: "ProductId 2")
-        let app3: App = App(title: "Title 3", description: "Description 3", appStoreProductId: "ProductId 3")
-        let mockApps: [App] = [app1, app2, app3]
-        apiManager = MockAPIManager(mockPostSections: [],
-                                    mockCVFile: CVFile(pdf: ""),
-                                    mockPhotos: [],
-                                    mockBlogPosts: [],
-                                    mockApps: mockApps)
-        sut = MainViewModel(apiManager: apiManager)
-        
-        // When.
-        sut.fetchApps()
-        
-        // Then.
-        let ex = XCTestExpectation()
-        sut.apps.sink { error in
-        } receiveValue: { apps in
-            if apps.count == 3 {
-                ex.fulfill()
-            }
-        }.store(in: &subscriptions)
-        
-        wait(for: [ex], timeout: 10)
-    }
-    
-    func testFetchBlogPosts_LessThanFour() {
+    func testFilterBlogPostsArray_ByQuantity_LessThanFour() {
         // Given.
         let blogPost1: BlogPost = BlogPost(title: "Blog Post 1", date: "", tags: [], descriptions: [])
         let blogPost2: BlogPost = BlogPost(title: "Blog Post 2", date: "", tags: [], descriptions: [])
         let blogPost3: BlogPost = BlogPost(title: "Blog Post 3", date: "", tags: [], descriptions: [])
         let blogPosts: [BlogPost] = [blogPost1, blogPost2, blogPost3]
-        apiManager = MockAPIManager(mockPostSections: [],
-                                    mockCVFile: CVFile(pdf: ""),
-                                    mockPhotos: [],
-                                    mockBlogPosts: blogPosts,
-                                    mockApps: [])
-        sut = MainViewModel(apiManager: apiManager)
         
         // When.
-        sut.fetchBlogPosts()
+        let lessThanFourBlogPosts = sut.filterArrayByQuantity(elements: blogPosts, quantity: 4)
         
         // Then.
-        let ex1 = XCTestExpectation()
-        sut.blogPosts.sink { error in
-        } receiveValue: { blogPosts in
-            if blogPosts.count == 3 {
-                ex1.fulfill()
-            }
-        }.store(in: &subscriptions)
-        
-        let ex2 = XCTestExpectation()
-        sut.blogPostsCount.sink { error in
-        } receiveValue: { blogPostsCount in
-            if blogPostsCount == 3 {
-                ex2.fulfill()
-            }
-        }.store(in: &subscriptions)
-        
-        wait(for: [ex1, ex2], timeout: 10)
+        XCTAssertEqual(lessThanFourBlogPosts.count, 3)
     }
     
-    func testFetchBlogPosts_MoreThanFour() {
+    func testFilterBlogPostsArray_ByQuantity_MoreThanFour() {
         // Given.
         let blogPost1: BlogPost = BlogPost(title: "Blog Post 1", date: "", tags: [], descriptions: [])
         let blogPost2: BlogPost = BlogPost(title: "Blog Post 2", date: "", tags: [], descriptions: [])
@@ -163,99 +85,54 @@ final class MainViewModelTests: XCTestCase {
         let blogPost4: BlogPost = BlogPost(title: "Blog Post 4", date: "", tags: [], descriptions: [])
         let blogPost5: BlogPost = BlogPost(title: "Blog Post 5", date: "", tags: [], descriptions: [])
         let blogPosts: [BlogPost] = [blogPost1, blogPost2, blogPost3, blogPost4, blogPost5]
-        apiManager = MockAPIManager(mockPostSections: [],
-                                    mockCVFile: CVFile(pdf: ""),
-                                    mockPhotos: [],
-                                    mockBlogPosts: blogPosts,
-                                    mockApps: [])
-        sut = MainViewModel(apiManager: apiManager)
         
         // When.
-        sut.fetchBlogPosts()
+        let moreThanFourBlogPosts = sut.filterArrayByQuantity(elements: blogPosts, quantity: 4)
         
         // Then.
-        let ex1 = XCTestExpectation()
-        sut.blogPosts.sink { error in
-        } receiveValue: { blogPosts in
-            if blogPosts.count == 4 {
-                ex1.fulfill()
-            }
-        }.store(in: &subscriptions)
-        
-        let ex2 = XCTestExpectation()
-        sut.blogPostsCount.sink { error in
-        } receiveValue: { blogPostsCount in
-            if blogPostsCount == 5 {
-                ex2.fulfill()
-            }
-        }.store(in: &subscriptions)
-        
-        wait(for: [ex1, ex2], timeout: 10)
+        XCTAssertEqual(moreThanFourBlogPosts.count, 4)
     }
     
-    func testFetchBlogPosts_ExactFour() {
+    func testFilterAppsArray_ByQuantity_Three() {
         // Given.
-        let blogPost1: BlogPost = BlogPost(title: "Blog Post 1", date: "", tags: [], descriptions: [])
-        let blogPost2: BlogPost = BlogPost(title: "Blog Post 2", date: "", tags: [], descriptions: [])
-        let blogPost3: BlogPost = BlogPost(title: "Blog Post 3", date: "", tags: [], descriptions: [])
-        let blogPost4: BlogPost = BlogPost(title: "Blog Post 4", date: "", tags: [], descriptions: [])
-        let blogPosts: [BlogPost] = [blogPost1, blogPost2, blogPost3, blogPost4]
-        apiManager = MockAPIManager(mockPostSections: [],
-                                    mockCVFile: CVFile(pdf: ""),
-                                    mockPhotos: [],
-                                    mockBlogPosts: blogPosts,
-                                    mockApps: [])
-        sut = MainViewModel(apiManager: apiManager)
+        let app1: App = App(title: "Title 1", description: "Description 1", appStoreProductId: "ProductId 1")
+        let app2: App = App(title: "Title 2", description: "Description 2", appStoreProductId: "ProductId 2")
+        let app3: App = App(title: "Title 3", description: "Description 3", appStoreProductId: "ProductId 3")
+        let apps: [App] = [app1, app2, app3]
         
         // When.
-        sut.fetchBlogPosts()
+        let threeApps = sut.filterArrayByQuantity(elements: apps, quantity: 3)
         
         // Then.
-        let ex1 = XCTestExpectation()
-        sut.blogPosts.sink { completion in
-        } receiveValue: { blogPosts in
-            if blogPosts.count == 4 {
-                ex1.fulfill()
-            }
-        }.store(in: &subscriptions)
-        
-        let ex2 = XCTestExpectation()
-        sut.blogPostsCount.sink { completion in
-        } receiveValue: { blogPostsCount in
-            if blogPostsCount == 4 {
-                ex2.fulfill()
-            }
-        }.store(in: &subscriptions)
-        
-        wait(for: [ex1, ex2], timeout: 10)
+        XCTAssertEqual(threeApps.count, 3)
     }
     
-    func testFetchBlogPosts_OrderByDate() {
+    func testFilterAppsArray_ByQuantity_LessThanThree() {
         // Given.
-        let blogPost1: BlogPost = BlogPost(title: "Blog Post 1", date: "2022-09-14T20:08:00+0200", tags: [], descriptions: [])
-        let blogPost2: BlogPost = BlogPost(title: "Blog Post 2", date: "2022-11-14T20:08:00+0200", tags: [], descriptions: [])
-        let blogPost3: BlogPost = BlogPost(title: "Blog Post 3", date: "2022-10-14T20:08:00+0200", tags: [], descriptions: [])
-        let blogPosts: [BlogPost] = [blogPost1, blogPost2, blogPost3]
-        apiManager = MockAPIManager(mockPostSections: [],
-                                    mockCVFile: CVFile(pdf: ""),
-                                    mockPhotos: [],
-                                    mockBlogPosts: blogPosts,
-                                    mockApps: [])
-        sut = MainViewModel(apiManager: apiManager)
+        let app1: App = App(title: "Title 1", description: "Description 1", appStoreProductId: "ProductId 1")
+        let app2: App = App(title: "Title 2", description: "Description 2", appStoreProductId: "ProductId 2")
+        let apps: [App] = [app1, app2]
         
         // When.
-        sut.fetchBlogPosts()
+        let lessThanthreeApps = sut.filterArrayByQuantity(elements: apps, quantity: 3)
         
         // Then.
-        let ex = XCTestExpectation()
-        sut.blogPosts.sink { completion in
-        } receiveValue: { blogPosts in
-            if (blogPosts[0].title == "Blog Post 2") && (blogPosts[1].title == "Blog Post 3") && (blogPosts[2].title == "Blog Post 1") {
-                ex.fulfill()
-            }
-        }.store(in: &subscriptions)
+        XCTAssertEqual(lessThanthreeApps.count, 2)
+    }
+    
+    func testFilterAppsArray_ByQuantity_MoreThanThree() {
+        // Given.
+        let app1: App = App(title: "Title 1", description: "Description 1", appStoreProductId: "ProductId 1")
+        let app2: App = App(title: "Title 2", description: "Description 2", appStoreProductId: "ProductId 2")
+        let app3: App = App(title: "Title 3", description: "Description 3", appStoreProductId: "ProductId 3")
+        let app4: App = App(title: "Title 4", description: "Description 4", appStoreProductId: "ProductId 4")
+        let apps: [App] = [app1, app2, app3, app4]
         
-        wait(for: [ex], timeout: 10)
+        // When.
+        let moreThanthreeApps = sut.filterArrayByQuantity(elements: apps, quantity: 3)
+        
+        // Then.
+        XCTAssertEqual(moreThanthreeApps.count, 3)
     }
     
 }
