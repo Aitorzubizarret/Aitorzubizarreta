@@ -104,21 +104,36 @@ class MainViewController: UIViewController {
     }
     
     private func subscriptions() {
-        viewModel.blogPosts.sink { error in
-            print("Error : \(error)")
+        viewModel.blogPosts.sink { receiveCompletion in
+            switch receiveCompletion {
+            case .finished:
+                print("Finished BlogPosts")
+            case .failure(let error):
+                print("Error : \(error)")
+            }
         } receiveValue: { [weak self] posts in
             self?.posts = posts
         }.store(in: &subscribedTo)
         
-        viewModel.blogPostsCount.sink { error in
-            print("Error : \(error)")
+        viewModel.blogPostsCount.sink { receiveCompletion in
+            switch receiveCompletion {
+            case .finished:
+                print("Finished BlogPostsCount")
+            case .failure(let error):
+                print("Error : \(error)")
+            }
         } receiveValue: { [weak self] blogPostCount in
             self?.postCount = blogPostCount
         }.store(in: &subscribedTo)
 
         
-        viewModel.apps.sink { error in
-            print("Error : \(error)")
+        viewModel.apps.sink { receiveCompletion in
+            switch receiveCompletion {
+            case .finished:
+                print("Finished Apps")
+            case .failure(let error):
+                print("Error : \(error)")
+            }
         } receiveValue: { [weak self] apps in
             self?.apps = apps
         }.store(in: &subscribedTo)

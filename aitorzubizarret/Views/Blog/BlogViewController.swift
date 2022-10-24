@@ -82,8 +82,13 @@ class BlogViewController: UIViewController {
     }
     
     private func subscriptions() {
-        viewModel.blogPosts.sink { error in
-            print("Error : \(error)")
+        viewModel.blogPosts.sink { receiveCompletion in
+            switch receiveCompletion {
+            case .finished:
+                print("Finished BlogPosts")
+            case .failure(let error):
+                print("Error : \(error)")
+            }
         } receiveValue: { [weak self] blogPosts in
             self?.posts = blogPosts
         }.store(in: &subscribedTo)

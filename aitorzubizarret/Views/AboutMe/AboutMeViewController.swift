@@ -123,8 +123,13 @@ class AboutMeViewController: UIViewController {
     }
     
     private func subscriptions() {
-        viewModel.postSections.sink { error in
-            print("Error \(error)")
+        viewModel.postSections.sink { receiveCompletion in
+            switch receiveCompletion {
+            case .finished:
+                print("Finished PostSections")
+            case .failure(let error):
+                print("Error : \(error)")
+            }
         } receiveValue: { [weak self] postSections in
             self?.postSections = postSections
         }.store(in: &subscribedTo)

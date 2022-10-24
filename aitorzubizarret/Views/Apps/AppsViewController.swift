@@ -82,8 +82,13 @@ class AppsViewController: UIViewController {
     }
     
     private func subscriptions() {
-        viewModel.apps.sink { error in
-            print("Error : \(error)")
+        viewModel.apps.sink { receiveCompletion in
+            switch receiveCompletion {
+            case .finished:
+                print("Finished Apps")
+            case .failure(let error):
+                print("Error : \(error)")
+            }
         } receiveValue: { [weak self] apps in
             self?.apps = apps
         }.store(in: &subscribedTo)

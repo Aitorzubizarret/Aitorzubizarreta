@@ -155,8 +155,13 @@ class PhotoAlbumViewController: UIViewController {
     }
     
     private func subscriptions() {
-        viewModel.photos.sink { error in
-            print("Error : \(error)")
+        viewModel.photos.sink { receiveCompletion in
+            switch receiveCompletion {
+            case .finished:
+                print("Finished Photos")
+            case .failure(let error):
+                print("Error : \(error)")
+            }
         } receiveValue: { [weak self] photos in
             self?.photos = photos
         }.store(in: &subscribedTo)

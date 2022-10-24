@@ -126,8 +126,13 @@ class CVViewController: UIViewController {
     }
     
     private func subscriptions() {
-        viewModel.cvFile.sink { error in
-            print("Error : \(error)")
+        viewModel.cvFile.sink { receiveCompletion in
+            switch receiveCompletion {
+            case .finished:
+                print("Finished CVFile")
+            case .failure(let error):
+                print("Error : \(error)")
+            }
         } receiveValue: { [weak self] cvFile in
             self?.cvFile = cvFile
         }.store(in: &subscribedTo)
